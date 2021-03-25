@@ -108,10 +108,10 @@ bci_env_grid %>%
 #' ### Verbo `arrange`
 #' 
 #' Pruebo también con la matriz de comunidad. Por ejemplo, introduzco en la tubería la función `colSums`, que devuelve un vector cuyos elementos están nombrados (tienen un atributo, en este caso, el nombre de especie), donde cada elemento representa la abundancia por especie.
-mc_apcyn_melic_saptc %>%
+mc_myrtc %>%
   colSums
 #' Y también obtengo la abundancia por quadrat.
-mc_apcyn_melic_saptc %>%
+mc_myrtc %>%
   rowSums
 #' Uso a continuación el verbo `arrange` para mostrar los registros de la matriz ambiental ordenados ascendentemente por pH.
 bci_env_grid %>%
