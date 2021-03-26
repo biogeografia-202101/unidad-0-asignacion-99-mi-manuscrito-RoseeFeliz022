@@ -206,7 +206,7 @@ agrupado_por_habitat %>%
 #' Finalmente, te muestro `join`. Más que una función, `join` es una función genérica con varios métodos para unir tablas que comparten al menos un atributo en común, siendo `inner_join` el más usado. Imagina un caso de uso: calculas abundancia de tu familia de plantas por cada quadrat de 1 ha. Ahora necesitas unir dicha información a la matriz ambiental. Aunque hay múltiples soluciones, `inner_join` es la que con mayor consistencia resuelve este problema.
 #' 
 #' Obtendré una tabla con dos columnas: código identificador de quadrat de 1 ha (le llamaré `id`), y abundancia de todas las plantas de mi familia por quadrat (le llamaré `abundancia_mi_familia`)
-id_abundancia_fam <- mc_apcyn_melic_saptc %>%
+id_abundancia_fam <- mc_myrtc %>%
   mutate(abundancia_mi_familia = rowSums(.)) %>% 
   rownames_to_column(var = 'id') %>%
   mutate(id = as.numeric(id)) %>% #Numérico, garantiza compatibilidad con id de bci_env_grid
