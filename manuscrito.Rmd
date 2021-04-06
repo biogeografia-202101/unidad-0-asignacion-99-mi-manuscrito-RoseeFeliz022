@@ -64,6 +64,10 @@ knitr::kable(abun_sp,
 abun_sp_q
 ```
 
+Patrón de riqueza... (ver Figura \ref(fig:mapa_cuadros_riq_mi_familia))
+
+![Distribución de la riqueza de la familia _Myrtaceae_ \label(fig:mapa_cuadros_riq_mi_familia)](mapa_cuadros_riq_mi_familia.png){width=50%}
+
 # Discusión
 
 # Agradecimientos
