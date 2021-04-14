@@ -40,7 +40,7 @@ La isla de Barro Colorado (BCI, por sus siglas en inglés) se formó al término
 
 Se ha seleccionado el censo número 8 de esta reserva natural por ser el más reciente y a esta reserva natural en particular debido a la gran cantidad disponible de datos censales que a través de la Ecología numérica nos permitirán conocer rasgos básicos de la estructura y composición de la comunidad de plantas mirtáceas en relación con factores ambientales.
 
-Las mirtáceas (Myrtaceae Juss) son una familia de  plantas leñosas del orden Myrtales. La mayoría de las especies son árboles, también hay muchas que son arbustos o subarbustos. Algunas especies producen flores y frutos, otras raíces adventicias. Se distribuyen principalmente en zonas tropicales y templadas, con poca representación en la región africana. La familia cuenta con unos 142 géneros y más de 5.500 especies, incluyendo Psiloxylon y Heteropyxis, también pueden ser citadas por otros autores como familias monogenéricas Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra los árboles más altos (110-140 m) del planeta (Eucalyptus) y al género más numeroso (1200‒1800 especies) que existe (Syzygium), los subarbustos rizomatosos de los géneros de la sabana (Psidium, Campomanesia y Eugenia), el género Metrosideros que contiene especies arbóreas con muchas raíces adventicias, y otros géneros son lianas trepadoras de raíces. También hay un mangle, el monotípico Osbornia, un pequeño árbol que carece de neumatóforos [@wilson2010myrtaceae].
+Las mirtáceas ( _Myrtaceae_ Juss) son una familia de  plantas leñosas del orden Myrtales. La mayoría de las especies son árboles, también hay muchas que son arbustos o subarbustos. Algunas especies producen flores y frutos, otras raíces adventicias. Se distribuyen principalmente en zonas tropicales y templadas, con poca representación en la región africana. La familia cuenta con unos 142 géneros y más de 5.500 especies, incluyendo _Psiloxylon_ y _Heteropyxis_, también pueden ser citadas por otros autores como familias monogenéricas Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra los árboles más altos (110-140 m) del planeta (Eucalyptus) y al género más numeroso (1200‒1800 especies) que existe ( _Syzygium_), los subarbustos rizomatosos de los géneros de la sabana ( _Psidium_, _Campomanesia_ y _Eugenia_), el género _Metrosideros_ que contiene especies arbóreas con muchas raíces adventicias, y otros géneros son lianas trepadoras de raíces. También hay un mangle, el monotípico Osbornia, un pequeño árbol que carece de neumatóforos [@wilson2010myrtaceae].
 
 R
 
@@ -64,9 +64,18 @@ knitr::kable(abun_sp,
 abun_sp_q
 ```
 
-Patrón de riqueza... (ver Figura \ref(fig:mapa_cuadros_riq_mi_familia))
+Patrón de riqueza... (ver Figura \ref{fig:mapa_cuadros_riq_mi_familia})
 
-![Distribución de la riqueza de la familia _Myrtaceae_ \label(fig:mapa_cuadros_riq_mi_familia)](mapa_cuadros_riq_mi_familia.png){width=50%}
+![Distribución de la riqueza de la familia _Myrtaceae_ \label{fig:mapa_cuadros_riq_mi_familia}](mapa_cuadros_riq_mi_familia.png){width=50%}
+
+Rangos de ph... (ver Figuras \ref{fig:mapa_cuadros_ph} y \ref{fig:mapa_cuadros_pendiente}).
+
+![Distribución del pH por cuadros de 1 Ha  \label{fig:mapa_cuadros_ph}](mapa_cuadros_ph.png){width=50%}
+
+
+![Distribución de las pendientes (en grados) por cuadro de 1 Ha  \label{fig:mapa_cuadros_pendiente}](mapa_cuadros_pendiente.png){width=50%}
+
+
 
 # Discusión
 
