@@ -84,6 +84,12 @@ mi_fam_jac %>% tidy # Mostrando sólo las primeras 10 combinaciones en modo data
 #' En esta matriz de disimilaridad, al igual que en la anterior, un valor pequeño (rosa) significa que los sitios comparados son muy parecidos. Por ejemplo, en el gráfico no ordenado (izquierda), verás que, por ejemplo, los sitios 1 y 2, y los sitios 3 y 4 son muy similares; en el gráfico ordenado por valor de distancia (derecha), notarás por ejemplo que 35 y 19 son muy similares.
 #'  
 coldiss(mi_fam_jac, diag = T)
+png(
+  filename = 'matriz_disimilaridad_jacard.png',
+  width = 2400, height = 1200, pointsize = 32
+)
+coldiss(mi_fam_jac, diag = T)
+dev.off()
 #' 
 #' La distancia de Jaccard (**D<sub>J</sub>**) se puede expresar como "la proporción de especies no compartidas". En este caso, para la comparación entre los sitios 1 y 2, dicho valor es de 8.33%, que equivale a decir "hay sólo un 8.33% de exclusividad" (por lo tanto, hay mucha similaridad). Si se tratara de la similaridad de Jaccard (**S<sub>J</sub>**) obtendríamos el complemento a 1, que equivale de hecho a "la proporción de especies compartidas", es decir, 91.67%.
 #' 
@@ -148,5 +154,11 @@ env_mix <- bci_env_grid %>%
 env_mix_d <- daisy(x = env_mix, metric = 'gower')
 env_mix_d %>% as.dist %>% tidy
 env_mix_d %>% coldiss(diag = T)
+png(
+  filename = 'modoQ_datosmixtos_heterogeneidadambientalyhabitat.png',
+  width = 2400, height = 1200, pointsize = 32
+)
+coldiss(env_mix_d, diag = T)
+dev.off()
 env_mix_d %>% coldissgg(ordered = T, fsz = 1)
 #'

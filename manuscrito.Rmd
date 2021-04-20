@@ -75,6 +75,9 @@ Rangos de ph... (ver Figuras \ref{fig:mapa_cuadros_ph} y \ref{fig:mapa_cuadros_p
 
 ![Distribución de las pendientes (en grados) por cuadro de 1 Ha  \label{fig:mapa_cuadros_pendiente}](mapa_cuadros_pendiente.png){width=50%}
 
+En la matriz, ... (ver figura \ref{fig:matriz_disimilaridad_jacard})
+
+![Matriz de Disimilaridad de Jacard \label{fig:matriz_disimilaridad_jacard}](matriz_disimilaridad_jacard.png)
 
 
 # Discusión

@@ -53,6 +53,7 @@ mi_fam_t_chi_d %>% tidy
 #' Finalmente, creo el "mapa de calor".
 #' 
 coldiss(mi_fam_t_chi_d, diag = TRUE)
+
 #'
 #' En el mapa de calor **ordenado** (el de la derecha), se identifica al menos un patrón de dependencia entre las especies relacionadas en la diagonal desde *Chrysophyllum cainito* hasta *Trichilia pallida* (cuadros de color rosa centrales). También se observan las especies que no parecen asociarse con otras, situadas en los extremos de la diagonal, y relacionadas con otras por medio de valores pequeños de distancia (cuadros azules), como *Rauvolfia littoralis* y *Pouteria fossicola* y *Cedrela odorata*.
 #' 
