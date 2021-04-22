@@ -79,7 +79,7 @@ En la matriz, ... (ver figura \ref{fig:matriz_disimilaridad_jacard})
 
 ![Matriz de Disimilaridad de Jacard \label{fig:matriz_disimilaridad_jacard}](matriz_disimilaridad_jacard.png)
 
-
+![Sitios de BCI según composición de especies de Myrtaceae Método de Ward a partir de matriz de distancia de cuerdas](sitios_de_BCI_segun_composicion_de_especies_de_Myrtaceae_metodo_de_Ward_a_partir_de_matriz_de_distancia_de_cuerdas.png)
 # Discusión
 
 # Agradecimientos
