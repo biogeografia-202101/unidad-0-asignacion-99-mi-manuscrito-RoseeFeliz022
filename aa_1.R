@@ -96,4 +96,11 @@ plot(cl_upgma, labels = rownames(mi_fam), hang = -1,
 plot(cl_ward, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Myrtaceae\nMétodo de Ward a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
-
+png(
+  filename = 'sitios_de_BCI_segun_composicion_de_especies_de_Myrtaceae_metodo_de_Ward_a_partir_de_matriz_de_distancia_de_cuerdas.png',
+  width = 1920, height = 1080, res = 125
+)
+plot(cl_ward, labels = rownames(mi_fam), hang = -1,
+     main = "Sitios de BCI según composición de especies de Myrtaceae\nMétodo de Ward a partir de matriz de distancia de cuerdas",
+     xlab = 'Sitios', ylab = 'Altura')
+dev.off()
