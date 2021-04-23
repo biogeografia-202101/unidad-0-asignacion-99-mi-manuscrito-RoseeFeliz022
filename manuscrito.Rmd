@@ -15,7 +15,7 @@ author:
 - name: 'Rosee Aurelina Féliz Méndez'
   affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
 abstract: "Resumen del manuscrito"
-keywords: "Myrtaceae, Ecología numérica"
+keywords: "_Myrtaceae_, Ecología numérica"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
