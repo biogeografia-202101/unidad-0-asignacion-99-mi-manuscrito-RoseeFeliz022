@@ -31,6 +31,22 @@ table(grupos_ward_k5)
 rojo <- colorRampPalette(brewer.pal(8, "Reds"))
 rojo_inv <- colorRampPalette(rev(brewer.pal(8, "Reds")))
 colores_grupos <- brewer.pal(8, "Accent")
+azul <- colorRampPalette(brewer.pal(8, "Blues"))
+azul_inv <- colorRampPalette(rev(brewer.pal(8, "Blues")))
+verde <- colorRampPalette(brewer.pal(8, "Greens"))
+verde_inv <- colorRampPalette(rev(brewer.pal(8, "Greens")))
+gris <- colorRampPalette(brewer.pal(8, "Greys"))
+gris_inv <- colorRampPalette(rev(brewer.pal(8, "Greys")))
+naranja <- colorRampPalette(brewer.pal(8, "Oranges"))
+naranja_inv <- colorRampPalette(rev(brewer.pal(8, "Oranges")))
+pastel1 <- colorRampPalette(brewer.pal(8, "YlOrBr"))
+pastel1_inv <- colorRampPalette(rev(brewer.pal(8, "YlOrBr")))
+pastel2 <- colorRampPalette(brewer.pal(8, "YlOrRd"))
+pastel2_inv <- colorRampPalette(rev(brewer.pal(8, "YlOrRd")))
+PRGn <- colorRampPalette(brewer.pal(8, "PRGn"))
+PRGn_inv <- colorRampPalette(rev(brewer.pal(8, "PRGn")))
+PuBu <- colorRampPalette(brewer.pal(8, "PuBu"))
+PuBu_inv <- colorRampPalette(rev(brewer.pal(8, "PuBu")))
 #' 
 #' ## Explorar efectos
 #' 
@@ -192,7 +208,7 @@ mapa_Al <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = azul_inv,
   zcol = 'pH') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -211,7 +227,7 @@ mapa_Fe <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = verde_inv,
   zcol = 'Fe') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -230,7 +246,7 @@ mapa_B <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = gris_inv,
   zcol = 'B') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -249,7 +265,7 @@ mapa_Cu <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = naranja_inv,
   zcol = 'Cu') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -268,7 +284,7 @@ mapa_Mn <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = pastel1_inv,
   zcol = 'Mn') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -287,7 +303,7 @@ mapa_N.min. <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = pastel2_inv,
   zcol = 'N.min.') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -306,7 +322,7 @@ mapa_N <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = PRGn_inv,
   zcol = 'N') %>% 
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
@@ -325,7 +341,7 @@ mapa_P <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
+  col.regions = PuBu_inv,
   zcol = 'P') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
