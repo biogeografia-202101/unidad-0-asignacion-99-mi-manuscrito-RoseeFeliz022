@@ -185,4 +185,156 @@ mapa_ph %>% mapshot(
   file = 'mapa_ph.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
-#' 
+#'
+mapa_Al <- mapView(
+  bci_env_grid,
+  layer.name = 'Al',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'pH') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_Al
+mapa_Al %>% mapshot(
+  file = 'mapa_Al.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_Fe <- mapView(
+  bci_env_grid,
+  layer.name = 'Fe',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'Fe') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_Fe
+mapa_Fe %>% mapshot(
+  file = 'mapa_ph.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_B <- mapView(
+  bci_env_grid,
+  layer.name = 'B',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'B') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_B
+mapa_B %>% mapshot(
+  file = 'mapa_B.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_Cu <- mapView(
+  bci_env_grid,
+  layer.name = 'Cu',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'Cu') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_Cu
+mapa_Cu %>% mapshot(
+  file = 'mapa_Cu.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_Mn <- mapView(
+  bci_env_grid,
+  layer.name = 'Mn',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'Mn') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_Mn
+mapa_Mn %>% mapshot(
+  file = 'mapa_Mn.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_N.min. <- mapView(
+  bci_env_grid,
+  layer.name = 'N.min.',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'N.min.') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_N.min.
+mapa_ph %>% mapshot(
+  file = 'mapa_Nin.min.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_N <- mapView(
+  bci_env_grid,
+  layer.name = 'N',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'N') %>% 
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_N
+mapa_N %>% mapshot(
+  file = 'mapa_N.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_P <- mapView(
+  bci_env_grid,
+  layer.name = 'P',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'P') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_P
+mapa_P %>% mapshot(
+  file = 'mapa_ph.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
