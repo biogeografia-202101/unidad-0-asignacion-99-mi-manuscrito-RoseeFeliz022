@@ -182,23 +182,42 @@ mapa_ward_k5 %>% mapshot(
 )
 #' 
 #' Mapa de una de las variables donde se presentó efecto de su promedio (p<0.01), en este caso, Zinc (`Zn`)
-#' 
-mapa_ph <- mapView(
+#'
+mapa_abundanciagl <- mapView(
   bci_env_grid,
-  layer.name = 'pH',
+  layer.name = 'abundancia_global',
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = rojo_inv,
-  zcol = 'pH') %>%
+  col.regions = azul_inv,
+  zcol = 'abundancia_global') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
     lng = -79.85136,
     lat = 9.15097,
     zoom = 15)
-mapa_ph
-mapa_ph %>% mapshot(
-  file = 'mapa_ph.png', 
+mapa_abundanciagl
+mapa_abundanciagl %>% mapshot(
+  file = 'mapa_abundanciagl.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_curvatura <- mapView(
+  bci_env_grid,
+  layer.name = 'curvatura_perfil_media',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = rojo_inv,
+  zcol = 'curvatura_perfil_media') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_curvatura
+mapa_curvatura %>% mapshot(
+  file = 'mapa_curvatura.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
@@ -209,7 +228,7 @@ mapa_Al <- mapView(
   map.types = 'OpenTopoMap',
   legend = T,
   col.regions = azul_inv,
-  zcol = 'pH') %>%
+  zcol = 'Al') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
     lng = -79.85136,
@@ -240,41 +259,41 @@ mapa_Fe %>% mapshot(
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
-mapa_B <- mapView(
+mapa_curva <- mapView(
   bci_env_grid,
-  layer.name = 'B',
+  layer.name = 'curvatura_tangencial_media',
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
   col.regions = gris_inv,
-  zcol = 'B') %>%
+  zcol = 'curvatura_tangencial_media') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
     lng = -79.85136,
     lat = 9.15097,
     zoom = 15)
-mapa_B
-mapa_B %>% mapshot(
-  file = 'mapa_B.png', 
+mapa_curva
+mapa_curva %>% mapshot(
+  file = 'mapa_curva.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
-mapa_Cu <- mapView(
+mapa_elevacion <- mapView(
   bci_env_grid,
-  layer.name = 'Cu',
+  layer.name = 'elevacion_media',
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
   col.regions = naranja_inv,
-  zcol = 'Cu') %>%
+  zcol = 'elevacion_media') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
     lng = -79.85136,
     lat = 9.15097,
     zoom = 15)
-mapa_Cu
-mapa_Cu %>% mapshot(
-  file = 'mapa_Cu.png', 
+mapa_elevacion
+mapa_elevacion %>% mapshot(
+  file = 'mapa_elevacion.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
@@ -316,25 +335,6 @@ mapa_ph %>% mapshot(
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
-mapa_N <- mapView(
-  bci_env_grid,
-  layer.name = 'N',
-  alpha.regions = 0.6,
-  map.types = 'OpenTopoMap',
-  legend = T,
-  col.regions = PRGn_inv,
-  zcol = 'N') %>% 
-  addStaticLabels(label = bci_env_grid$id) %>% 
-  leaflet::setView(
-    lng = -79.85136,
-    lat = 9.15097,
-    zoom = 15)
-mapa_N
-mapa_N %>% mapshot(
-  file = 'mapa_N.png', 
-  remove_controls = c("zoomControl", "layersControl", "homeButton")
-)
-#'
 mapa_P <- mapView(
   bci_env_grid,
   layer.name = 'P',
@@ -350,7 +350,64 @@ mapa_P <- mapView(
     zoom = 15)
 mapa_P
 mapa_P %>% mapshot(
-  file = 'mapa_ph.png', 
+  file = 'mapa_P.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
+#'
+mapa_heterogeneidadambiental <- mapView(
+  bci_env_grid,
+  layer.name = 'heterogeineidad_ambiental',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = PuBu_inv,
+  zcol = 'heterogeneidad_ambiental') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_heterogeneidadambiental
+mapa_heterogeneidadambiental %>% mapshot(
+  file = 'mapa_heterogeneidad.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_orientacionmedia <- mapView(
+  bci_env_grid,
+  layer.name = 'orientacion_media',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = PuBu_inv,
+  zcol = 'orientacion_media') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_orientacionmedia
+mapa_orientacionmedia %>% mapshot(
+  file = 'mapa_orientacion.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+mapa_riquezaglobal <- mapView(
+  bci_env_grid,
+  layer.name = 'riqueza_global',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = PuBu_inv,
+  zcol = 'riqueza_global') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_riquezaglobal
+mapa_riquezaglobal %>% mapshot(
+  file = 'mapa_riquezaglobal.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
 #'
