@@ -23,7 +23,7 @@ source('biodata/funciones.R')
 #' ### Cargar datos
 #' 
 load('biodata/Myrtaceae.Rdata')
-mi_fam <- mc_myrtc
+mi_fam <-  mc_myrtc
 load('biodata/matriz_ambiental.Rdata')
 mi_fam %>% tibble
 bci_env_grid %>% tibble
