@@ -23,8 +23,8 @@ load('biodata/Myrtaceae.Rdata')
 load('biodata/matriz_ambiental.Rdata')
 grupos_upgma_k2 <- readRDS('grupos_upgma_k2.RDS')
 table(grupos_upgma_k2) #Importante, tener en cuenta los desiguales tamaños de los grupos
-grupos_ward_k5 <- readRDS('grupos_ward_k5.RDS')
-table(grupos_ward_k5)
+grupos_ward_k4 <- readRDS('grupos_ward_k4.RDS')
+table(grupos_ward_k4)
 #' 
 #' ### Paletas
 #' 
@@ -133,27 +133,27 @@ mapa_zn %>% mapshot(
 #' 
 #' Objeto común:
 #' 
-(m_amb_ward_k5 <- bci_env_grid %>%
+(m_amb_ward_k4 <- bci_env_grid %>%
     select_if(is.numeric) %>% select(-id) %>% 
-    mutate(grupos_ward_k5) %>%
+    mutate(grupos_ward_k4) %>%
     st_drop_geometry() %>% 
-    pivot_longer(-grupos_ward_k5, names_to = "variable", values_to = "valor"))
+    pivot_longer(-grupos_ward_k4, names_to = "variable", values_to = "valor"))
 #' 
 #' Pruebas, en este caso ANOVA (evalúa homogeneidad de medias; no se cumplen muchos de los supuestos requeridos para esta prueba) y Kruskal-Wallis (evalúa homogeneidad de medianas):
 #' 
-m_amb_ward_k5 %>% 
+m_amb_ward_k4 %>% 
   group_by(variable) %>% 
   summarise(
-    p_valor_a = oneway.test(valor ~ grupos_ward_k5)$p.value,
-    p_valor_k = kruskal.test(valor ~ grupos_ward_k5)$p.value) %>%
+    p_valor_a = oneway.test(valor ~ grupos_ward_k4)$p.value,
+    p_valor_k = kruskal.test(valor ~ grupos_ward_k4)$p.value) %>%
   arrange(p_valor_k) %>%
   print(n=Inf)
 #' 
 #' Gráficos:
 #' 
-m_amb_ward_k5 %>% 
+m_amb_ward_k4 %>% 
   group_by(variable) %>% 
-  ggplot() + aes(x = grupos_ward_k5, y = valor, fill = grupos_ward_k5) + 
+  ggplot() + aes(x = grupos_ward_k4, y = valor, fill = grupos_ward_k4) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
   theme_bw() +
@@ -162,22 +162,22 @@ m_amb_ward_k5 %>%
 #' 
 #' Mapas:
 #' 
-mapa_ward_k5 <- mapView(
-  bci_env_grid %>% mutate(grupos_ward_k5),
-  layer.name = 'Grupos (5) Ward',
+mapa_ward_k4 <- mapView(
+  bci_env_grid %>% mutate(grupos_ward_k4),
+  layer.name = 'Grupos (4) Ward',
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T,
-  col.regions = colores_grupos[1:5],
-  zcol = 'grupos_ward_k5') %>%
+  col.regions = colores_grupos[1:4],
+  zcol = 'grupos_ward_k4') %>%
   addStaticLabels(label = bci_env_grid$id) %>% 
   leaflet::setView(
     lng = -79.85136,
     lat = 9.15097,
     zoom = 15)
-mapa_ward_k5
-mapa_ward_k5 %>% mapshot(
-  file = 'mapa_ward_k5.png', 
+mapa_ward_k4
+mapa_ward_k4 %>% mapshot(
+  file = 'mapa_ward_k4.png', 
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #' 
@@ -410,4 +410,60 @@ mapa_riquezaglobal %>% mapshot(
   remove_controls = c("zoomControl", "layersControl", "homeButton")
 )
 #'
+mapa_geohombrera <- mapView(
+  bci_env_grid,
+  layer.name = 'geomorf_hombrera_pct',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = azul_inv,
+  zcol = 'geomorf_hombrera_pct') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_geohombrera
+mapa_geohombrera %>% mapshot(
+  file = 'mapa_geohombrera.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_Cu <- mapView(
+  bci_env_grid,
+  layer.name = 'Cu',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = azul_inv,
+  zcol = 'Cu') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_abundanciagl
+mapa_abundanciagl %>% mapshot(
+  file = 'mapa_abundanciagl.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
+#'
+mapa_utm_ns <- mapView(
+  bci_env_grid,
+  layer.name = 'UTM.NS',
+  alpha.regions = 0.6,
+  map.types = 'OpenTopoMap',
+  legend = T,
+  col.regions = azul_inv,
+  zcol = 'UTM.NS') %>%
+  addStaticLabels(label = bci_env_grid$id) %>% 
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_utm_ns
+mapa_utm_ns %>% mapshot(
+  file = 'mapa_utm_ns.png', 
+  remove_controls = c("zoomControl", "layersControl", "homeButton")
+)
 #'

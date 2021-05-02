@@ -96,7 +96,7 @@ map_df(lista_cl, function(x) {
 #' 
 #' Para UPGMA:
 #' 
-anch_sil_single <- calcular_anchuras_siluetas(
+anch_sil_upgma <- calcular_anchuras_siluetas(
   mc_orig = mi_fam, 
   distancias = mi_fam_norm_d, 
   cluster = lista_cl$cl_upgma)
@@ -144,7 +144,7 @@ rect.hclust(
 plot(w_dend_reord, hang = -1)
 rect.hclust(
   tree = w_dend_reord,
-  k = anch_sil_ward$n_grupos_optimo + 2)
+  k = anch_sil_ward$n_grupos_optimo + 1)
 #' 
 #' Comparando el dendrograma con el mapa de calor. Verificar si el número de grupos hace sentido.
 #' 
@@ -231,13 +231,13 @@ table(grupos_upgma_k2)
 #' 
 #' Ward:
 #' 
-(grupos_ward_k5 <- as.factor(cutree(lista_cl$cl_ward, k = 5)))
-table(grupos_ward_k5)
+(grupos_ward_k4 <- as.factor(cutree(lista_cl$cl_ward, k = 4)))
+table(grupos_ward_k4)
 #'
 #' Guardaré estos vectores en archivos para reutilizarlos en *scripts* posteriores:
 #' 
 saveRDS(grupos_upgma_k2, 'grupos_upgma_k2.RDS')
-saveRDS(grupos_ward_k5, 'grupos_ward_k5.RDS')
+saveRDS(grupos_ward_k4, 'grupos_ward_k4.RDS')
 #' 
 #' Evita usar este, y cualquier otro procedimiento, de manera mecánica. En tu caso, quizá tengas que cortar tus dendrogramas en más o menos grupos de sitios. También podría resultar que alguno de dichos métodos, o ambos, sean irrelevante para tu caso, por lo que probablemente tendrás que elegir otro que haga sentido ecológico a tus datos (por ejemplo, *complete*).
 #' 

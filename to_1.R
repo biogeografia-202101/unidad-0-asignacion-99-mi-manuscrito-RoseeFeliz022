@@ -30,8 +30,8 @@ mi_fam <- mc_myrtc
 bci_env_grid %>% tibble
 grupos_upgma_k2 <- readRDS('grupos_upgma_k2.RDS')
 table(grupos_upgma_k2)
-grupos_ward_k5 <- readRDS('grupos_ward_k5.RDS')
-table(grupos_ward_k5)
+grupos_ward_k4 <- readRDS('grupos_ward_k4.RDS')
+table(grupos_ward_k4)
 #' 
 #' ## Ordenación
 #' 
@@ -66,8 +66,8 @@ env_suelo_pca
 summary(env_suelo_pca)
 #'
 env_geomorf <- bci_env_grid %>%
-  st_drop_geometry %>%
-  dplyr::select(matches('^[geomorf, heterog, curva, pendient, orienta]|^pH$', ignore.case = F))
+  select(curvatura_perfil_media, curvatura_tangencial_media, elevacion_media, geomorf_vertiente_pct, heterogeneidad_ambiental, orientacion_media, abundancia_global, riqueza_global, UTM.NS) %>%
+  st_drop_geometry()
 env_geomorf %>% tibble
 env_geomorf_pca <- rda(env_geomorf, scale = TRUE)
 env_geomorf_pca
@@ -83,6 +83,7 @@ summary(env_geomorf_pca)
 #' - Puntuaciones de "sitios", *Site scores*
 #' 
 screeplot(env_suelo_pca, bstick = TRUE)
+screeplot(env_geomorf_pca, bstick = TRUE)
 #' 
 #' Usando función `cleanplot.pca`
 #' 
@@ -91,6 +92,10 @@ cleanplot.pca(env_suelo_pca, scaling = 1, mar.percent = 0.08, cex.char1 = 0.8)
 cleanplot.pca(env_suelo_pca, scaling = 2, mar.percent = 0.04, cex.char1 = 0.8)
 par(mfrow = c(1, 1))
 #' 
+par(mfrow = c(1, 2))
+cleanplot.pca(env_geomorf_pca, scaling = 1, mar.percent = 0.08, cex.char1 = 0.8)
+cleanplot.pca(env_geomorf_pca, scaling = 2, mar.percent = 0.04, cex.char1 = 0.8)
+par(mfrow = c(1, 1))
 #' Comparar distribución de los sitios en biplots con distribución real en el mapa:
 #' 
 #' ### Generar mapa de cuadros sin simbología
@@ -111,16 +116,22 @@ mapa_cuadros
 #' Comparar con resultados de un análisis de agrupamiento del mismo conjunto de datos. Primero agrupo mis sitios basado en la misma matriz ambiental fuente del PCA (`env_suelo`), escalándola.
 #' 
 (env_agrupamiento <- hclust(dist(scale(env_suelo)), 'ward.D'))
-(env_grupos <- cutree(env_agrupamiento, k = 5))
+(env_grupos <- cutree(env_agrupamiento, k = 4))
 (mi_cluster <- factor(env_grupos))
 (mi_cluster_l <- levels(mi_cluster))
 (mi_cluster_l_seq <- 1:length(mi_cluster_l))
 #' 
+(env_agrupamiento <- hclust(dist(scale(env_geomorf)), 'ward.D'))
+(env_grupos <- cutree(env_agrupamiento, k = 4))
+(mi_cluster <- factor(env_grupos))
+(mi_cluster_l <- levels(mi_cluster))
+(mi_cluster_l_seq <- 1:length(mi_cluster_l))
 #' Observa que estoy generando un agrupamiento basado en los datos de suelo. No estoy comparando un agrupamiento externo o anterior (e.g. como los creados en los scripts "aa_analisis_de_agrupamiento*"). Sin embargo, dicha comparación es deseable y posible.
 #' 
 #' Luego calculo las puntuaciones de los sitios para usarlas luego como coordenadas de los puntos que añadires al gráfico:
 #' 
 (puntuaciones <- scores(env_suelo_pca, display = 'wa', scaling = 1))
+(puntuaciones <- scores(env_geomorf_pca, display = 'wa', scaling = 1))
 #'
 #' Luego creo el gráfico base, coloco los puntos sobre el gráfico usando las puntuaciones, les coloco rótulos y, finalmente, coloco leyenda:
 #'
@@ -148,12 +159,35 @@ legend(
   pt.cex = 2
 )
 #' 
+grafico_base <- plot(
+  env_geomorf_pca,
+  display = "wa",
+  scaling = 1,
+  type = "n",
+  main = "PCA y grupos"
+)
+abline(v = 0, lty = "dotted")
+abline(h = 0, lty = "dotted")
+for (i in mi_cluster_l_seq) {
+  points(puntuaciones[mi_cluster == i, ],
+         pch = (14 + i),
+         cex = 2,
+         col = i + 1)
+}
+text(puntuaciones, row.names(env_geomorf), cex = 1, pos = 3)
+legend(
+  "topright", # Otras alternativas: "bottomleft", "bottomright" y "topleft"
+  paste("Grupo", c(mi_cluster_l_seq)),
+  pch = 14 + c(mi_cluster_l_seq),
+  col = 1 + c(mi_cluster_l_seq),
+  pt.cex = 2
+)
 #' Es razonable que el análisis cluster y el biplot muestren patrones consistentes, puesto que se basan en la misma matriz ambiental.
 #' 
 #' Si hago lo mismo, pero usando mi análisis de agrupamiento anterior (*scripts* "aa_analisis_de_agrupamiento_*"), no obtengo resultados consistentes, al menos en mi caso.
 #' 
 (mi_cluster_anterior <- grupos_upgma_k2)
-# (mi_cluster_anterior <- grupos_ward_k5)
+(mi_cluster_anterior <- grupos_ward_k4)
 (mi_cluster_anterior_l <- levels(mi_cluster_anterior))
 (mi_cluster_anterior_l_seq <- 1:length(mi_cluster_anterior_l))
 grafico_base <- plot(
@@ -180,6 +214,31 @@ legend(
   pt.cex = 2
 )
 #' 
+(mi_cluster_anterior_l <- levels(mi_cluster_anterior))
+(mi_cluster_anterior_l_seq <- 1:length(mi_cluster_anterior_l))
+grafico_base <- plot(
+  env_geomorf_pca,
+  display = "wa",
+  scaling = 1,
+  type = "n",
+  main = "PCA y grupos"
+)
+abline(v = 0, lty = "dotted")
+abline(h = 0, lty = "dotted")
+for (i in mi_cluster_anterior_l_seq) {
+  points(puntuaciones[mi_cluster_anterior == i, ],
+         pch = (14 + i),
+         cex = 2,
+         col = i + 1)
+}
+text(puntuaciones, row.names(env_geomorf), cex = 1, pos = 3)
+legend(
+  "topright", # Otras alternativas: "bottomleft", "bottomright" y "topleft"
+  paste("Grupo", c(mi_cluster_anterior_l_seq)),
+  pch = 14 + c(mi_cluster_anterior_l_seq),
+  col = 1 + c(mi_cluster_anterior_l_seq),
+  pt.cex = 2
+)
 #' Esto podría significar que las tendencias/patrones de mi matriz de comunidad (cuadros de 1 Ha de BCI según composición), no se asocian/no son consistentes con variables de suelo según el PCA. Es probable que, usando una combinación diferente de variables ambientales, se puedan extraer patrones. No recomiendo identificar variables ambientales de forma meramente heurística, porque sería equivalente a pescar; recomiendo construir una matriz ambiental de variables seleccionadas a partir de patrones de dependencia identificados en scripts anteriores. Concretamente, en el script [aa_analisis_de_agrupamiento_3_variables_ambientales_segun_grupos.R](aa_analisis_de_agrupamiento_3_variables_ambientales_segun_grupos.R) identifiqué posibles variables asociadas según los distintos agrupamientos realizados. Si fuese tu caso, te recomiendo construir una matriz ambiental con dichas variables y probar la consistencia de los métodos de ordenación y agrupamiento.
 #' 
 #' #### PCA aplicado a datos de comunidad transformados
