@@ -66,7 +66,7 @@ env_suelo_pca
 summary(env_suelo_pca)
 #'
 env_geomorf <- bci_env_grid %>%
-  select(curvatura_perfil_media, curvatura_tangencial_media, elevacion_media, geomorf_vertiente_pct, heterogeneidad_ambiental, orientacion_media, abundancia_global, riqueza_global, UTM.NS) %>%
+  select(curvatura_perfil_media, curvatura_tangencial_media, elevacion_media, geomorf_hombrera_pct, heterogeneidad_ambiental, orientacion_media, abundancia_global, riqueza_global, UTM.NS) %>%
   st_drop_geometry()
 env_geomorf %>% tibble
 env_geomorf_pca <- rda(env_geomorf, scale = TRUE)
@@ -116,7 +116,7 @@ mapa_cuadros
 #' Comparar con resultados de un análisis de agrupamiento del mismo conjunto de datos. Primero agrupo mis sitios basado en la misma matriz ambiental fuente del PCA (`env_suelo`), escalándola.
 #' 
 (env_agrupamiento <- hclust(dist(scale(env_suelo)), 'ward.D'))
-(env_grupos <- cutree(env_agrupamiento, k = 4))
+(env_grupos <- cutree(env_agrupamiento, k = 3))
 (mi_cluster <- factor(env_grupos))
 (mi_cluster_l <- levels(mi_cluster))
 (mi_cluster_l_seq <- 1:length(mi_cluster_l))
@@ -326,20 +326,20 @@ par(mfrow = c(1, 1))
 #' 
 #' Excluyendo especie *Thevetia ahouai*, abreviada como *Thevahou*.
 #' 
-mi_fam_ca <- cca(mi_fam[, -grep('Thevahou', colnames(mi_fam))])
+mi_fam_ca <- cca(mi_fam[, -grep('Chamschi', colnames(mi_fam))])
 summary(mi_fam_ca)
 summary(mi_fam_ca, scaling = 1)
 screeplot(mi_fam_ca, bstick = TRUE, npcs = length(mi_fam_ca$CA$eig))
 par(mfrow = c(1, 2))
 plot(mi_fam_ca,
      scaling = 1,
-     main = "CA, escalamiento 1, sin Thevetia ahouai"
+     main = "CA, escalamiento 1, sin Chamchi"
 )
 plot(mi_fam_ca,
      scaling = 2,
-     main = "CA, escalamiento 2, sin Thevetia ahouai")
+     main = "CA, escalamiento 2, sin Chamchi")
 par(mfrow = c(1, 1))
-#' 
+ #' 
 #' Análisis de coordenadas principales (PCoA)
 #' 
 #' Las técnicas de ordenación anteriores preservan la distancia euclídea entre los objetos. Si necesitaras ordenar objetos usando una métrica diferente, por ejemplo, la de Gower para datos mixtos, entonces PCA y CA serían inútiles y, en su lugar, podrías usar PCoA. Paso el resto de la explicación al vídeo asociado.
