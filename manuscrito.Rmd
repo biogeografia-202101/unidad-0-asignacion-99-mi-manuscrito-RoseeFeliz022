@@ -36,7 +36,7 @@ source("aed_1.R", local = knitr::knit_global())
 
 # Introducción
 
-La isla de Barro Colorado (BCI, por sus siglas en inglés) se formó al término del canal de Panamá en 1974, desde su creación se ha utilizado como centro de investigación debido a su gran reserva natural. Se considera monumento natural protegido por el gobierno de Panamá junto a las penínsulas Peña Blanca, Bohío, Buena Vista, Frijoles y Gigante. La parcela permanente de 50 hectáreas se encuentra en el bosque húmedo tropical de la isla de Barro Colorado. Se estableció en 1980, desde entonces se han realizado 8 censos (aprox. 1 cada 5 años) en cual se toman en cuenta árboles de tallos leñosos con un diámetro a la altura del pecho (DAP) mayor a 10 mm, y como resultado en cada censo, se han identificado, censado y mapeado más de 350, 000 árboles individuales.
+La isla de Barro Colorado (BCI, por sus siglas en inglés) se formó al término del canal de Panamá en 1974, desde su creación se ha utilizado como centro de investigación debido a su gran reserva natural. Se considera monumento natural protegido por el gobierno de Panamá junto a las penínsulas Peña Blanca, Bohío, Buena Vista, Frijoles y Gigante. La parcela permanente de 50 hectáreas se encuentra en el bosque húmedo tropical de la isla de Barro Colorado. Se estableció en 1980, desde entonces se han realizado 8 censos (aprox. 1 cada 5 años) en cual se toman en cuenta árboles de tallos leñosos con un diámetro a la altura del pecho (DAP) mayor a 10 mm, y como resultado en cada censo, se han identificado, censado y mapeado más de 350, 000 árboles individuales[@webcenso].
 
 Se ha seleccionado el censo número 8 de esta reserva natural por ser el más reciente y a esta reserva natural en particular debido a la gran cantidad disponible de datos censales que a través de la Ecología numérica nos permitirán conocer rasgos básicos de la estructura y composición de la comunidad de plantas mirtáceas en relación con factores ambientales.
 
@@ -48,7 +48,25 @@ En este trabajo se harán estudios de asociación, agrupamiento, diversidad y ec
 
 # Metodología
 
-\ldots
+Preguntas de investigación
+A. Medición de asociación:
+
+¿Se detectan especies asociadas dentro de mi familia seleccionada?
+¿Existe asociación entre variables ambientales/atributos? ¿Cuáles variables?
+
+B. Agrupamiento (cluster analysis):
+Los cuadros (o quadrats) de 1 hectárea, ¿se organizan en grupos discontinuos según la composición de las especies de mi familia seleccionada?
+Si existe algún patrón, ¿es consistente con alguna variable ambiental/atributo?
+¿Hay especies indicadoras o con preferencia por determinadas condiciones ambientales/atributos?
+
+C. Diversidad:
+Según los análisis de estimación de riqueza, ¿está suficientemente representada mi familia? Consideremos como buena representación un 85%
+¿Existe asociación de la diversidad alpha con variables ambientales/atributos? ¿Con cuáles?
+¿Existe contribución local o por alguna especie a la diversidad beta?
+
+E. Ecología espacial:
+¿Alguna(s) especies de mi familia presenta(n) patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable?
+¿Predicen bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de especies (SDM)? \ldots
 
 # Resultados
 
