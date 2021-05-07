@@ -230,9 +230,112 @@ Colorado.
 
 \section{Metodología}\label{metodologuxeda}
 
-Preguntas de investigación A. Medición de asociación: ¿Se detectan
-especies asociadas dentro de mi familia seleccionada? ¿Existe asociación
-entre variables ambientales/atributos? ¿Cuáles variables?
+Ambito geográfico
+
+La parcela permanente de 50 hectáreas es un bosque húmedo tropical que
+fue establecido en 1980 por Stephen Hubbell y Robin Foster en la meseta
+central de la isla de Barro Colorado (latitud 9\(^\circ\)~9'N, longitud
+79\(^\circ\)~50'O). Posee 1,000 m de largo por 500 m de ancho, se divide
+en 1250 cuadrantes de 20x20 m (ver figura \ref{fig:mapa_cuadros_bci}).
+En la parcela, todos los tallos leñosos con un DAP mayor o igual a 1 cm
+se encuentran marcados, enumerados, mapeados e identicados hasta el
+nivel de especie. Cada 5 años, esta parcela es censada para evaluar el
+cremiento, la mortalidad y el reclutamiento de nuevas generaciones de
+plantas. Como resultado de estos censos se han registrado mas de 300
+especies de árboles, arbustos y palmas con el próposito de conocer la
+historia de vida de las especies, interacciones y dinámica de la
+comunidad (Pérez et al., 2005).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.50000\textwidth]{mapa_cuadros.png}
+\caption{Parcela permanente de 50-ha dela isla Barro Colorado, lago
+Gatún, Panamá \label{fig:mapa_cuadros_bci}}
+\end{figure}
+
+Materiales y Métodos
+
+El análisis exploratorio de datos (AED) permite obtener una visión
+general de los datos, transformar o recodificar algunas variables y
+orientar los análisis posteriores. Explorar los parámetros simples y las
+distribuciones de las variables, ayudará a seleccionar correctamente los
+análisis más avanzados(Borcard, n.d.).
+
+Se exploraron los datos del censo número 8 disponibles en la página web
+del censo (Hubbell et al., 2021), organizados en dos matrices: la matriz
+de comunidad, la cual recopila la información referente a las especies
+de la familia \emph{Myrtaceae}, y la matriz ambiental, que contiene la
+información referente a las variables de suelo, geomorfologicas,
+litologicas y de tipo de habitat. Los analisis se realizaron con ayuda
+de los paquetes de R (R Core Team, 2019) para analisis estadísticos y
+ecológicos, cabe destacar los paquetes \texttt{vegan} (Oksanen et al.,
+2019), \texttt{tidyverse} (Wickham, 2017), \texttt{sf} (Pebesma, 2018),
+\texttt{mapview} (Appelhans, Detsch, Reudenbach, \& Woellauer, 2019),
+\texttt{leaflet} (Cheng, Karambelkar, \& Xie, 2018), para obtener la
+riqueza numérica y abundacia de especies por quadrat y de la comunidad
+global, y se correlacionaron con las variables
+ambien\textasciitilde{}tales para obtener una visión general de cómo se
+distribuyen las mirtáceas en la parcela permanente de BCI.
+
+A. Medición de asociación
+
+Modo Q para datos cuantitativos de especies (abundancia): Matriz de
+distancia euclídea, utilizando la transformación * Hellinger *
+
+Modo Q para datos binarios (presencia / ausencia): La índice de
+disimilaridad de Jaccard o distancia de Jaccard (** D J **) se puede
+expresar como ``la proporción de especies no compartidas''. Como la
+distancia de Jaccard ( D J ) es el complemento a 1 de la similaridad de
+Jaccard ( S J ), es decir, D J = 1-S J , y dado que arriba calculamos la
+distancia, para obtener la similaridad, sólo hay que restarle el valor
+de distancia a 1 ( S J = 1-D J ). La fórmula de la similaridad de
+Jaccard es S J = a / (a + b + c) , donde a es el número de especies
+compartidas (presentes en ambos sitios comparados), b el número de
+especies exclusivas del sitio 2, y c el número de especies exclusivas
+del sitio 1. Mapa de calor
+
+Modo Q para datos cuantitativos, NO de abundancia de especies (variables
+ambientales) variables de suelo, todas cuantitativas, puntuaciones z
+
+Modo Q para datos cualitativos y cuantitativos (mixtos), NO de
+abundancia de especies (variables ambientales)
+hetereogeneidad\_ambiental, habitat y quebrada.
+
+Modo R para datos cuantitativos de especies (abundancia) grado de
+asociación entre especies, NO entre sitios transformación Chi a la
+matriz de comunidad transpuesta, se calcula la distancia euclidea y se
+crea el mapa de calor.
+
+Modo R para datos cuantitativos, NO de abundancia de especies (variables
+ambientales) índice de correlación de Pearson. Sin embargo, si los datos
+no presentan distribución normal, puedes emplear métricas más flexibles,
+como el índice rho de Spearman
+
+B. Agrupamiento (cluster analysis): Correlación cofenética Anchura de
+silueta UPGMA WARD Remuestro de bootstrap y BP Remuestreo pro medio de
+Bootstrap multiescalar y AU Para UPGMA: Homogeneidad de promedios,
+pruebas t (medias), distribucion t de student, suma de rangos de
+wilcoxon (medianas) Para WARD: ANOVA y Kruskal-Wallis Analisis de
+especies indicadoras INDVal Especies con preferencia de habitat:
+coeficiente de correlacion biserial puntual
+
+C. Diversidad: Diversidad alpha Matriz de correlacion de Pearson Modelos
+de abundancia de especie Rarefaccion- Curva de rarefaccion Riqueza de
+especies estimación y comparación, completitud de muestra Enfoques
+ansioticos- Chao Enfoques no ansioticos- Chao
+
+E. Ecología espacial: Autocorrelacion espacial mediante correlograma
+Autocorrelacion mediante Prueba de Mantel (Matrices de distancia) I de
+Moran global aplicado a abundancia de especies transformadas sin
+tendencia Yo de Moran local
+
+\section{Resultados}\label{resultados}
+
+Preguntas de investigación A. Medición de asociación:
+
+¿Se detectan especies asociadas dentro de mi familia seleccionada?
+¿Existe asociación entre variables ambientales/atributos? ¿Cuáles
+variables?
 
 B. Agrupamiento (cluster analysis): Los cuadros (o quadrats) de 1
 hectárea, ¿se organizan en grupos discontinuos según la composición de
@@ -250,9 +353,7 @@ o por alguna especie a la diversidad beta?
 E. Ecología espacial: ¿Alguna(s) especies de mi familia presenta(n)
 patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable? ¿Predicen
 bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de
-especies (SDM)? \ldots
-
-\section{Resultados}\label{resultados}
+especies (SDM)?
 
 La tabla \ref{tab:abun_sp} y la figura \ref{fig:abun_sp_q} visualiza
 estos resultados a continuación.
@@ -351,10 +452,50 @@ reproducible}{Script reproducible}}\label{script-reproducible}
 \addcontentsline{toc}{section}{Referencias}
 
 \hypertarget{refs}{}
+\hypertarget{ref-mapview}{}
+Appelhans, T., Detsch, F., Reudenbach, C., \& Woellauer, S. (2019).
+\emph{Mapview: Interactive viewing of spatial data in r}. Retrieved from
+\url{https://CRAN.R-project.org/package=mapview}
+
+\hypertarget{ref-borcard2018numerical}{}
+Borcard, F. ~. ois y L., Daniel y Gillet. (n.d.). \emph{Ecología
+numérica con r} (Springer, Ed.).
+
+\hypertarget{ref-leaflet}{}
+Cheng, J., Karambelkar, B., \& Xie, Y. (2018). \emph{Leaflet: Create
+interactive web maps with the javascript 'leaflet' library}. Retrieved
+from \url{https://CRAN.R-project.org/package=leaflet}
+
 \hypertarget{ref-webcenso}{}
 Hubbell, S., Condit, R., \& Foster, R. (2021). Forest Census Plot on
 Barro Colorado Island. Retrieved May 5, 2021, from
 \url{http://ctfs.si.edu/webatlas/datasets/bci/}
+
+\hypertarget{ref-vegan}{}
+Oksanen, J., Blanchet, F. G., Friendly, M., Kindt, R., Legendre, P.,
+McGlinn, D., \ldots{} Wagner, H. (2019). \emph{Vegan: Community ecology
+package}. Retrieved from \url{https://CRAN.R-project.org/package=vegan}
+
+\hypertarget{ref-sf}{}
+Pebesma, E. (2018). Simple Features for R: Standardized Support for
+Spatial Vector Data. \emph{The R Journal}, \emph{10}(1), 439--446.
+\url{https://doi.org/10.32614/RJ-2018-009}
+
+\hypertarget{ref-perez2005metodologia}{}
+Pérez, R., Aguilar, S., Condit, R., Foster, R., Hubbell, S., \& Lao, S.
+(2005). Metodologia empleada en los censos de la parcela de 50 hectareas
+de la isla de barro colorado, panamá. \emph{Centro de Ciencias
+Forestales Del Tropico (CTFS) Y Instituto Smithsonian de Investigaciones
+Tropicales (STRI)}, 1--24.
+
+\hypertarget{ref-citadeR}{}
+R Core Team. (2019). \emph{R: A language and environment for statistical
+computing}. Retrieved from \url{https://www.R-project.org/}
+
+\hypertarget{ref-tidyverse}{}
+Wickham, H. (2017). \emph{Tidyverse: Easily install and load the
+'tidyverse'}. Retrieved from
+\url{https://CRAN.R-project.org/package=tidyverse}
 
 \hypertarget{ref-wilson2010myrtaceae}{}
 Wilson, P. G. (2010). Myrtaceae. In \emph{Flowering plants. eudicots}
