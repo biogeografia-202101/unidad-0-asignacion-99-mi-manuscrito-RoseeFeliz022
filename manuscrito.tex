@@ -104,7 +104,7 @@ Subtítulo  }
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Rosee Aurelina Féliz Méndez (Estudiante, Universidad Autónoma de Santo Domingo (UASD))},
-             pdfkeywords = {\emph{Myrtaceae}, Ecología numérica},  
+             pdfkeywords = {Myrtaceae, Ecología numérica},  
             pdftitle={Ecología numérica de la familia Myrtaceae en la parcela permanente de
 50-ha en Barro Colorado, lago Gatún, Panamá\\
 Subtítulo\\
@@ -167,7 +167,7 @@ Subtítulo},
 \noindent Resumen del manuscrito
 
 
-\vskip 8.5pt \noindent \emph{Keywords}: \emph{Myrtaceae}, Ecología numérica \par
+\vskip 8.5pt \noindent \emph{Keywords}: Myrtaceae, Ecología numérica \par
 
     \hbox{\vrule height .2pt width 39.14pc}
 
@@ -201,14 +201,14 @@ numérica nos permitirán conocer rasgos básicos de la estructura y
 composición de la comunidad de plantas mirtáceas en relación con
 factores ambientales.
 
-Las mirtáceas ( \emph{Myrtaceae} Juss) son una familia de plantas
-leñosas del orden Myrtales. La mayoría de las especies son árboles,
-también hay muchas que son arbustos o subarbustos. Algunas especies
-producen flores y frutos, otras raíces adventicias. Se distribuyen
-principalmente en zonas tropicales y templadas, con poca representación
-en la región africana. La familia cuenta con unos 142 géneros y más de
-5.500 especies, incluyendo \emph{Psiloxylon} y \emph{Heteropyxis},
-también pueden ser citadas por otros autores como familias monogenéricas
+Las mirtáceas ( Myrtaceae Juss) son una familia de plantas leñosas del
+orden Myrtales. La mayoría de las especies son árboles, también hay
+muchas que son arbustos o subarbustos. Algunas especies producen flores
+y frutos, otras raíces adventicias. Se distribuyen principalmente en
+zonas tropicales y templadas, con poca representación en la región
+africana. La familia cuenta con unos 142 géneros y más de 5.500
+especies, incluyendo \emph{Psiloxylon} y \emph{Heteropyxis}, también
+pueden ser citadas por otros autores como familias monogenéricas
 Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra
 los árboles más altos (110-140 m) del planeta ( \emph{Eucalyptus}) y al
 género más numeroso (1200‒1800 especies) que existe ( \emph{Syzygium}),
@@ -255,81 +255,29 @@ Gatún, Panamá \label{fig:mapa_cuadros_bci}}
 
 Materiales y Métodos
 
-El análisis exploratorio de datos (AED) permite obtener una visión
-general de los datos, transformar o recodificar algunas variables y
-orientar los análisis posteriores. Explorar los parámetros simples y las
-distribuciones de las variables, ayudará a seleccionar correctamente los
-análisis más avanzados(Borcard, n.d.).
-
 Se exploraron los datos del censo número 8 disponibles en la página web
 del censo (Hubbell et al., 2021), organizados en dos matrices: la matriz
 de comunidad, la cual recopila la información referente a las especies
-de la familia \emph{Myrtaceae}, y la matriz ambiental, que contiene la
-información referente a las variables de suelo, geomorfologicas,
-litologicas y de tipo de habitat. Los analisis se realizaron con ayuda
-de los paquetes de R (R Core Team, 2019) para analisis estadísticos y
-ecológicos, cabe destacar los paquetes \texttt{vegan} (Oksanen et al.,
-2019), \texttt{tidyverse} (Wickham, 2017), \texttt{sf} (Pebesma, 2018),
-\texttt{mapview} (Appelhans, Detsch, Reudenbach, \& Woellauer, 2019),
-\texttt{leaflet} (Cheng, Karambelkar, \& Xie, 2018), para obtener la
-riqueza numérica y abundacia de especies por quadrat y de la comunidad
-global, y se correlacionaron con las variables
-ambien\textasciitilde{}tales para obtener una visión general de cómo se
-distribuyen las mirtáceas en la parcela permanente de BCI.
-
-A. Medición de asociación
-
-Modo Q para datos cuantitativos de especies (abundancia): Matriz de
-distancia euclídea, utilizando la transformación * Hellinger *
-
-Modo Q para datos binarios (presencia / ausencia): La índice de
-disimilaridad de Jaccard o distancia de Jaccard (** D J **) se puede
-expresar como ``la proporción de especies no compartidas''. Como la
-distancia de Jaccard ( D J ) es el complemento a 1 de la similaridad de
-Jaccard ( S J ), es decir, D J = 1-S J , y dado que arriba calculamos la
-distancia, para obtener la similaridad, sólo hay que restarle el valor
-de distancia a 1 ( S J = 1-D J ). La fórmula de la similaridad de
-Jaccard es S J = a / (a + b + c) , donde a es el número de especies
-compartidas (presentes en ambos sitios comparados), b el número de
-especies exclusivas del sitio 2, y c el número de especies exclusivas
-del sitio 1. Mapa de calor
-
-Modo Q para datos cuantitativos, NO de abundancia de especies (variables
-ambientales) variables de suelo, todas cuantitativas, puntuaciones z
-
-Modo Q para datos cualitativos y cuantitativos (mixtos), NO de
-abundancia de especies (variables ambientales)
-hetereogeneidad\_ambiental, habitat y quebrada.
-
-Modo R para datos cuantitativos de especies (abundancia) grado de
-asociación entre especies, NO entre sitios transformación Chi a la
-matriz de comunidad transpuesta, se calcula la distancia euclidea y se
-crea el mapa de calor.
-
-Modo R para datos cuantitativos, NO de abundancia de especies (variables
-ambientales) índice de correlación de Pearson. Sin embargo, si los datos
-no presentan distribución normal, puedes emplear métricas más flexibles,
-como el índice rho de Spearman
-
-B. Agrupamiento (cluster analysis): Correlación cofenética Anchura de
-silueta UPGMA WARD Remuestro de bootstrap y BP Remuestreo pro medio de
-Bootstrap multiescalar y AU Para UPGMA: Homogeneidad de promedios,
-pruebas t (medias), distribucion t de student, suma de rangos de
-wilcoxon (medianas) Para WARD: ANOVA y Kruskal-Wallis Analisis de
-especies indicadoras INDVal Especies con preferencia de habitat:
-coeficiente de correlacion biserial puntual
-
-C. Diversidad: Diversidad alpha Matriz de correlacion de Pearson Modelos
-de abundancia de especie Rarefaccion- Curva de rarefaccion Riqueza de
-especies estimación y comparación, completitud de muestra Enfoques
-ansioticos- Chao Enfoques no ansioticos- Chao
-
-E. Ecología espacial: Autocorrelacion espacial mediante correlograma
-Autocorrelacion mediante Prueba de Mantel (Matrices de distancia) I de
-Moran global aplicado a abundancia de especies transformadas sin
-tendencia Yo de Moran local
+de la parcela permanente de 50-ha, y la matriz ambiental, que contiene
+la información referente a las variables de suelo, geomorfológicas,
+litológicas y de tipo de habitat. Los análisis, tablas, figuras y
+gráficos se realizaron con los scripts de análisis de José R. Martínez
+(Batlle, 2020) y con ayuda de los paquetes de R para análisis
+estadísticos y ecológicos (R Core Team, 2019), cabe destacar los
+paquetes \texttt{vegan} (Oksanen et al., 2019), \texttt{tidyverse}
+(Wickham, 2017), \texttt{sf} (Pebesma, 2018), \texttt{mapview}
+(Appelhans, Detsch, Reudenbach, \& Woellauer, 2019) y \texttt{leaflet}
+(Cheng, Karambelkar, \& Xie, 2018) que fueron los más utilizados.
 
 \section{Resultados}\label{resultados}
+
+La familia Myrtaceae está presente en la parcela permanente de 50-ha de
+BCI con una abundancia de 5,579 individuos pertenecientes a 7 especies,
+de las cuales las más abundantes son \emph{Eugenia galalonensis} y
+\emph{Eugenia oerstediana}, representadas con 1,975 y 1,838 individuos
+cada una, y las especies más raras son \emph{Psidium
+friedrichsthalianum} y \emph{Myrcia gatunensis}, con 58 y 56 individuos
+respectivamente (ver tabla \ref{tab:abun_sp}).
 
 Preguntas de investigación A. Medición de asociación:
 
@@ -355,8 +303,8 @@ patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable? ¿Predicen
 bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de
 especies (SDM)?
 
-La tabla \ref{tab:abun_sp} y la figura \ref{fig:abun_sp_q} visualiza
-estos resultados a continuación.
+y la figura \ref{fig:abun_sp_q} visualiza estos resultados a
+continuación.
 
 \begin{longtable}[]{@{}lr@{}}
 \caption{\label{tab:abun_sp}Abundancia por especie de la familia
@@ -457,9 +405,10 @@ Appelhans, T., Detsch, F., Reudenbach, C., \& Woellauer, S. (2019).
 \emph{Mapview: Interactive viewing of spatial data in r}. Retrieved from
 \url{https://CRAN.R-project.org/package=mapview}
 
-\hypertarget{ref-borcard2018numerical}{}
-Borcard, F. ~. ois y L., Daniel y Gillet. (n.d.). \emph{Ecología
-numérica con r} (Springer, Ed.).
+\hypertarget{ref-jose_ramon_martinez_batlle_2020_4402362}{}
+Batlle, J. R. M. (2020). biogeografia-master/scripts-de-analisis-BCI:
+Long coding sessions (Version v0.0.0.9000).
+\url{https://doi.org/10.5281/zenodo.4402362}
 
 \hypertarget{ref-leaflet}{}
 Cheng, J., Karambelkar, B., \& Xie, Y. (2018). \emph{Leaflet: Create
