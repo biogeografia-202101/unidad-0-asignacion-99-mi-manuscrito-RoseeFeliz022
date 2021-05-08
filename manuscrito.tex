@@ -104,7 +104,7 @@ Subtítulo  }
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Rosee Aurelina Féliz Méndez (Estudiante, Universidad Autónoma de Santo Domingo (UASD))},
-             pdfkeywords = {Myrtaceae, Ecología numérica},  
+             pdfkeywords = {Myrtaceae, Ecología numérica, BCI},  
             pdftitle={Ecología numérica de la familia Myrtaceae en la parcela permanente de
 50-ha en Barro Colorado, lago Gatún, Panamá\\
 Subtítulo\\
@@ -167,7 +167,7 @@ Subtítulo},
 \noindent Resumen del manuscrito
 
 
-\vskip 8.5pt \noindent \emph{Keywords}: Myrtaceae, Ecología numérica \par
+\vskip 8.5pt \noindent \emph{Keywords}: Myrtaceae, Ecología numérica, BCI \par
 
     \hbox{\vrule height .2pt width 39.14pc}
 
@@ -279,33 +279,6 @@ cada una, y las especies más raras son \emph{Psidium
 friedrichsthalianum} y \emph{Myrcia gatunensis}, con 58 y 56 individuos
 respectivamente (ver tabla \ref{tab:abun_sp}).
 
-Preguntas de investigación A. Medición de asociación:
-
-¿Se detectan especies asociadas dentro de mi familia seleccionada?
-¿Existe asociación entre variables ambientales/atributos? ¿Cuáles
-variables?
-
-B. Agrupamiento (cluster analysis): Los cuadros (o quadrats) de 1
-hectárea, ¿se organizan en grupos discontinuos según la composición de
-las especies de mi familia seleccionada? Si existe algún patrón, ¿es
-consistente con alguna variable ambiental/atributo? ¿Hay especies
-indicadoras o con preferencia por determinadas condiciones
-ambientales/atributos?
-
-C. Diversidad: Según los análisis de estimación de riqueza, ¿está
-suficientemente representada mi familia? Consideremos como buena
-representación un 85\% ¿Existe asociación de la diversidad alpha con
-variables ambientales/atributos? ¿Con cuáles? ¿Existe contribución local
-o por alguna especie a la diversidad beta?
-
-E. Ecología espacial: ¿Alguna(s) especies de mi familia presenta(n)
-patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable? ¿Predicen
-bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de
-especies (SDM)?
-
-y la figura \ref{fig:abun_sp_q} visualiza estos resultados a
-continuación.
-
 \begin{longtable}[]{@{}lr@{}}
 \caption{\label{tab:abun_sp}Abundancia por especie de la familia
 Myrtaceae}\tabularnewline
@@ -333,57 +306,93 @@ Myrcia gatunensis & 56\tabularnewline
 \caption{\label{fig:abun_sp_q}Abundancia de especies por quadrat}
 \end{figure}
 
-Patrón de riqueza\ldots{} (ver Figura
-\ref{fig:mapa_cuadros_riq_mi_familia})
+La distancia de chi-cuadradado y la distancia de Jacard infieren que las
+especies del genéro \emph{Eugenia} presentan un patrón de dependencia
+(\emph{E. oerstediana}, \emph{E. galalonensis}, \emph{E. nesiotica} y
+\emph{E. coloradoensis}), debido a que tienen distancias euclideas muy
+pequeñas, es decir, altos grados de asociación; y las especies
+\emph{Psidium friedrichsthalianum}, \emph{Myrcia gatunensis} y
+\emph{Changuava schippii} presentan un posible patrón independiente, no
+parecen asociarse con otras (ver \ref{fig:matriz_Jacard}). El índice de
+correlación de Pearson y de Spearman infieren que estos patrones pueden
+estar produciéndose debido a la disponibilidad de Al, P y escasez de Ca,
+y a la presencia de los atributos del terreno geomorfología de llanura,
+elevación media y a una relación negativa con la heterogeneidad
+ambiental, geomorfología de vertiente, geomorfología de vaguada y
+pendiente media (ver correlogramas \ref{fig:matriz_pearson} y
+\ref{fig:matriz_spearman}).
 
 \begin{figure}
 \centering
-\includegraphics[width=0.50000\textwidth]{mapa_cuadros_riq_mi_familia.png}
-\caption{Distribución de la riqueza de la familia \emph{Myrtaceae}
-\label{fig:mapa_cuadros_riq_mi_familia}}
-\end{figure}
-
-Rangos de ph\ldots{} (ver Figuras \ref{fig:mapa_cuadros_ph} y
-\ref{fig:mapa_cuadros_pendiente}).
-
-\begin{figure}
-\centering
-\includegraphics[width=0.50000\textwidth]{mapa_cuadros_ph.png}
-\caption{Distribución del pH por cuadros de 1 Ha
-\label{fig:mapa_cuadros_ph}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.50000\textwidth]{mapa_cuadros_pendiente.png}
-\caption{Distribución de las pendientes (en grados) por cuadro de 1 Ha
-\label{fig:mapa_cuadros_pendiente}}
-\end{figure}
-
-En la matriz, \ldots{} (ver figura
-\ref{fig:matriz_disimilaridad_jacard})
-
-\begin{figure}
-\centering
-\includegraphics{matriz_disimilaridad_jacard.png}
-\caption{Matriz de Disimilaridad de Jacard
-\label{fig:matriz_disimilaridad_jacard}}
+\includegraphics{Disimilaridad_.png}
+\caption{Matriz de disimilaridad de Jacard \label{fig:matriz_Jacard}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{sitios_de_BCI_segun_composicion_de_especies_de_Myrtaceae_metodo_de_Ward_a_partir_de_matriz_de_distancia_de_cuerdas.png}
-\caption{Sitios de BCI según composición de especies de Myrtaceae Método
-de Ward a partir de matriz de distancia de cuerdas}
+\includegraphics{matriz_correlacion_geomorf_abun_riq_spearman.png}
+\caption{Matriz de correlación, índice Pearson
+\label{fig:matriz_pearson}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{mapa_ph.png}
-\caption{Mapa de las concentraciones de pH}
+\includegraphics{matriz_correlacion_suelo_abun_riq_spearman.png}
+\caption{Matriz de correlación, índice de Spearman
+\label{fig:matriz_spearman}}
 \end{figure}
 
-{[}{]} \# Discusión
+El método de agrupamiento Ward de varianza mínima en comparación con el
+mapa de calor sugiere que las mirtáceas de la parcela permanente de
+50-ha de BCI se distribuyen en 4 grupos, de 2, 13, 15 y 20 sitios,
+respectivamente (ver mapa \ref{fig:mapa_ward}). Los métodos de
+agrupamiento aglomerativos por enlace simple, por enlace completo y por
+enlace promedio (grupos de pares no ponderados con media aritmética,
+UPGMA por sus siglas en inglés) destacan la singularidad de este grupo
+formado por dos sitios (14 y 19), en suma, el muestreo de bootstrap
+multiescalar respalda este grupo con un probabilidad de bootstrap (BP)
+de 76 \% y probabilidad de valores aproximadamente insesgados (AU) de 99
+\%, de que se un grupo real (ver dendrograma
+\ref {fig:bootstrap_multiescalar}). No hay patrones consistentes con
+alguna variable ambiental o atributo, aunque las mirtáceas tienen claras
+preferencias por el conjunto de variables (Al, Fe, Mn, N. min., etc ) y
+atributos del terreno (curvatura perfil media, curvatura tangencial
+media, elevación media, etc.) (ver correlograma
+\ref{fig:ward_con_variables}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.50000\textwidth]{mapa_ward_k4.png}
+\caption{Agrupamiento por el método Ward de varianza mínima de las
+mirtáceas \label{fig:mapa_ward}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{bootstrap_Ward.png}
+\caption{Dendrograma, agrupamiento Ward con los porcentajes del
+remuestreo de bootstrap multiescalar \label{fig:bootstrap_multiescalar}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{correlograma_wardyvariablesambientales.png}
+\caption{Correlograma grupos Ward con variables ambientales y atributos
+\label{fig:ward_con_variables}}
+\end{figure}
+
+Para este agrupamiento, el análisis de especies indicadoras mediante
+IndVal para una significancia menor de 0.005, propuso como especie
+asociada como indicadora del grupo 3 a \emph{Chamguava schippii}, para
+el conjutno de grupos 1+2 \emph{Eugenia coloradoensis} y para el
+conjunto de grupos 3+4 \emph{Eugenia oerstediana}; y el análisis de
+especies con preferencia por hábitat mediante el coeficiente de
+correlación biserial puntual para una significancia menor de 0.005,
+sugirió que \emph{Eugenia coloradoensis} tiene preferencia por el grupo
+2, \emph{Chamguava schippii} por el grupo 3 y \emph{Eugenia oerstediana}
+por el grupo 4.
+
+\section{Discusión}\label{discusiuxf3n}
 
 \section{Agradecimientos}\label{agradecimientos}
 
