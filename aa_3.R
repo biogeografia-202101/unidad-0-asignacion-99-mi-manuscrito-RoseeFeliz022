@@ -137,7 +137,7 @@ mapa_zn %>% mapshot(
     select_if(is.numeric) %>% select(-id) %>% 
     mutate(grupos_ward_k4) %>%
     st_drop_geometry() %>% 
-    pivot_longer(-grupos_ward_k4, names_to = "variable", values_to = "valor"))
+    pivot_longer(grupos_ward_k4, names_to = "variable", values_to = "valor"))
 #' 
 #' Pruebas, en este caso ANOVA (evalúa homogeneidad de medias; no se cumplen muchos de los supuestos requeridos para esta prueba) y Kruskal-Wallis (evalúa homogeneidad de medianas):
 #' 
