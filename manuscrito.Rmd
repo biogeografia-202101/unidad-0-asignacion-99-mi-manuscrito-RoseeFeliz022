@@ -109,7 +109,7 @@ El método de agrupamiento Ward de varianza mínima en comparación con el mapa 
 ![Correlograma grupos Ward con variables ambientales y atributos \label{fig:ward_con_variables}](correlograma_wardyvariablesambientales.png)
 
 
-Para este agrupamiento, el análisis de especies indicadoras mediante IndVal para una significancia menor de 0.005, propuso como especie asociada como indicadora del grupo 3 a *Chamguava schippii*, para el conjutno de grupos 1+2 *Eugenia coloradoensis* y para el conjunto de grupos 3+4 *Eugenia oerstediana*; y el análisis de especies con preferencia por hábitat mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.005, sugirió que *Eugenia coloradoensis* tiene preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4.
+Para este agrupamiento, el análisis de especies indicadoras mediante IndVal para una significancia menor de 0.005, propuso como especie asociada como indicadora del grupo 3 a *Chamguava schippii*, para el conjunto de grupos 1+2 *Eugenia coloradoensis* y para el conjunto de grupos 3+4 *Eugenia oerstediana*; y el análisis de especies con preferencia por hábitat mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.005, sugirió que *Eugenia coloradoensis* tiene preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4.
 
 <!-- C. Diversidad:
 Según los análisis de estimación de riqueza, ¿está suficientemente representada mi familia? Consideremos como buena representación un 85%
