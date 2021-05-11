@@ -14,8 +14,8 @@ title: |
 author:
 - name: 'Rosee Aurelina Féliz Méndez'
   affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
-abstract: "Resumen del manuscrito"
-keywords: "Myrtaceae, Ecología numérica, BCI"
+abstract: "El objetivo general es conocer los rasgos básicos de la estructura y composición de la comunidad de mirtáceas en relación con factores ambientales de la parcela permanente de 50-ha de isla Barro Colorado. Se hiceron estudios para medir el grado de asociación, agrupamiento, diversidad y ecología espacial de esta familia con la ayuda de los paquetes de R y con los datos de octavo censo de esta localidad. Las mirtáceas presentaron una riqueza de 7 especies con una abundancia de 5579 individuos. Las especies del género *Eugenia* presentaron altos grados de asociación. El agrupamiento Ward de varianza mínima sugirió la partición de 4 grupos que alcazaron el 100% de la completitud de muestra. La diversidad de mirtáceas posee una correlación positiva con *Al, P, Ca, Fe* y la geomorfología de pendiente media. Las especies *Changuava schipii* y *E. oerstediana* son las especies que aportan a la diversidad alpha y están estrechamente relacionadas con los sitios que aportan a la misma. Las mirtáceas presentan patrones aglomerados para vecinos de primer orden, a excepción de *M. gatunencis*, que presentó un patrón aleatorio. El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%)."
+keywords: "Myrtaceae, Ecología numérica, mirtáceas, parcela permanente de 50-ha, BCI"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
@@ -40,9 +40,9 @@ La isla de Barro Colorado (BCI, por sus siglas en inglés) se formó al término
 
 Se ha seleccionado el censo número 8 de esta reserva natural por ser el más reciente y a esta reserva natural en particular debido a la gran cantidad disponible de datos censales que a través de la Ecología numérica nos permitirán conocer rasgos básicos de la estructura y composición de la comunidad de plantas mirtáceas en relación con factores ambientales.
 
-Las mirtáceas ( Myrtaceae Juss) son una familia de  plantas leñosas del orden Myrtales. La mayoría de las especies son árboles, también hay muchas que son arbustos o subarbustos. Algunas especies producen flores y frutos, otras raíces adventicias. Se distribuyen principalmente en zonas tropicales y templadas, con poca representación en la región africana. La familia cuenta con unos 142 géneros y más de 5.500 especies, incluyendo _Psiloxylon_ y _Heteropyxis_, también pueden ser citadas por otros autores como familias monogenéricas Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra los árboles más altos (110-140 m) del planeta ( _Eucalyptus_) y al género más numeroso (1200‒1800 especies) que existe ( _Syzygium_), los subarbustos rizomatosos de los géneros de la sabana ( _Psidium_, _Campomanesia_ y _Eugenia_), el género _Metrosideros_ que contiene especies arbóreas con muchas raíces adventicias, y otros géneros son lianas trepadoras de raíces. También hay un mangle, el monotípico _Osbornia_, un pequeño árbol que carece de neumatóforos [@wilson2010myrtaceae].
+Las mirtáceas ( Myrtaceae Juss) son una familia de  plantas leñosas del orden Myrtales. La mayoría de las especies son árboles, también hay muchas que son arbustos o subarbustos. Algunas especies producen flores y frutos, otras raíces adventicias. Se distribuyen principalmente en zonas tropicales y templadas, con poca representación en la región africana. La familia cuenta con unos 142 géneros y más de 5.500 especies, incluyendo _Psiloxylon_ y _Heteropyxis_, también pueden ser citadas por otros autores como familias monogenéricas Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra los árboles más altos (110-140 m) del planeta ( _Eucalyptus_) y al género más númeroso (1200‒1800 especies) que existe ( _Syzygium_), los subarbustos rizomatosos de los géneros de la sabana ( _Psidium_, _Campomanesia_ y _Eugenia_), el género _Metrosideros_ que contiene especies arbóreas con muchas raíces adventicias, y otros géneros son lianas trepadoras de raíces. También hay un mangle, el monotípico _Osbornia_, un pequeño árbol que carece de neumatóforos [@wilson2010myrtaceae].
 
-R
+Según los análisis exploratorios las mirtáceas tienen una importante representación en BCI y presentan algunas especies raras de las que muy poco o tal vez nunca hemos escuchado hablar como *Changuava schipii*, que poseen unos patrones de distribución y preferencias por variables ambientales (como *Al* y *P*) muy poco estudiados que sería interesante conocer. Con ayuda de la ecología numérica podemos dar a conocer estos patrones en términos estadísticos con algunos métodos novedosos en el espacio y lenguaje de programación R que esta diseñado para estos fines.
 
 En este trabajo se harán estudios de asociación, agrupamiento, diversidad y ecología espacial en relación a factores ambientales con los datos disponibles del censo número de 8 de la parcela permanente de 50-ha con ecología numérica en R para comprender mejor la estructura y composición de la comunidad de mirtáceas en la foresta tropical de Barro Colorado.
 
@@ -68,9 +68,7 @@ Distancia chi-cuadrado es la distancia euclidiana calculada sobre los datos tran
 
 
 Distancia de Jacard
-La similitud de Jaccard es la relación entre el número de dobles 1 y el número de especies, excluyendo las especies representadas por dobles ceros en el par de objetos
-considerados. Por lo tanto, una similitud de Jaccard de 0,25 significa que el 25% del número total de especies observadas en dos sitios estaban presentes en ambos sitios y el 75% en uno solo. La disimilitud de Jaccard calculada en R es (1-0,25) o 1 0:25 p dependiendo del paquete utilizado.
-
+La similitud de Jaccard es la relación entre el número de dobles 1 y el número de especies, excluyendo las especies representadas por dobles ceros en el par de objetos considerados. 
 
 Indice de correlación de Pearson
 
@@ -152,8 +150,6 @@ La distancia de chi-cuadradado y la distancia de Jacard infieren que las especie
 ![Matriz de disimilaridad de Jacard \label{fig:matriz_Jacard}](Disimilaridad_.png)
  
 
-![Matriz de correlación, índice Pearson \label{fig:matriz_pearson}](matriz_correlacion_geomorf_abun_riq_spearman.png)
-
 ![Matriz de correlación, índice de Spearman \label{fig:matriz_spearman}](matriz_correlacion_suelo_abun_riq_spearman.png)
 
 
@@ -188,17 +184,30 @@ La riqueza (N<sub>0</sub>), E<sub>2</sub> y N<sub>2 de Hill sugieren que la dive
 ¿Alguna(s) especies de mi familia presenta(n) patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable?
 ¿Predicen bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de especies (SDM)? -->
 
-La prueba I de Moran sugiere que las mirtáceas de esta localización presentan patrones aglomerados al menos con la vecindad de primer orden que implica hasta 50 sitios, con excepción de *M. gatunensis* que muestra un patrón espacial aleatorio. Cabe destacar que para *C. schipii* existe una autocorrelación espacial en términos positivos también para los vecinos de segundo orden y en términos negativos del cuarto al sexto orden; para *E. nesiotica* y *E. oerstediana* una autocorrelacion negativa con vecinos de tercer a cuarto orden y de cuarto a quinto orden, respectivamente, es decir, su abundancia disminuye en esas vecindades cuando aumenta en la de primer orden y viceversa. El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%). Los modelos de distribución de especies (SDM) parecen estar prediciendo bien la ocurrencia de dichas especies.
+La prueba I de Moran sugiere que las mirtáceas de esta localización presentan patrones aglomerados al menos con la vecindad de primer orden que implica hasta 50 sitios, con excepción de *M. gatunensis* que muestra un patrón espacial aleatorio. Cabe destacar que para *C. schipii* existe una autocorrelación espacial en términos positivos también para los vecinos de segundo orden y en términos negativos del cuarto al sexto orden; para *E. nesiotica* y *E. oerstediana* una autocorrelacion negativa con vecinos de tercer a cuarto orden y de cuarto a quinto orden, respectivamente, es decir, su abundancia disminuye en esas vecindades cuando aumenta en la de primer orden y viceversa. El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%).
  
 La autocorrelación mediante la prueba de Mantel muestra que hay una correlación espacial inducida por alguna variable en términos positivos para el primer orden y en términos negativos para el tercer y sexto orden (hasta 500 metros). La prueba Yo de Moran evidencia que *C. schipii* muestra un posible patrón de correlación inversa con el *B, Ca, Zn, N y pH*; para *E. coloradoensis* infiere un patrón en términos positivos con *Ca* y *N. min.* y de igual manera para *E. galalonensis* con la geomorfología de vaguada pct y pendiente media.
 
 
 # Discusión
 
-La comunidad de mirtaceas de la parcela permante de BCI posee una riqueza de 7 especies con una abundancia de 5579 individuos, la mayor abundancia se registro para las especies *E. galalonensis* (35.40%) y *E. oerstediana* (32.94%) y la menor abundancia para las especies *P. friedrichsthalianum* (1.04%) y *M. gatunensis* (1.004%). En cada quadrat de la parcela BCI podemos encontrar un mínimo de 58 y un máximo de 399 mirtáceas para un promedio de 112 individuos por quadrat.
+La comunidad de mirtáceas de la parcela permante de BCI posee una riqueza de 7 especies con una abundancia de 5579 individuos, la mayor abundancia se registró para las especies *E. galalonensis* (35.40%) y *E. oerstediana* (32.94%) y la menor abundancia para las especies *P. friedrichsthalianum* (1.04%) y *M. gatunensis* (1.004%). En cada quadrat de la parcela BCI podemos encontrar un mínimo de 58 y un máximo de 399 mirtáceas para un promedio de 112 individuos por quadrat.
 
-Para el 57 de la riqueza, las especies del género *Eugenia*, 
+El 57% de la riqueza, las especies del género *Eugenia*, presentaron altos grados de asociación entre ellas, por lo que supone un patrón de dependencia, a diferencia de las especies *P. friedriechsthalianum*, *M. gatunensis* y *C. schipii* mostraron un posible patrón independiente, por lo que supone que se presentan aleatoriamente en la muestra sin asociarse a las otras especies. 
 
+Las mirtáceas de esta muestra, según el método Ward, se dividen en 4 grupos, cada uno con 2, 13, 15 y 20 sitios respectivamente; el grupo con 2 sitios es respaldado por los métodos de agrupamiento aglomerativo y el bootstrap multiescalar (BP de 76% y un AU de 99%) esto infiere que es un grupo natural y real dentro de la localidad. Este agrupamiento no se relaciona específicamente con alguna variable sino por la preferencia de un conjunto de éstas, como lo son *Al* y *Fe*.
+
+Según el análisis de especies indicadoras (IndVal), las especies asociadas como diagnósticas para el agrupamiento Ward, fueron *C. schipii* para el grupo 3, *E. coloradoensis* para el conjunto 1+2 y *E. oerstediana* para el grupo 3+4, esto puede ser debido a sus altas abundancias presentes en estos grupos.
+
+Los estimadores de riqueza demostraron que la completitud de muestra para las mirtáceas en estudio fue alcanzda 100%, lo mismo para los grupos Ward, por lo que inferimos que el esfuerzo de muestreo surtió las necesidas de lugar y no se espera encontrar más especies de en de esta familia en BCI.
+
+Los equidad de Pielou, los números de Hill destacan que la diversidad de mirtáceas posee una correlación positiva con *Al, P, Ca, Fe* y la geomorfología de pendiente media.
+
+Las especies que hacen contribución a la diversidad beta son *C. schipii* y *E. oerstediana*, y los sitios que hacen contribución a esta diversidad son el grupo 14 y 19, coincidencialmente un grupo Ward que posee altas abundancias de las especies antes mencionadas, por lo que este grupo guarda una estrecha relación con la presencia de estas especies.
+
+Las mirtáceas de esta localidad, según el I de Moran, presentan patrones aglomerados para vecinos de primer orden que implican hasta 50 sitios, con excepción de *M. gatunencis*, que como había mencionado antes, presentó un patrón aleatorio; en el caso de *C. schipii*, presenta patrón más aglomerado que las demás debido a que presenta una correlación positiva también con los vecinos de segundo orden y en términos negativos con los vecinos del cuarto al sexto orden, es decir que aumenta o disminuye de forma inversa en estos lugares en relación con el primer y segundo orden.
+
+El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%), parece una cifra razonable debido a que el 48% de los quadrats poseen valores 7 y 6 de riqueza,  lo que infiere que los modelos de distribución de especies (SDM) parecen estar prediciendo bien la ocurrencia de dichas especies.
 
 
 # Agradecimientos

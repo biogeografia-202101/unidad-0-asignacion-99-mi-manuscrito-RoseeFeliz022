@@ -104,7 +104,8 @@ Subtítulo  }
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Rosee Aurelina Féliz Méndez (Estudiante, Universidad Autónoma de Santo Domingo (UASD))},
-             pdfkeywords = {Myrtaceae, Ecología numérica, BCI},  
+             pdfkeywords = {Myrtaceae, Ecología numérica, mirtáceas, parcela permanente de 50-ha,
+BCI},  
             pdftitle={Ecología numérica de la familia Myrtaceae en la parcela permanente de
 50-ha en Barro Colorado, lago Gatún, Panamá\\
 Subtítulo\\
@@ -164,10 +165,29 @@ Subtítulo},
 
     \vskip 8.5pt % \small 
 
-\noindent Resumen del manuscrito
+\noindent El objetivo general es conocer los rasgos básicos de la estructura y
+composición de la comunidad de mirtáceas en relación con factores
+ambientales de la parcela permanente de 50-ha de isla Barro Colorado. Se
+hiceron estudios para medir el grado de asociación, agrupamiento,
+diversidad y ecología espacial de esta familia con la ayuda de los
+paquetes de R y con los datos de octavo censo de esta localidad. Las
+mirtáceas presentaron una riqueza de 7 especies con una abundancia de
+5579 individuos. Las especies del género \emph{Eugenia} presentaron
+altos grados de asociación. El agrupamiento Ward de varianza mínima
+sugirió la partición de 4 grupos que alcazaron el 100\% de la
+completitud de muestra. La diversidad de mirtáceas posee una correlación
+positiva con \emph{Al, P, Ca, Fe} y la geomorfología de pendiente media.
+Las especies \emph{Changuava schipii} y \emph{E. oerstediana} son las
+especies que aportan a la diversidad alpha y están estrechamente
+relacionadas con los sitios que aportan a la misma. Las mirtáceas
+presentan patrones aglomerados para vecinos de primer orden, a excepción
+de \emph{M. gatunencis}, que presentó un patrón aleatorio. El modelo de
+abundancia de especies muestra que el 56\% de la comunidad presenta
+mayores valores de equidad (log normal 10\% y null 46\%).
 
 
-\vskip 8.5pt \noindent \emph{Keywords}: Myrtaceae, Ecología numérica, BCI \par
+\vskip 8.5pt \noindent \emph{Keywords}: Myrtaceae, Ecología numérica, mirtáceas, parcela permanente de 50-ha,
+BCI \par
 
     \hbox{\vrule height .2pt width 39.14pc}
 
@@ -211,7 +231,7 @@ especies, incluyendo \emph{Psiloxylon} y \emph{Heteropyxis}, también
 pueden ser citadas por otros autores como familias monogenéricas
 Psiloxylaceae y Heteropyxidaceae. Cabe destacar que la familia integra
 los árboles más altos (110-140 m) del planeta ( \emph{Eucalyptus}) y al
-género más numeroso (1200‒1800 especies) que existe ( \emph{Syzygium}),
+género más númeroso (1200‒1800 especies) que existe ( \emph{Syzygium}),
 los subarbustos rizomatosos de los géneros de la sabana (
 \emph{Psidium}, \emph{Campomanesia} y \emph{Eugenia}), el género
 \emph{Metrosideros} que contiene especies arbóreas con muchas raíces
@@ -219,7 +239,15 @@ adventicias, y otros géneros son lianas trepadoras de raíces. También
 hay un mangle, el monotípico \emph{Osbornia}, un pequeño árbol que
 carece de neumatóforos (Wilson, 2010).
 
-R
+Según los análisis exploratorios las mirtáceas tienen una importante
+representación en BCI y presentan algunas especies raras de las que muy
+poco o tal vez nunca hemos escuchado hablar como \emph{Changuava
+schipii}, que poseen unos patrones de distribución y preferencias por
+variables ambientales (como \emph{Al} y \emph{P}) muy poco estudiados
+que sería interesante conocer. Con ayuda de la ecología numérica podemos
+dar a conocer estos patrones en términos estadísticos con algunos
+métodos novedosos en el espacio y lenguaje de programación R que esta
+diseñado para estos fines.
 
 En este trabajo se harán estudios de asociación, agrupamiento,
 diversidad y ecología espacial en relación a factores ambientales con
@@ -232,8 +260,8 @@ Colorado.
 
 Ambito geográfico
 
-La parcela permanente de 50 hectáreas es un bosque húmedo tropical que
-fue establecido en 1980 por Stephen Hubbell y Robin Foster en la meseta
+La parcela permanente de 50 hectáreas es un bosque húmedo tropical, fue
+establecido en 1980 por Stephen Hubbell y Robin Foster en la meseta
 central de la isla de Barro Colorado (latitud 9\(^\circ\)~9'N, longitud
 79\(^\circ\)~50'O). Posee 1,000 m de largo por 500 m de ancho, se divide
 en 1250 cuadrantes de 20x20 m (ver figura \ref{fig:mapa_cuadros_bci}).
@@ -268,6 +296,116 @@ paquetes \texttt{vegan} (Oksanen et al., 2019), \texttt{tidyverse}
 (Wickham, 2017), \texttt{sf} (Pebesma, 2018), \texttt{mapview}
 (Appelhans, Detsch, Reudenbach, \& Woellauer, 2019) y \texttt{leaflet}
 (Cheng, Karambelkar, \& Xie, 2018) que fueron los más utilizados.
+
+A. Medición de asociación
+
+Distancia chi-cuadrado es la distancia euclidiana calculada sobre los
+datos transformados de esa manera produce la distancia chi-cuadrado, que
+es apropiada tanto para los datos cuantitativos como para los de
+presencia-ausencia. de presencia y ausencia.
+
+Distancia de Jacard La similitud de Jaccard es la relación entre el
+número de dobles 1 y el número de especies, excluyendo las especies
+representadas por dobles ceros en el par de objetos considerados.
+
+Indice de correlación de Pearson
+
+Indice de correlación de Spearman
+
+B. Agrupamiento (cluster analysis)
+
+El método con la correlación cofenética más alta puede considerarse como
+el que produce el modelo de agrupación que retiene la mayor parte de la
+información contenida en la matriz de disimilitud. Sin embargo, esto no
+significa necesariamente que este modelo de agrupación sea el más
+adecuado para el objetivo del investigador. La correlación cofenética
+depende depende en gran medida del método de agrupación utilizado,
+además de los datos.
+
+La anchura de la silueta es una medida del grado de pertenencia de un
+objeto a su clúster, basada en la disimilitud media entre este objeto y
+todos los objetos del clúster al que pertenece, comparada con la misma
+medida calculada para el siguiente clúster más cercano. La anchura de la
+silueta oscila entre - 1 y 1 y puede promediarse entre todos los objetos
+de una partición. En resumen, cuanto mayor sea el valor, mejor será la
+agrupación del objeto. Los valores negativos sugieren que los objetos
+correspondientes pueden haber sido colocados en el cluster equivocado.
+
+Método aglomerativos por enlace simple (single) También llamado
+clasificación por vecinos más cercanos, este método aglomera los objetos
+en función de sus disimilitudes (o mayores similitudes) más cortas entre
+pares: la fusión de un objeto (o un grupo) con un grupo en un nivel de
+similitud (o disimilitud) determinado sólo requiere que un objeto de
+cada uno de los dos grupos que van a aglomerarse esté vinculado a otro
+en ese nivel. Dos grupos se aglomeran en la disimilitud que separa el
+par más cercano de sus miembros. Esto facilita la aglomeración. En
+consecuencia, el dendrograma resultante de una aglomeración de enlace
+simple suele mostrar encadenamiento de objetos.La lista de las primeras
+conexiones que hacen que un objeto objeto miembro de un clúster, o que
+permite la fusión de dos clústeres, se denomina cadena de conexiones
+primarias; esta cadena forma el árbol de expansión mínima (MST).
+
+Método aglomerativos por enlace completo (complete) (también llamada
+clasificación del vecino más lejano) permite que un objeto (o un grupo)
+se agrupe con otro grupo sólo en la disimilitud correspondiente a la del
+par de objetos más distante; así, a fortiori, todos los miembros de los
+dos grupos están vinculados. Un grupo admite un nuevo miembro sólo a una
+disimilitud correspondiente al objeto más lejano del grupo: se podría
+decir que la admisión requiere la unanimidad de los miembros del grupo.
+De ello se deduce que cuanto más grande es un grupo, más difícil es
+aglomerarse con él. La vinculación completa, por tanto, tiende a
+producir muchos grupos pequeños separados, que tienden a ser más bien
+esféricos en el espacio multivar de espacio y se aglomeran a grandes
+distancias. Por lo tanto, este método es interesante para buscar e
+identificar discontinuidades en los datos.
+
+Método aglomerativos por enlace promedio Esta familia comprende cuatro
+métodos que se basan en las disimilitudes medias entre los objetos o en
+los centroides de los grupos. Las diferencias entre ellos radican en la
+forma de calcular las posiciones de los grupos (media aritmética frente
+a centroides) y en la ponderación o no de los grupos en función del
+número de objetos que contienen al calcular los niveles de fusión.
+
+-Grupos de pares no ponderados con media aritmética (UPGMA) El método
+más conocido de esta familia, el UPGMA, permite que un objeto se una a
+un grupo en la media de las disimilitudes entre este objeto y todos los
+miembros del grupo. Cuando dos grupos se unen, lo hacen a la media de
+las disimilitudes entre todos los miembros de un grupo y todos los
+miembros del otro.
+
+Agrupación de varianza mínima de Ward Este método se basa en el criterio
+del modelo lineal de mínimos cuadrados. El objetivo es definir los
+grupos de tal manera que la suma de cuadrados dentro del grupo (es
+decir, el error cuadrado del ANOVA) se minimice. La suma de errores al
+cuadrado dentro del grupo puede calcularse como la suma de las
+distancias al cuadrado entre los miembros de un grupo dividida por el
+número de objetos.
+
+Remuestreo de bootstrap multiescalar El remuestreo bootstrap consiste en
+muestrear aleatoriamente subconjuntos de los datos y calcular la
+agrupación en estos subconjuntos. Después de haber hecho esto un gran
+número de veces, se cuenta la proporción de los resultados de clustering
+replicados en los que aparece un cluster determinado. Esta proporción se
+denomina probabilidad bootstrap (BP) del cluster. Esta proporción se
+denomina probabilidad bootstrap (BP) del cluster. El remuestreo
+bootstrap multiescalar utiliza muestras bootstrap de varios tamaños
+diferentes para estimar el valor p de cada conglomerado. Esta mejora
+produce valores p ``aproximadamente insesgados'' (AU).
+
+Análisis de especies indicadoras El índice IndVal de Dufrêne y Legendre
+(1997) se calcula como el producto de la especificidad de una especie
+para el grupo objetivo por su fidelidad al grupo objetivo. La
+especificidad se define por la abundancia media de la especie dentro del
+grupo objetivo comparada con su abundancia media en todos los grupos; la
+fidelidad es la proporción de sitios del grupo objetivo en el que está
+presente la especie.
+
+C. Diversidad Diversidad alpha Estimadores de riqueza Homogeneous model,
+Homogeneous (MLE), Chao1, Chao1-b, iChao1, Jacknif de primer y segundo
+orden, ACE, ACE-1 Números y ratios de Hill
+
+E. Ecología espacial Prueba I de Moran Modelos de districución de
+especie -Modelo de abundancia de especie
 
 \section{Resultados}\label{resultados}
 
@@ -330,13 +468,6 @@ y \ref{fig:matriz_spearman}).
 
 \begin{figure}
 \centering
-\includegraphics{matriz_correlacion_geomorf_abun_riq_spearman.png}
-\caption{Matriz de correlación, índice Pearson
-\label{fig:matriz_pearson}}
-\end{figure}
-
-\begin{figure}
-\centering
 \includegraphics{matriz_correlacion_suelo_abun_riq_spearman.png}
 \caption{Matriz de correlación, índice de Spearman
 \label{fig:matriz_spearman}}
@@ -356,7 +487,7 @@ de 76 \% y probabilidad de valores aproximadamente insesgados (AU) de 99
 \ref {fig:bootstrap_multiescalar}). No hay patrones consistentes con
 alguna variable ambiental o atributo, aunque las mirtáceas tienen claras
 preferencias por el conjunto de variables (\emph{Al, Fe, Mn, N. min.},
-etc ) y atributos del terreno (curvatura perfil media, curvatura
+etc.) y atributos del terreno (curvatura perfil media, curvatura
 tangencial media, elevación media, etc.) (ver correlograma
 \ref{fig:ward_con_variables}).
 
@@ -424,27 +555,90 @@ que implica hasta 50 sitios, con excepción de \emph{M. gatunensis} que
 muestra un patrón espacial aleatorio. Cabe destacar que para \emph{C.
 schipii} existe una autocorrelación espacial en términos positivos
 también para los vecinos de segundo orden y en términos negativos del
-cuarto al sexto orden e infiero que puede estar asociada a la
-distribución \emph{Al, P, Fe}, bajos valores de \emph{Cu, N. min.}, y la
-geomorfología de curvatura perfil media y orientación media ; para
-\emph{E. nesiotica} y \emph{E. oerstediana} una autocorrelacion negativa
-con vecinos de tercer a cuarto orden y de cuarto a quinto orden,
-respectivamente, es decir, su abundancia disminuye en esas vecindades
-cuando aumenta en la de primer orden y viceversa. Los modelos de
-distribución de especies (SDM) parecen estar prediciendo bien la
-ocurrencia de dichas especies.
+cuarto al sexto orden; para \emph{E. nesiotica} y \emph{E. oerstediana}
+una autocorrelacion negativa con vecinos de tercer a cuarto orden y de
+cuarto a quinto orden, respectivamente, es decir, su abundancia
+disminuye en esas vecindades cuando aumenta en la de primer orden y
+viceversa. El modelo de abundancia de especies muestra que el 56\% de la
+comunidad presenta mayores valores de equidad (log normal 10\% y null
+46\%).
 
-La autocorrelación mediante la prueba de Mantel muestra hay una
-correlación espacial inducida por alguna variable en terminos positivos
-para el primer orden y en terminos negativos para el tercer y sexto
+La autocorrelación mediante la prueba de Mantel muestra que hay una
+correlación espacial inducida por alguna variable en términos positivos
+para el primer orden y en términos negativos para el tercer y sexto
 orden (hasta 500 metros). La prueba Yo de Moran evidencia que \emph{C.
 schipii} muestra un posible patrón de correlación inversa con el
 \emph{B, Ca, Zn, N y pH}; para \emph{E. coloradoensis} infiere un patrón
-en términos positivos con \emph{Ca y N. min.} y de igual manera para
-\emph{E. galalonensis} con la geomorfología de vaguada pct y pendiente
-media.
+en términos positivos con \emph{Ca} y \emph{N. min.} y de igual manera
+para \emph{E. galalonensis} con la geomorfología de vaguada pct y
+pendiente media.
 
 \section{Discusión}\label{discusiuxf3n}
+
+La comunidad de mirtáceas de la parcela permante de BCI posee una
+riqueza de 7 especies con una abundancia de 5579 individuos, la mayor
+abundancia se registró para las especies \emph{E. galalonensis}
+(35.40\%) y \emph{E. oerstediana} (32.94\%) y la menor abundancia para
+las especies \emph{P. friedrichsthalianum} (1.04\%) y \emph{M.
+gatunensis} (1.004\%). En cada quadrat de la parcela BCI podemos
+encontrar un mínimo de 58 y un máximo de 399 mirtáceas para un promedio
+de 112 individuos por quadrat.
+
+El 57\% de la riqueza, las especies del género \emph{Eugenia},
+presentaron altos grados de asociación entre ellas, por lo que supone un
+patrón de dependencia, a diferencia de las especies \emph{P.
+friedriechsthalianum}, \emph{M. gatunensis} y \emph{C. schipii}
+mostraron un posible patrón independiente, por lo que supone que se
+presentan aleatoriamente en la muestra sin asociarse a las otras
+especies.
+
+Las mirtáceas de esta muestra, según el método Ward, se dividen en 4
+grupos, cada uno con 2, 13, 15 y 20 sitios respectivamente; el grupo con
+2 sitios es respaldado por los métodos de agrupamiento aglomerativo y el
+bootstrap multiescalar (BP de 76\% y un AU de 99\%) esto infiere que es
+un grupo natural y real dentro de la localidad. Este agrupamiento no se
+relaciona específicamente con alguna variable sino por la preferencia de
+un conjunto de éstas, como lo son \emph{Al} y \emph{Fe}.
+
+Según el análisis de especies indicadoras (IndVal), las especies
+asociadas como diagnósticas para el agrupamiento Ward, fueron \emph{C.
+schipii} para el grupo 3, \emph{E. coloradoensis} para el conjunto 1+2 y
+\emph{E. oerstediana} para el grupo 3+4, esto puede ser debido a sus
+altas abundancias presentes en estos grupos.
+
+Los estimadores de riqueza demostraron que la completitud de muestra
+para las mirtáceas en estudio fue alcanzda 100\%, lo mismo para los
+grupos Ward, por lo que inferimos que el esfuerzo de muestreo surtió las
+necesidas de lugar y no se espera encontrar más especies de en de esta
+familia en BCI.
+
+Los equidad de Pielou, los números de Hill destacan que la diversidad de
+mirtáceas posee una correlación positiva con \emph{Al, P, Ca, Fe} y la
+geomorfología de pendiente media.
+
+Las especies que hacen contribución a la diversidad beta son \emph{C.
+schipii} y \emph{E. oerstediana}, y los sitios que hacen contribución a
+esta diversidad son el grupo 14 y 19, coincidencialmente un grupo Ward
+que posee altas abundancias de las especies antes mencionadas, por lo
+que este grupo guarda una estrecha relación con la presencia de estas
+especies.
+
+Las mirtáceas de esta localidad, según el I de Moran, presentan patrones
+aglomerados para vecinos de primer orden que implican hasta 50 sitios,
+con excepción de \emph{M. gatunencis}, que como había mencionado antes,
+presentó un patrón aleatorio; en el caso de \emph{C. schipii}, presenta
+patrón más aglomerado que las demás debido a que presenta una
+correlación positiva también con los vecinos de segundo orden y en
+términos negativos con los vecinos del cuarto al sexto orden, es decir
+que aumenta o disminuye de forma inversa en estos lugares en relación
+con el primer y segundo orden.
+
+El modelo de abundancia de especies muestra que el 56\% de la comunidad
+presenta mayores valores de equidad (log normal 10\% y null 46\%),
+parece una cifra razonable debido a que el 48\% de los quadrats poseen
+valores 7 y 6 de riqueza, lo que infiere que los modelos de distribución
+de especies (SDM) parecen estar prediciendo bien la ocurrencia de dichas
+especies.
 
 \section{Agradecimientos}\label{agradecimientos}
 
