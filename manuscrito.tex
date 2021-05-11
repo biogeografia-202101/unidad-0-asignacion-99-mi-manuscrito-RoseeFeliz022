@@ -208,8 +208,8 @@ considera monumento natural protegido por el gobierno de Panamá junto a
 las penínsulas Peña Blanca, Bohío, Buena Vista, Frijoles y Gigante. La
 parcela permanente de 50 hectáreas se encuentra en el bosque húmedo
 tropical de la isla de Barro Colorado. Se estableció en 1980, desde
-entonces se han realizado 8 censos (aprox. 1 cada 5 años) en cual se
-toman en cuenta árboles de tallos leñosos con un diámetro a la altura
+entonces se han realizado 8 censos (aprox. 1 cada 5 años) en los cuales
+se toman en cuenta árboles de tallos leñosos con un diámetro a la altura
 del pecho (DAP) mayor a 10 mm, y como resultado en cada censo, se han
 identificado, censado y mapeado más de 350, 000 árboles
 individuales(Hubbell, Condit, \& Foster, 2021).
@@ -239,7 +239,7 @@ adventicias, y otros géneros son lianas trepadoras de raíces. También
 hay un mangle, el monotípico \emph{Osbornia}, un pequeño árbol que
 carece de neumatóforos (Wilson, 2010).
 
-Según los análisis exploratorios las mirtáceas tienen una importante
+Según los análisis exploratorios, las mirtáceas tienen una importante
 representación en BCI y presentan algunas especies raras de las que muy
 poco o tal vez nunca hemos escuchado hablar como \emph{Changuava
 schipii}, que poseen unos patrones de distribución y preferencias por
@@ -261,18 +261,18 @@ Colorado.
 Ambito geográfico
 
 La parcela permanente de 50 hectáreas es un bosque húmedo tropical, fue
-establecido en 1980 por Stephen Hubbell y Robin Foster en la meseta
+establecida en 1980 por Stephen Hubbell y Robin Foster en la meseta
 central de la isla de Barro Colorado (latitud 9\(^\circ\)~9'N, longitud
-79\(^\circ\)~50'O). Posee 1,000 m de largo por 500 m de ancho, se divide
+79\(^\circ\)~51'O). Posee 1,000 m de largo por 500 m de ancho, se divide
 en 1250 cuadrantes de 20x20 m (ver figura \ref{fig:mapa_cuadros_bci}).
 En la parcela, todos los tallos leñosos con un DAP mayor o igual a 1 cm
 se encuentran marcados, enumerados, mapeados e identicados hasta el
 nivel de especie. Cada 5 años, esta parcela es censada para evaluar el
-cremiento, la mortalidad y el reclutamiento de nuevas generaciones de
-plantas. Como resultado de estos censos se han registrado mas de 300
-especies de árboles, arbustos y palmas con el próposito de conocer la
-historia de vida de las especies, interacciones y dinámica de la
-comunidad (Pérez et al., 2005).
+crecimiento, la mortalidad y para el reclutamiento de nuevas
+generaciones de plantas. Como resultado de estos censos se han
+registrado mas de 300 especies de árboles, arbustos y palmas con el
+próposito de conocer la historia de vida de las especies, interacciones
+y dinámica de la comunidad (Pérez et al., 2005).
 
 \begin{figure}
 \centering
@@ -299,113 +299,136 @@ paquetes \texttt{vegan} (Oksanen et al., 2019), \texttt{tidyverse}
 
 A. Medición de asociación
 
-Distancia chi-cuadrado es la distancia euclidiana calculada sobre los
-datos transformados de esa manera produce la distancia chi-cuadrado, que
-es apropiada tanto para los datos cuantitativos como para los de
-presencia-ausencia. de presencia y ausencia.
+Para calcular la asociación entre especies, se utilizó distancia
+chi-cuadrado y la distancia de Jacard: la primera es la distancia
+euclidiana calculada sobre los datos transformados, la cual es apropiada
+tanto para los datos cuantitativos como para los de presencia-ausencia;
+y la segunda, la distancia de Jaccard (** D J \textbf{) se puede
+expresar como ``la proporción de especies no compartidas''. La distancia
+de Jaccard es el complemento a 1 de la similaridad de Jaccard (} S J
+\textbf{), es decir , } D J = 1-S J \textbf{, de esta manera para
+obtener la similaridad, sólo hay que restarle el valor de distancia a 1
+(} S J = 1-D J **). Se puede usar para evaluar la distancia entre
+especies, usando como fuente la matriz de comunidad transpuesta
+convertida a binaria (presencia / ausencia) (Batlle, 2020).
 
-Distancia de Jacard La similitud de Jaccard es la relación entre el
-número de dobles 1 y el número de especies, excluyendo las especies
-representadas por dobles ceros en el par de objetos considerados.
-
-Indice de correlación de Pearson
-
-Indice de correlación de Spearman
+El coeficiente de correlación de Pearson tiene como objetivo medir la
+fuerza o grado de asociación entre dos variables aleatorias
+cuantitativas que poseen una distribución normal bivariada conjunta.
+Alternativamente cuando este no cumple con los supuestos se utiliza
+coeficiente de correlación no paramétrico de Spearman, se define como el
+coeficiente de correlación lineal entre los rangos Ri(x) y Ri(y)
+{[}Restrepo (n.d.)\}.
 
 B. Agrupamiento (cluster analysis)
 
-El método con la correlación cofenética más alta puede considerarse como
-el que produce el modelo de agrupación que retiene la mayor parte de la
-información contenida en la matriz de disimilitud. Sin embargo, esto no
-significa necesariamente que este modelo de agrupación sea el más
-adecuado para el objetivo del investigador. La correlación cofenética
-depende depende en gran medida del método de agrupación utilizado,
-además de los datos.
+El método con la correlación cofenética se utilizó para escoger los
+métodos de agrupamiento, bajo el criterio de que el agrupamiento con la
+correlación cofenética más alta puede considerarse como el que produce
+el modelo de agrupación que retiene la mayor parte de la información
+contenida en la matriz de disimilitud, no obstante, esto no significa
+necesariamente que este método sea el más adecuado para el objetivo del
+investigador. Luego para escoger una cantidad óptima de clusters para
+cada agrupamiento se utilizó la anchura de la silueta, ésta es una
+medida del grado de pertenencia de un objeto a su clúster, basada en la
+disimilitud media entre este objeto y del clúster al que pertenece,
+comparada con la misma medida del clúster más próximo (Borcard, n.d.).
 
-La anchura de la silueta es una medida del grado de pertenencia de un
-objeto a su clúster, basada en la disimilitud media entre este objeto y
-todos los objetos del clúster al que pertenece, comparada con la misma
-medida calculada para el siguiente clúster más cercano. La anchura de la
-silueta oscila entre - 1 y 1 y puede promediarse entre todos los objetos
-de una partición. En resumen, cuanto mayor sea el valor, mejor será la
-agrupación del objeto. Los valores negativos sugieren que los objetos
-correspondientes pueden haber sido colocados en el cluster equivocado.
+Los métodos aglomerativos utilizados para constatar y evaluar los grupos
+que hacían sentido para las mirtáceas de este estudio son desarrollados
+a continuación:
 
-Método aglomerativos por enlace simple (single) También llamado
-clasificación por vecinos más cercanos, este método aglomera los objetos
-en función de sus disimilitudes (o mayores similitudes) más cortas entre
-pares: la fusión de un objeto (o un grupo) con un grupo en un nivel de
-similitud (o disimilitud) determinado sólo requiere que un objeto de
-cada uno de los dos grupos que van a aglomerarse esté vinculado a otro
-en ese nivel. Dos grupos se aglomeran en la disimilitud que separa el
-par más cercano de sus miembros. Esto facilita la aglomeración. En
-consecuencia, el dendrograma resultante de una aglomeración de enlace
-simple suele mostrar encadenamiento de objetos.La lista de las primeras
-conexiones que hacen que un objeto objeto miembro de un clúster, o que
+-El método aglomerativo por enlace simple (single), conocido como la
+clasificación por vecinos más cercanos, aglomera objetos en función de
+sus disimilitudes más cortas entre pares: la fusión de un objeto con un
+grupo en un nivel de disimilitud determinado sólo requiere que un objeto
+de cada grupos que van a aglomerarse esté vinculado al otro en ese
+nivel. En consecuencia, el dendrograma resultante de una aglomeración de
+enlace simple suele mostrar encadenamiento de objetos. La lista de las
+primeras conexiones que hacen a un objeto miembro de un clúster, o que
 permite la fusión de dos clústeres, se denomina cadena de conexiones
 primarias; esta cadena forma el árbol de expansión mínima (MST).
 
-Método aglomerativos por enlace completo (complete) (también llamada
-clasificación del vecino más lejano) permite que un objeto (o un grupo)
-se agrupe con otro grupo sólo en la disimilitud correspondiente a la del
-par de objetos más distante; así, a fortiori, todos los miembros de los
-dos grupos están vinculados. Un grupo admite un nuevo miembro sólo a una
-disimilitud correspondiente al objeto más lejano del grupo: se podría
-decir que la admisión requiere la unanimidad de los miembros del grupo.
-De ello se deduce que cuanto más grande es un grupo, más difícil es
-aglomerarse con él. La vinculación completa, por tanto, tiende a
-producir muchos grupos pequeños separados, que tienden a ser más bien
-esféricos en el espacio multivar de espacio y se aglomeran a grandes
-distancias. Por lo tanto, este método es interesante para buscar e
-identificar discontinuidades en los datos.
+-El método aglomerativo por enlace completo (complete), conocido como la
+clasificación del vecino más lejano, permite que un objeto se agrupe con
+otro grupo sólo en la disimilitud correspondiente a la del par de
+objetos más distante; de esta manera con mayor motivo, todos los
+miembros de los dos grupos están vinculados. Un grupo admite un nuevo
+miembro sólo a una disimilitud correspondiente al objeto más lejano del
+grupo. De ello se deduce que cuánto más grande es un grupo, más difícil
+es aglomerarse con él. La vinculación completa resulta en muchos grupos
+pequeños separados que se aglomeran a grandes distancias, por lo que
+este método es interesante para buscar e identificar discontinuidades en
+los datos.
 
-Método aglomerativos por enlace promedio Esta familia comprende cuatro
-métodos que se basan en las disimilitudes medias entre los objetos o en
-los centroides de los grupos. Las diferencias entre ellos radican en la
-forma de calcular las posiciones de los grupos (media aritmética frente
-a centroides) y en la ponderación o no de los grupos en función del
-número de objetos que contienen al calcular los niveles de fusión.
+-El método de grupos de pares no ponderados con media aritmética (UPGMA,
+por sus siglas en inglés) es el más conocido de la familia métodos
+aglomerativos por enlace promedio, éstos se basan en las disimilitudes
+medias entre los objetos o en los centroides de los grupos. El método
+UPGMA permite que un objeto se una a un grupo en la media de las
+disimilitudes entre este objeto y todos los miembros del grupo. Cuando
+dos grupos se unen, lo hacen a la media de las disimilitudes entre todos
+los miembros de un grupo y todos los miembros del otro.
 
--Grupos de pares no ponderados con media aritmética (UPGMA) El método
-más conocido de esta familia, el UPGMA, permite que un objeto se una a
-un grupo en la media de las disimilitudes entre este objeto y todos los
-miembros del grupo. Cuando dos grupos se unen, lo hacen a la media de
-las disimilitudes entre todos los miembros de un grupo y todos los
-miembros del otro.
-
-Agrupación de varianza mínima de Ward Este método se basa en el criterio
-del modelo lineal de mínimos cuadrados. El objetivo es definir los
-grupos de tal manera que la suma de cuadrados dentro del grupo (es
-decir, el error cuadrado del ANOVA) se minimice. La suma de errores al
+-El método de agrupación de varianza mínima de Ward se basa en el
+criterio del modelo lineal de mínimos cuadrados. Su objetivo es definir
+los grupos de tal manera que la suma de cuadrados dentro del grupo (es
+decir, el error cuadrado del ANOVA) se minimiza. La suma de errores al
 cuadrado dentro del grupo puede calcularse como la suma de las
-distancias al cuadrado entre los miembros de un grupo dividida por el
-número de objetos.
+distancias al cuadrado entre los miembros de un grupo dividido por el
+número de objetos. Este método fue seleccionado porque hace más sentido
+ecológico para el estudio(Borcard, n.d.).
 
-Remuestreo de bootstrap multiescalar El remuestreo bootstrap consiste en
-muestrear aleatoriamente subconjuntos de los datos y calcular la
-agrupación en estos subconjuntos. Después de haber hecho esto un gran
-número de veces, se cuenta la proporción de los resultados de clustering
-replicados en los que aparece un cluster determinado. Esta proporción se
-denomina probabilidad bootstrap (BP) del cluster. Esta proporción se
-denomina probabilidad bootstrap (BP) del cluster. El remuestreo
-bootstrap multiescalar utiliza muestras bootstrap de varios tamaños
-diferentes para estimar el valor p de cada conglomerado. Esta mejora
-produce valores p ``aproximadamente insesgados'' (AU).
+El remuestreo \emph{bootstrap} consiste en muestrear aleatoriamente
+subconjuntos de los datos y calcular la agrupación en estos
+subconjuntos. Luego de repetir este proceso un gran número de veces, se
+cuenta la proporción de los resultados de clustering replicados en los
+que aparece un cluster determinado. Esta proporción se denomina
+probabilidad \emph{bootstrap} (BP) del cluster. El remuestreo
+\emph{bootstrap} multiescalar utiliza muestras \emph{bootstrap} de
+varios tamaños diferentes para estimar el valor p de cada conglomerado.
+Esta mejora produce valores p ``aproximadamente insesgados'' (AU)
+(Borcard, n.d.).
 
-Análisis de especies indicadoras El índice IndVal de Dufrêne y Legendre
-(1997) se calcula como el producto de la especificidad de una especie
-para el grupo objetivo por su fidelidad al grupo objetivo. La
-especificidad se define por la abundancia media de la especie dentro del
-grupo objetivo comparada con su abundancia media en todos los grupos; la
-fidelidad es la proporción de sitios del grupo objetivo en el que está
-presente la especie.
+Las pruebas que se utilizaron para hacer el correlograma entre los
+grupos Ward y las variables ambientales fueron ANOVA, que evalúa
+homogeneidad de medias, y Kruskal-Wallis, que evalúa la homogeneidad de
+medianas; los cuales hacen sentido para agrupamientos de 3 grupos o
+más(Batlle, 2020).
 
-C. Diversidad Diversidad alpha Estimadores de riqueza Homogeneous model,
-Homogeneous (MLE), Chao1, Chao1-b, iChao1, Jacknif de primer y segundo
-orden, ACE, ACE-1 Números y ratios de Hill
+El análisis de especies indicadoras de los grupos Ward se hizo mediante
+el índice IndVal, el cual se calcula como el producto de la
+especificidad de una especie para el grupo objetivo por su fidelidad al
+grupo objetivo. La especificidad se define por la abundancia media de la
+especie dentro del grupo objetivo comparada con su abundancia media en
+todos los grupos; la fidelidad es la proporción de sitios del grupo
+objetivo en el que está presente la especie. Y el análisis de especies
+con preferencia por hábitat se realizó mediante el coeficiente de
+correlación biserial puntual(Borcard, n.d.).
 
-E. Ecología espacial Prueba I de Moran Modelos de districución de
-especie -Modelo de abundancia de especie
+C. Diversidad Para medir la diversidad alpha se utilizaron los índices
+de diversidad, descritos a continuación: -La equidad de Pielou
+(denominada también equidad de Shannon) equivale a \emph{J=H1/H0}. -Los
+tres primeros números de diversidad de Hill : \emph{N0=q} (la riqueza de
+especies), \emph{N1=exp(H)}(número de especies abundantes), y
+\emph{N1=1/λ} (inverso de Simpson). -Los ratios de Hill: \emph{E1=N1/N0}
+(versión de la \textbf{equidad de Shannon}) y \emph{E2=N2/N0} (versión
+de la \textbf{equidad de Simpson}).
+
+Basándonos en los supuestos de Whittaker, que dicen que la diversidad
+beta es la variación espacial de la diversidad entre sitios, medimos la
+diversidad beta en función de las especies y sitios que contribuían a
+ésta con la función \texttt{determinar\_contrib\_local\_y\_especie} de R
+del script fuente (Batlle, 2020).
+
+E. Ecología espacial Para medir los patrones de ecología espacial de las
+especies y las variables ambientales se utilizaron los modelos de
+distribución de especies. Primero se aplicó la prueba I de Moran que
+está contenida en la función \texttt{calcular\_autocorrelacion}. Luego,
+se aplicó la prueba Yo de Moran a las variables ambientales y las
+abundancias de especies transformadas sin tendencia, lo que resultó en
+unos clusters lisa que mostraron los patrones significativos de los que
+se pueden inferir las dependencias inducidas.
 
 \section{Resultados}\label{resultados}
 
@@ -480,11 +503,11 @@ respectivamente (ver mapa \ref{fig:mapa_ward}). Los métodos de
 agrupamiento aglomerativos por enlace simple, por enlace completo y por
 enlace promedio (grupos de pares no ponderados con media aritmética,
 UPGMA por sus siglas en inglés) destacan la singularidad de este grupo
-formado por dos sitios (14 y 19), en suma, el muestreo de bootstrap
-multiescalar respalda este grupo con un probabilidad de bootstrap (BP)
-de 76 \% y probabilidad de valores aproximadamente insesgados (AU) de 99
-\%, de que se un grupo real (ver dendrograma
-\ref {fig:bootstrap_multiescalar}). No hay patrones consistentes con
+formado por dos sitios (14 y 19), en suma, el muestreo de
+\emph{bootstrap} multiescalar respalda este grupo con un probabilidad de
+\emph{bootstrap} (BP) de 76 \% y probabilidad de valores aproximadamente
+insesgados (AU) de 99 \%, de que se un grupo real (ver dendrograma
+\ref {fig:*bootstrap*_multiescalar}). No hay patrones consistentes con
 alguna variable ambiental o atributo, aunque las mirtáceas tienen claras
 preferencias por el conjunto de variables (\emph{Al, Fe, Mn, N. min.},
 etc.) y atributos del terreno (curvatura perfil media, curvatura
@@ -500,9 +523,10 @@ mirtáceas \label{fig:mapa_ward}}
 
 \begin{figure}
 \centering
-\includegraphics{bootstrap_Ward.png}
+\includegraphics{*bootstrap*_Ward.png}
 \caption{Dendrograma, agrupamiento Ward con los porcentajes del
-remuestreo de bootstrap multiescalar \label{fig:bootstrap_multiescalar}}
+remuestreo de \emph{bootstrap} multiescalar
+\label{fig:*bootstrap*_multiescalar}}
 \end{figure}
 
 \begin{figure}
@@ -595,10 +619,10 @@ especies.
 Las mirtáceas de esta muestra, según el método Ward, se dividen en 4
 grupos, cada uno con 2, 13, 15 y 20 sitios respectivamente; el grupo con
 2 sitios es respaldado por los métodos de agrupamiento aglomerativo y el
-bootstrap multiescalar (BP de 76\% y un AU de 99\%) esto infiere que es
-un grupo natural y real dentro de la localidad. Este agrupamiento no se
-relaciona específicamente con alguna variable sino por la preferencia de
-un conjunto de éstas, como lo son \emph{Al} y \emph{Fe}.
+\emph{bootstrap} multiescalar (BP de 76\% y un AU de 99\%) esto infiere
+que es un grupo natural y real dentro de la localidad. Este agrupamiento
+no se relaciona específicamente con alguna variable sino por la
+preferencia de un conjunto de éstas, como lo son \emph{Al} y \emph{Fe}.
 
 Según el análisis de especies indicadoras (IndVal), las especies
 asociadas como diagnósticas para el agrupamiento Ward, fueron \emph{C.
@@ -665,6 +689,10 @@ Batlle, J. R. M. (2020). biogeografia-master/scripts-de-analisis-BCI:
 Long coding sessions (Version v0.0.0.9000).
 \url{https://doi.org/10.5281/zenodo.4402362}
 
+\hypertarget{ref-borcard2018numerical}{}
+Borcard, F. ~. ois y L., Daniel y Gillet. (n.d.). \emph{Ecología
+numérica con r} (Springer, Ed.).
+
 \hypertarget{ref-leaflet}{}
 Cheng, J., Karambelkar, B., \& Xie, Y. (2018). \emph{Leaflet: Create
 interactive web maps with the javascript 'leaflet' library}. Retrieved
@@ -695,6 +723,10 @@ Tropicales (STRI)}, 1--24.
 \hypertarget{ref-citadeR}{}
 R Core Team. (2019). \emph{R: A language and environment for statistical
 computing}. Retrieved from \url{https://www.R-project.org/}
+
+\hypertarget{ref-restrepo2007pearson}{}
+Restrepo, J. '. n, Luis F y Gonz ~'a lez. (n.d.). De pearson a spearman.
+\emph{Revista Colombiana de Ciencias Pecuarias}.
 
 \hypertarget{ref-tidyverse}{}
 Wickham, H. (2017). \emph{Tidyverse: Easily install and load the
