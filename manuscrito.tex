@@ -303,14 +303,13 @@ Para calcular la asociación entre especies, se utilizó distancia
 chi-cuadrado y la distancia de Jacard: la primera es la distancia
 euclidiana calculada sobre los datos transformados, la cual es apropiada
 tanto para los datos cuantitativos como para los de presencia-ausencia;
-y la segunda, la distancia de Jaccard (** D J \textbf{) se puede
-expresar como ``la proporción de especies no compartidas''. La distancia
-de Jaccard es el complemento a 1 de la similaridad de Jaccard (} S J
-\textbf{), es decir , } D J = 1-S J \textbf{, de esta manera para
-obtener la similaridad, sólo hay que restarle el valor de distancia a 1
-(} S J = 1-D J **). Se puede usar para evaluar la distancia entre
-especies, usando como fuente la matriz de comunidad transpuesta
-convertida a binaria (presencia / ausencia) (Batlle, 2020).
+y la segunda, la distancia de Jaccard (D J ) se puede expresar como la
+proporción de especies no compartidas. La distancia de Jaccard es el
+complemento a 1 de la similaridad de Jaccard (S J ), es decir, D J = 1-S
+J , de esta manera para obtener la similaridad, sólo hay que restarle el
+valor de distancia a 1 (S J = 1-D J ). Se puede usar para evaluar la
+distancia entre especies, usando como fuente la matriz de comunidad
+transpuesta convertida a binaria (presencia / ausencia) (Batlle, 2020).
 
 El coeficiente de correlación de Pearson tiene como objetivo medir la
 fuerza o grado de asociación entre dos variables aleatorias
@@ -411,9 +410,9 @@ de diversidad, descritos a continuación: -La equidad de Pielou
 (denominada también equidad de Shannon) equivale a \emph{J=H1/H0}. -Los
 tres primeros números de diversidad de Hill : \emph{N0=q} (la riqueza de
 especies), \emph{N1=exp(H)}(número de especies abundantes), y
-\emph{N1=1/λ} (inverso de Simpson). -Los ratios de Hill: \emph{E1=N1/N0}
-(versión de la \textbf{equidad de Shannon}) y \emph{E2=N2/N0} (versión
-de la \textbf{equidad de Simpson}).
+\emph{N1=1/\(\lambda\)} (inverso de Simpson). -Los ratios de Hill:
+\emph{E1=N1/N0} (versión de la \textbf{equidad de Shannon}) y
+\emph{E2=N2/N0} (versión de la \textbf{equidad de Simpson}).
 
 Basándonos en los supuestos de Whittaker, que dicen que la diversidad
 beta es la variación espacial de la diversidad entre sitios, medimos la
@@ -523,7 +522,7 @@ mirtáceas \label{fig:mapa_ward}}
 
 \begin{figure}
 \centering
-\includegraphics{*bootstrap*_Ward.png}
+\includegraphics{bootstrap_Ward.png}
 \caption{Dendrograma, agrupamiento Ward con los porcentajes del
 remuestreo de \emph{bootstrap} multiescalar
 \label{fig:*bootstrap*_multiescalar}}
