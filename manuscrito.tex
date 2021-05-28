@@ -168,7 +168,7 @@ Subtítulo},
 \noindent El objetivo general es conocer los rasgos básicos de la estructura y
 composición de la comunidad de mirtáceas en relación con factores
 ambientales de la parcela permanente de 50-ha de isla Barro Colorado. Se
-hiceron estudios para medir el grado de asociación, agrupamiento,
+hicieron estudios para medir el grado de asociación, agrupamiento,
 diversidad y ecología espacial de esta familia con la ayuda de los
 paquetes de R y con los datos de octavo censo de esta localidad. Las
 mirtáceas presentaron una riqueza de 7 especies con una abundancia de
@@ -202,11 +202,11 @@ BCI \par
 \noindent  \section{Introducción}\label{introducciuxf3n}
 
 Uno de los temas centrales en la ecología de comunidades es cómo
-controlar de la diversidad alfa, es decir, el número de especies que
-pueden coexistir a escalas localizadas (eg. 1 ha de una parcela). La
-diversidad alfa de las plantas puede alcanzar niveles extraordinarios en
-los bosques ecuatoriales. En el caso de los árboles, la diversidad alfa
-en los trópicos puede rivalizar con la diversidad hemisférica en la zona
+controlar la diversidad alfa, es decir, el número de especies que pueden
+coexistir a escalas localizadas (eg. 1 ha de una parcela). La diversidad
+alfa de las plantas puede alcanzar niveles extraordinarios en los
+bosques ecuatoriales. En el caso de los árboles, la diversidad alfa en
+los trópicos puede rivalizar con la diversidad hemisférica en la zona
 templada. Otras formas de vida aumentan la diversidad alfa en los
 bosques tropicales, especialmente las selvas tropicales, donde los
 árboles representan sólo el 25\% de las especies vegetales. La
@@ -246,25 +246,72 @@ géneros son lianas trepadoras de raíces. También hay un mangle, el
 monotípico \emph{Osbornia}, un pequeño árbol que carece de neumatóforos
 (Wilson, 2010).
 
+Las mirtaceas de BCI pertenecen a la subtribu Myrteae. La subtribu posee
+especies que son ecológicamente importantes en muchos entornos
+neotropicales debido a las bayas carnosas que comen las aves y los
+mamíferos y a las flores blancas generalistas que suministran polen y
+recursos a una variedad de especies de abejas. Debido a su importancia
+ecológica, los investigadores se han interesado cada vez más en utilizar
+las Myrteae como grupo modelo para estudios evolutivos, ecológicos y de
+conservación en biomas neotropicales. Dos tercios de la diversidad de
+especies descritas se encuentran en solo dos géneros, \emph{Eugenia} y
+\emph{Myrcia}, que también son dos de los géneros de angiospermas más
+grandes con 1000 y 700 especies, respectivamente. Además, se ha
+demostrado sistemáticamente que estos dos géneros son hermanos de
+linajes pobres en especies de la tribu, lo que aumenta la disparidad de
+la diversidad existente entre clados estrechamente relacionados. La
+mayor parte de la biodiversidad existente de Myrteae está restringida al
+Neotrópico. En el continente americano la mayor diversidad de especies
+se encuentra en las selvas tropicales y la sabana del centro y el este
+de Brasil, el escudo de Guayana y el Caribe; una biodiversidad menor,
+pero aún significativa, se encuentra en la América Central continental y
+en la cuenca del Amazonas de tierras bajas. La diversidad de especies es
+relativamente baja en las zonas subtropicales y templadas del sur de
+Sudamérica (Patagonia) y en los Andes de gran altitud, pero estas zonas
+cuentan con una importante variedad de géneros endémicos.
+
 En BCI, durante los repetidos censos que se han realizado en la parcela
-permanente de 50-ha desde 1981b (Hubbell et al., 2021), se han reportado
+permanente de 50-ha desde 1981 (Hubbell et al., 2021), se han reportado
 varias especies de mirtáceas, siendo su representatividad relativamente
 importante en dicho enclave.
 
 Mediante análisis exploratorios preliminares, se detectaron patrones
-singulares de distribución espacial y de diversidad. Por ejemplo,
-algunas especies (e.g. \emph{Changuava schipii}), mostraron una
-distribución espacial concentrada. Igualmente, varias especies mostraron
-preliminarmente asociación con variables de suelo y geomorfólógicas.
-Ninguna investigación ha reportado ni analizado estos patrones a la
-fecha. El objetivo de este estudio es caracterizar la comunidad de
-mirtáceas de BCI, con ayuda de técnicas de ecología numérica
-(e.g.~análisis de asociación, agrupamiento, diversidad y ecología
-espacial en relación a factores ambientales), utilizando como fuente los
-datos disponibles del censo número de 8 de la parcela permanente de
-50-ha.
+singulares de distribución espacial y de diversidad. Algunas especies
+mostraron una distribución espacial concentrada (e.g. \emph{Changuava
+schipii}). Igualmente, varias especies mostraron preliminarmente
+asociación con variables de suelo y geomorfólógicas. Ninguna
+investigación ha reportado ni analizado estos patrones a la fecha. El
+objetivo de este estudio es caracterizar la comunidad de mirtáceas de
+BCI, con ayuda de técnicas de ecología numérica (e.g.~análisis de
+asociación, agrupamiento, diversidad y ecología espacial en relación a
+factores ambientales), utilizando como fuente los datos disponibles del
+censo número de 8 de la parcela permanente de 50-ha.
 
 \section{Metodología}\label{metodologuxeda}
+
+\subsection{Preguntas de
+investigación}\label{preguntas-de-investigaciuxf3n}
+
+Medición de asociación: ¿Se detectan especies asociadas dentro de las
+mirtaceas de BCI? ¿Existe asociación entre variables
+ambientales/atributos? ¿Cuáles variables?
+
+Agrupamiento: Los cuadros (o quadrats) de 1 hectárea, ¿se organizan en
+grupos discontinuos según la composición de las especies de mirtáceas?
+Si existe algún patrón, ¿es consistente con alguna variable
+ambiental/atributo? ¿Hay especies indicadoras o con preferencia por
+determinadas condiciones ambientales/atributos?
+
+Diversidad: Según los análisis de estimación de riqueza, ¿están
+representadas suficientemente las mirtáceas en la parcela permanente de
+50-ha de BCI? ¿Existe asociación de la diversidad alpha con variables
+ambientales/atributos? ¿Con cuáles? ¿Existe contribución local o por
+alguna especie a la diversidad beta?
+
+Ecología espacial: ¿Alguna(s) especies de mirtáceas presenta(n) patrón
+aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable? ¿Predicen bien la
+ocurrencia de dicha(s) especie(s) los modelos de distribución de
+especies (SDM)?
 
 \subsection{Ámbito geográfico}\label{uxe1mbito-geogruxe1fico}
 
