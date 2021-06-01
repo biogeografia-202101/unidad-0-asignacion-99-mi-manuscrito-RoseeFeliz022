@@ -37,7 +37,7 @@ source("aed_1.R", local = knitr::knit_global())
 # Introducción
 
 
-Uno de los temas centrales en la ecología de comunidades es cómo controlar la diversidad alfa, es decir, el número de especies que pueden coexistir a escalas localizadas (eg. 1 ha de una parcela). En las plantas esta diversidad puede alcanzar niveles extraordinarios en los bosques ecuatoriales. En el caso de los árboles, esta diversidad en los trópicos puede rivalizar con la diversidad hemisférica en la zona templada. Otras formas de vida aumentan la diversidad alfa en los bosques tropicales, especialmente las selvas tropicales, donde los árboles representan sólo el 25% de las especies vegetales. Ésta de las plantas es mayor en las selvas tropicales ecuatoriales que en cualquier otro tipo de vegetación [@wright2002plant].
+Uno de los temas centrales en la ecología de comunidades es cómo controlar la diversidad alfa, es decir, el número de especies que pueden coexistir a escalas localizadas (eg. 1 ha de una parcela). En las plantas esta diversidad puede alcanzar niveles extraordinarios en los bosques ecuatoriales. En el caso de los árboles, la diversidad alpha en pequeños bosques tropicales puede competir con la diversidad de árboles de los bosques templados de todo un hemisferio. Otras formas de vida aumentan la diversidad alfa en los bosques tropicales, especialmente las selvas tropicales, donde los árboles representan sólo el 25% de las especies vegetales. Ésta de las plantas es mayor en las selvas tropicales ecuatoriales que en cualquier otro tipo de vegetación [@wright2002plant].
 
 La isla de Barro Colorado (BCI, por sus siglas en inglés) es un bosque tropical, ésta se formó al término del canal de Panamá en 1914, desde su creación se ha utilizado como centro de investigación debido a su gran reserva natural. Se considera monumento natural protegido por el gobierno de Panamá junto a las penínsulas Peña Blanca, Bohío, Buena Vista, Frijoles y Gigante [@bci_video]. La parcela permanente de 50 hectáreas se encuentra en el bosque caducifolio húmedo tropical de la isla de Barro Colorado. Se estableció en 1980, desde entonces se han realizado 8 censos (aprox. 1 cada 5 años), en los cuales se toman en cuenta árboles de tallos leñosos con un diámetro a la altura del pecho (DAP) mayor a 10 mm, y como resultado en cada censo, se han identificado, censado y mapeado más de 350,000 árboles individuales [@webcenso].
 
@@ -120,9 +120,47 @@ Para medir la diversidad alpha se utilizaron los índices de diversidad, descrit
 
 -Los ratios de Hill: $E_1 = N_1/N_0$ (versión de la equidad de Shannon) y $E_2 = N_2/N_0$ (versión de la equidad de Simpson).
 
-Basado en los supuestos de Whittaker, según los cuales la diversidad beta es la variación espacial de la diversidad entre sitios, la diversidad beta fue medida en función de las especies y sitios que contribuían a ésta con la función `determinar_contrib_local_y_especie` de R del script fuente [@jose_ramon_martinez_batlle_2020_4402362].
+La equidad puede relacionarse con la forma de los modelos de abundancia de especies, estos últimos son funciones que describen la forma de los gráficos de rango/abundancia en los que la abscisa clasifica las especies en orden de abundancia decreciente y la ordenada representa las abundancias transformadas en logaritmos. Los cuatro modelos principales son las series geométricas, logarítmicas y lognormales, y el modelo de barra rota. En este orden, la uniformidad aumenta de un modelo a otro en esta secuencia.
 
-Para medir los patrones espaciales de las especies y las variables ambientales se utilizaron tanto el correlograma, como la prueba Mantel, el índice de autocorrelación I de Moran y los mapas de indicadores locales de autocorrelación espacial (en lo adelante Mapas LISA). Primero se aplicó la prueba I de Moran que está contenida en la función `calcular_autocorrelacion`. Luego, se aplicó a las variables ambientales y las abundancias de especies transformadas sin tendencia, lo que resultó en unos clusters LISA que mostraron los patrones significativos de los que se pueden inferir las dependencias inducidas.
+Para estimar la riqueza se utilizaron los modelos de enfoque asintótico: a) paramétricos: Modelo homogéneo (estándar y MLE), este asume que todas las especies tienen las mismas probabilidades de incidencia o detección; y no paramétricos: Chao1, el cual utiliza las frecuencias de únicos y duplicados para estimar el número de especies no detectadas, Chao1-bc (forma corregida de sesgo para el estimador Chao1) e iChao1 (estimador Chao1 mejorado); ICE (Estimador de cobertura basado en la incidencia) e ICE-1 (ICE modificado para casos altamente heterogéneos); Jackknife de primer orden, el cual utiliza la frecuencia de los ejemplares únicos para estimar el número de especies no detectadas y jackknife de 2º orden, que utiliza las frecuencias de los únicos y los duplicados para estimar el número de especies no detectadas. Los cuales contienen un intervalo de confianza del 95%, para el cual se utiliza una transformación logarítmica, de modo que el límite inferior del intervalo resultante sea al menos el número de especies observadas. 
+
+Basado en los supuestos de Whittaker, según los cuales la diversidad beta es la variación espacial de la diversidad entre sitios dentro de un área geográfica de interés. Existen diferentes ecuaciones para medir esa variación. De la investigación sobre la diversidad beta dos enfoques: (1) La diversidad beta puede interpretarse como una rotación, es decir, el cambio direccional en la composición de la comunidad a lo largo de un gradiente espacial, temporal o ambiental predefinido. (2) La diversidad beta también puede definirse como la variación de la composición de la comunidad entre unidades de muestreo, sin referencia a un gradiente explícito. Ambos conceptos entran en el ámbito de la definición de Whittaker.
+Contribuciones locales a la diversidad beta (LCBD)
+La contribución del sitio i a la diversidad beta global es la suma (SSi) de los valores centrados y al cuadrado del sitio (o fila) i en la matriz S:
+
+![Fómula contribución de un sitio \label{fig:beta_sitio}](beta_local.PNG) 
+
+La contribución relativa del sitio i a la diversidad beta, denominada contribución local a la diversidad beta (LCBD), es:
+
+![Fómula contribución relativa de un sitio \label{fig:beta_local}](beta_especies.png)
+
+donde ![Fómula contribución total de los sitios \label{fig:beta_global}](beta_local2.PNG)
+
+Contribuciones de las especies a la diversidad beta (SCBD)
+La descomposición de la diversidad beta en contribuciones de las especies sólo puede calcularse a partir de una tabla de datos sitio por sitio, y no a partir de una matriz de disimilitud, ya que las abundancias de las especies en los sitios se han perdido en el cálculo de las disimilitudes.
+La contribución de la especie j a la diversidad beta global es la suma (SSj) de los valores centrados y al cuadrado de la especie (o columna) j en la matriz S:
+
+![Fómula contribución de una especie \label{fig:beta_especie}](beta_especies1.PNG)
+
+La contribución relativa de la especie j a la diversidad beta, denominada contribución de la especie a la diversidad beta (SCBD), es:
+
+![Fómula contribución relativa de una especie \label{fig:beta_local}](beta_especies2.PNG)
+
+donde ![Fómula contribución total de las especies \label{fig:beta_global}](beta_especies.png)
+
+
+Uno de los estadisticos mas utilizados para medir la correlación espacial es el I de Moran, se construye de la siguiente manera:
+
+
+
+Su valor esperado para la uasencia de correlación espacial es:
+
+
+
+
+Para medir los patrones espaciales de las especies y las variables ambientales se utilizaron tanto el correlograma, es un gráfico de los valores de correlación espacial frente a las clases de distancia. Combinado con pruebas estadísticas, un correlograma permite evaluar rápidamente el tipo y el alcance de la estructura de correlación espacial de una variable. 
+ La correlación espacial en el ámbito multivariante puede evaluarse y comprobarse mediante un correlograma de Mantel. Básicamente, se calcula un estadístico de Mantel estandarizado rM (análogo al coeficiente r de Pearson) entre una matriz de disimilitud entre sitios y una matriz donde los pares de sitios que pertenecen a la misma clase de distancia reciben el valor 0 y los demás pares, el valor 1. El proceso se repite para cada clase de distancia. Cada valor de rM puede probarse mediante permutaciones. La expectativa del estadístico de Mantel para la ausencia de correlación espacial es rM  0.
+como la prueba Mantel, el índice de autocorrelación I de Moran y los mapas de indicadores locales de autocorrelación espacial (en lo adelante Mapas LISA). Primero se aplicó la prueba I de Moran que está contenida en la función `calcular_autocorrelacion`. Luego, se aplicó a las variables ambientales y las abundancias de especies transformadas sin tendencia, lo que resultó en unos clusters LISA que mostraron los patrones significativos de los que se pueden inferir las dependencias inducidas.
 
 
 # Resultados
@@ -178,7 +216,7 @@ Para este agrupamiento, el análisis de especies indicadoras mediante IndVal par
 Según los análisis de estimación de riqueza, ¿está suficientemente representada mi familia? Consideremos como buena representación un 85%
 ¿Existe asociación de la diversidad alpha con variables ambientales/atributos? ¿Con cuáles?
 ¿Existe contribución local o por alguna especie a la diversidad beta?-->
-Según los modelos de estimación de riqueza (*Homogeneous model*, *Homogeneous (MLE)*, los Chao y los Jacknife), la completitud de muestra se alcanzó al 100% para las mirtáceas de este ámbito geográfico por lo que no sería necesario aumentar el esfuerzo de muestreo ya que no se espera encontrar otras especies en BCI*. La diversidad alpha para el agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7 especies) con diferentes abundancias (1882, 1205, 553 y 1939, respectivamente). Para los grupos Ward, la riqueza máxima fue estimada y observada, por lo que también se alcanzó la completitud de muestra al 100% y al 98% para el grupo 3 (grupo con la menor abundancia), y no será necesario aumentar los esfuerzos de muestreo.
+Según los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife), la completitud de muestra se alcanzó al 100% para las mirtáceas de este ámbito geográfico por lo que no sería necesario aumentar el esfuerzo de muestreo ya que no se espera encontrar otras especies en BCI*. La diversidad alpha para el agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7 especies) con diferentes abundancias (1882, 1205, 553 y 1939, respectivamente). Para los grupos Ward, la riqueza máxima fue estimada y observada, por lo que también se alcanzó la completitud de muestra al 100% y al 98% para el grupo 3 (grupo con la menor abundancia), y no será necesario aumentar los esfuerzos de muestreo.
 
 La riqueza ($N_0$), $E_2$ y $N_2$ de Hill sugieren que la diversidad de mirtáceas presenta una correlación positiva importante con *Al, P, Ca y Fe*, en suma la equidad de Pielou (J), los ratios de Hill ($E_1$ y $E_2$) y $N_2$ infieren una correlación positiva notable con la presencia de la geomorfología de pendiente media.
 
