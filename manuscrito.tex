@@ -205,19 +205,19 @@ Uno de los temas centrales en la ecología de comunidades es cómo
 controlar la diversidad alfa, es decir, el número de especies que pueden
 coexistir a escalas localizadas (eg. 1 ha de una parcela). En las
 plantas esta diversidad puede alcanzar niveles extraordinarios en los
-bosques ecuatoriales. En el caso de los árboles, la diversidad alpha en
-pequeños bosques tropicales puede competir con la diversidad de árboles
-de los bosques templados de todo un hemisferio. Otras formas de vida
-aumentan la diversidad alfa en los bosques tropicales, especialmente las
-selvas tropicales, donde los árboles representan sólo el 25\% de las
-especies vegetales. Ésta de las plantas es mayor en las selvas
+bosques ecuatoriales. En el caso de los árboles, ésta en pequeños
+bosques tropicales puede competir con la diversidad de árboles de los
+bosques templados de todo un hemisferio. Otras formas de vida aumentan
+la diversidad alfa en los bosques tropicales, especialmente las selvas
+tropicales, donde los árboles representan sólo el 25\% de las especies
+vegetales. Esta diversidad de las plantas es mayor en las selvas
 tropicales ecuatoriales que en cualquier otro tipo de vegetación
 (Wright, 2002).
 
 La isla de Barro Colorado (BCI, por sus siglas en inglés) es un bosque
-tropical, ésta se formó al término del canal de Panamá en 1914, desde su
-creación se ha utilizado como centro de investigación debido a su gran
-reserva natural. Se considera monumento natural protegido por el
+tropical, la isla se formó al término del canal de Panamá en 1914, desde
+su creación se ha utilizado como centro de investigación debido a su
+gran reserva natural. Se considera monumento natural protegido por el
 gobierno de Panamá junto a las penínsulas Peña Blanca, Bohío, Buena
 Vista, Frijoles y Gigante (Smithsonian Tropical Research Institute,
 2010). La parcela permanente de 50 hectáreas se encuentra en el bosque
@@ -481,16 +481,17 @@ riqueza de especies), \(N_1 = e^H\) (número de especies abundantes), y
 \(N_1 = 1/\)\(\lambda\) (inverso de Simpson).
 
 -Los ratios de Hill: \(E_1 = N_1/N_0\) (versión de la equidad de
-Shannon) y \(E_2 = N_2/N_0\) (versión de la equidad de Simpson).
+Shannon) y \(E_2 = N_2/N_0\) (versión de la equidad de Simpson)
+(Borcard, 2018).
 
 La equidad puede relacionarse con la forma de los modelos de abundancia
-de especies, estos últimos son funciones que describen la forma de los
-gráficos de rango/abundancia en los que la abscisa clasifica las
-especies en orden de abundancia decreciente y la ordenada representa las
-abundancias transformadas en logaritmos. Los cuatro modelos principales
-son las series geométricas, logarítmicas y lognormales, y el modelo de
-barra rota. En este orden, la uniformidad aumenta de un modelo a otro en
-esta secuencia.
+de especies, estos son funciones que describen la forma de los gráficos
+de rango/abundancia en los que la abscisa clasifica las especies en
+orden de abundancia decreciente y la ordenada representa las abundancias
+transformadas en logaritmos. Los cuatro modelos principales son las
+series geométricas, logarítmicas y lognormales, y el modelo de barra
+rota. En este orden, la uniformidad aumenta de un modelo a otro en esta
+secuencia (Borcard, 2018).
 
 Para estimar la riqueza se utilizaron los modelos de enfoque asintótico:
 a) paramétricos: Modelo homogéneo (estándar y MLE), este asume que todas
@@ -506,7 +507,8 @@ orden, que utiliza las frecuencias de los únicos y los duplicados para
 estimar el número de especies no detectadas. Los cuales contienen un
 intervalo de confianza del 95\%, para el cual se utiliza una
 transformación logarítmica, de modo que el límite inferior del intervalo
-resultante sea al menos el número de especies observadas.
+resultante sea al menos el número de especies observadas (Chao et al.,
+2014).
 
 Basado en los supuestos de Whittaker, según los cuales la diversidad
 beta es la variación espacial de la diversidad entre sitios dentro de un
@@ -518,88 +520,78 @@ gradiente espacial, temporal o ambiental predefinido. (2) La diversidad
 beta también puede definirse como la variación de la composición de la
 comunidad entre unidades de muestreo, sin referencia a un gradiente
 explícito. Ambos conceptos entran en el ámbito de la definición de
-Whittaker. Contribuciones locales a la diversidad beta (LCBD) La
-contribución del sitio i a la diversidad beta global es la suma (SSi) de
-los valores centrados y al cuadrado del sitio (o fila) i en la matriz S:
+Whittaker (Borcard, 2018).
 
-\begin{figure}
-\centering
-\includegraphics{beta_local.PNG}
-\caption{Fómula contribución de un sitio \label{fig:beta_sitio}}
-\end{figure}
+Para obtener la contribuciones locales a la diversidad beta (LCBD), se
+calcula primero la contribución del sitio i a la diversidad beta global
+es la suma (SSi) de los valores centrados y al cuadrado del sitio (o
+fila) i en la matriz S: \includegraphics{beta_local.PNG}
 
-La contribución relativa del sitio i a la diversidad beta, denominada
-contribución local a la diversidad beta (LCBD), es:
+y luego, la contribución relativa del sitio i a la diversidad beta, la
+cual es denominada LCBD, es (Borcard, 2018):
+\includegraphics{beta_especies.png} donde
+\includegraphics{beta_local2.PNG}
 
-\begin{figure}
-\centering
-\includegraphics{beta_especies.png}
-\caption{Fómula contribución relativa de un sitio
-\label{fig:beta_local}}
-\end{figure}
-
-donde \includegraphics{beta_local2.PNG}
-
-Contribuciones de las especies a la diversidad beta (SCBD) La
-descomposición de la diversidad beta en contribuciones de las especies
-sólo puede calcularse a partir de una tabla de datos sitio por sitio, y
-no a partir de una matriz de disimilitud, ya que las abundancias de las
-especies en los sitios se han perdido en el cálculo de las
-disimilitudes. La contribución de la especie j a la diversidad beta
+Para conocer las contribuciones de las especies a la diversidad beta
+(SCBD), se calcula la contribución de la especie j a la diversidad beta
 global es la suma (SSj) de los valores centrados y al cuadrado de la
 especie (o columna) j en la matriz S:
-
-\begin{figure}
-\centering
 \includegraphics{beta_especies1.PNG}
-\caption{Fómula contribución de una especie \label{fig:beta_especie}}
-\end{figure}
 
-La contribución relativa de la especie j a la diversidad beta,
-denominada contribución de la especie a la diversidad beta (SCBD), es:
+y luego, la contribución relativa de la especie j a la diversidad beta,
+que eso que se conoce como SCBD, es (Borcard, 2018):
+\includegraphics{beta_especies2.PNG} donde
+\includegraphics{beta_especies.png}
 
-\begin{figure}
-\centering
-\includegraphics{beta_especies2.PNG}
-\caption{Fómula contribución relativa de una especie
-\label{fig:beta_local}}
-\end{figure}
+Para para explorar patrones espaciales de las especies y las variables
+ambientales, se utilizaron tanto el correlograma, como la prueba Mantel,
+el índice de autocorrelación I de Moran y los mapas de indicadores
+locales de autocorrelación espacial (en lo adelante Mapas LISA). Serán
+descritos a continuación.
 
-donde \includegraphics{beta_especies.png}
+El correlograma es un gráfico de los valores de correlación espacial
+frente a las clases de distancia, que combinado con pruebas
+estadísticas, un correlograma permite evaluar rápidamente el tipo y el
+alcance de la estructura de correlación espacial de una variable
+(Borcard, 2018).
 
-Uno de los estadisticos mas utilizados para medir la correlación
-espacial es el I de Moran, se construye de la siguiente manera:
+El Índice Global de Moran es un analisis estadístico que examina de
+forma integral las variaciones de la autocorrelación espacial entre
+valores vecinos más cercanos, que se clasifican como positivo, negativo
+y sin autocorrelación espacial. Cuando los valores tienden a agruparse
+se trata de una autocorrelación espacial positiva, pero si se dispersan,
+es una autocorrelación negativa, y si se distribuyen de forma aleatoria,
+se habla de que no hay autocorrelación espacial entre los valores
+analizados(Bucheli, 2019). Se construye de la siguiente manera (Borcard,
+2018): \includegraphics{moran1.PNG}
 
-Su valor esperado para la uasencia de correlación espacial es:
+La correlación espacial en el ámbito multivariante puede evaluarse y
+comprobarse mediante un correlograma de Mantel. Básicamente, se calcula
+un estadístico de Mantel estandarizado rM (análogo al coeficiente r de
+Pearson) entre una matriz de disimilitud entre sitios y una matriz donde
+los pares de sitios que pertenecen a la misma clase de distancia reciben
+el valor 0 y los demás pares, el valor 1. El proceso se repite para cada
+clase de distancia. Cada valor de rM puede probarse mediante
+permutaciones. La expectativa del estadístico de Mantel para la ausencia
+de correlación espacial es rM \(1/4\) 0 (Borcard, 2018).
 
-Para medir los patrones espaciales de las especies y las variables
-ambientales se utilizaron tanto el correlograma, es un gráfico de los
-valores de correlación espacial frente a las clases de distancia.
-Combinado con pruebas estadísticas, un correlograma permite evaluar
-rápidamente el tipo y el alcance de la estructura de correlación
-espacial de una variable. La correlación espacial en el ámbito
-multivariante puede evaluarse y comprobarse mediante un correlograma de
-Mantel. Básicamente, se calcula un estadístico de Mantel estandarizado
-rM (análogo al coeficiente r de Pearson) entre una matriz de disimilitud
-entre sitios y una matriz donde los pares de sitios que pertenecen a la
-misma clase de distancia reciben el valor 0 y los demás pares, el valor
-1. El proceso se repite para cada clase de distancia. Cada valor de rM
-puede probarse mediante permutaciones. La expectativa del estadístico de
-Mantel para la ausencia de correlación espacial es rM 0. como la prueba
-Mantel, el índice de autocorrelación I de Moran y los mapas de
-indicadores locales de autocorrelación espacial (en lo adelante Mapas
-LISA). Primero se aplicó la prueba I de Moran que está contenida en la
-función \texttt{calcular\_autocorrelacion}. Luego, se aplicó a las
-variables ambientales y las abundancias de especies transformadas sin
-tendencia, lo que resultó en unos clusters LISA que mostraron los
-patrones significativos de los que se pueden inferir las dependencias
-inducidas.
+El Índice Local de Asociación Espacial (LISA) ayuda a identificar
+patrones locales de asociación espacial, descomponiendo el Índice Moran
+para evaluar la influencia de hábitats localizados en la estadística
+global, esto se visualiza utilizando los Sistemas de Información
+Geográfica. Este índice destaca las localizaciones con valores
+estadísticos significativos en los indicadores, resaltando la presencia
+de puntos calientes \emph{hot spots} o atípicos espaciales, dependiendo
+de los datos estadísticos analizados. El resultado es la la generación
+de un mapa que se denomina de agrupamiento o clúster, en este se
+visualiza cada unidad espacial se diferenciada de sus unidades vecinas
+(Bucheli, 2019).
 
 \section{Resultados}\label{resultados}
 
-La familia Myrtaceae está presente en la parcela permanente de 50-ha de
-BCI con una abundancia de 5,579 individuos pertenecientes a 7 especies,
-de las cuales las más abundantes fueron \emph{Eugenia galalonensis} y
+La familia Myrtaceae de la parcela permanente de 50-ha de BCI presentó
+una abundancia de 5,579 individuos pertenecientes a 7 especies, de las
+cuales las más abundantes fueron \emph{Eugenia galalonensis} y
 \emph{Eugenia oerstediana}, representadas con 1,975 y 1,838 individuos
 cada una, y las especies más raras fueron \emph{Psidium
 friedrichsthalianum} y \emph{Myrcia gatunensis}, con 58 y 56 individuos
@@ -632,22 +624,22 @@ Myrcia gatunensis & 56\tabularnewline
 \caption{\label{fig:abun_sp_q}Abundancia de especies por quadrat}
 \end{figure}
 
-La distancia de \emph{ji}-cuadradado y la distancia de Jacard resultaron
-pequeñas entre especies del genéro \emph{Eugenia} (\emph{E.
-oerstediana}, \emph{E. galalonensis}, \emph{E. nesiotica} y \emph{E.
-coloradoensis}), lo cual sugiere un patrón de dependencia, debido a que
-tienen altos grados de asociación; y las especies \emph{Psidium
-friedrichsthalianum}, \emph{Myrcia gatunensis} y \emph{Changuava
-schippii} presentan un posible patrón independiente, no parecen
-asociarse con otras (ver figura \ref{fig:matriz_Jacard}). La riqueza de
-la familia presentó asociación estadística, a través del índice de
-Spearman, en términos positivos con \emph{Al}, * P* y en términos
-negativos con \emph{Ca}; y la abundancia de mi familia presentó
-asociación estadística, a través del índice de Spearman y el índice de
-Pearson, en términos positivos con \emph{Al} y elevación media, y en
-términos negativos con \emph{Ca}, heterogeneidad ambiental y
-geomorfología de vaguada (ver figuras \ref{fig:matriz_spearman} y
-\ref{fig:matriz_pearson}).
+Para los análisis de medición de asociación, la distancia de
+\emph{ji}-cuadradado y la distancia de Jacard resultaron pequeñas entre
+especies del genéro \emph{Eugenia} (\emph{E. oerstediana}, \emph{E.
+galalonensis}, \emph{E. nesiotica} y \emph{E. coloradoensis}), lo cual
+sugiere un patrón de dependencia, debido a que tienen altos grados de
+asociación; y las especies \emph{Psidium friedrichsthalianum},
+\emph{Myrcia gatunensis} y \emph{Changuava schippii} presentan un
+posible patrón independiente, no parecen asociarse con otras (ver figura
+\ref{fig:matriz_Jacard}). La riqueza de la familia presentó asociación
+estadística, a través del índice de Spearman, en términos positivos con
+\emph{Al}, * P* y en términos negativos con \emph{Ca}; y la abundancia
+de mi familia presentó asociación estadística, a través del índice de
+Spearman y el índice de Pearson, en términos positivos con \emph{Al} y
+elevación media, y en términos negativos con \emph{Ca}, heterogeneidad
+ambiental y geomorfología de vaguada (ver figuras
+\ref{fig:matriz_spearman} y \ref{fig:matriz_pearson}).
 
 \begin{figure}
 \centering
@@ -669,23 +661,32 @@ geomorfología de vaguada (ver figuras \ref{fig:matriz_spearman} y
 \label{fig:matriz_pearson}}
 \end{figure}
 
-El método de agrupamiento Ward de varianza mínima, conjuntamente con el
-mapa de calor (ver figura \ref{fig:mapadecalor_ward}), mostró que las
-mirtáceas de la parcela permanente de 50-ha de BCI se distribuyen en 4
-grupos, de 2, 13, 15 y 20 sitios, respectivamente (ver figura
-\ref{fig:mapa_ward}). Los métodos de agrupamiento aglomerativos por
-enlace simple, por enlace completo y por enlace promedio (grupos de
-pares no ponderados con media aritmética, UPGMA por sus siglas en
-inglés) destacaron la singularidad de este grupo formado por dos sitios
-(14 y 19). Además, el muestreo de \emph{bootstrap} multiescalar respalda
-este grupo con un probabilidad de \emph{bootstrap} (BP) de 76 \% y
-probabilidad de valores aproximadamente insesgados (AU) de 99 \%, de que
-sea un grupo real (ver figura \ref {fig:*bootstrap*_multiescalar}). Las
-mirtáceas presentaron asociación estadística, según el diagrama de
-cajas, con un conjunto de variables de suelo (\emph{Al, Fe, Mn, N.
-min.}, etc.) y atributos del terreno (curvatura perfil media, curvatura
-tangencial media, elevación media, etc.) (ver figura
-\ref{fig:ward_con_variables}). ANOVA, Kruskal-Walis*
+Para los análisis de agrupamiento (\emph{cluster analysis}), se utilizó
+el método de agrupamiento Ward de varianza mínima, conjuntamente con el
+mapa de calor (ver figuras \ref{fig:mapadecalor_ward} y
+\ref{fig:ward_fraccionado}), los cuales mostraron que las mirtáceas de
+la parcela permanente de 50-ha de BCI se distribuyen en 4 grupos, de 2,
+13, 15 y 20 sitios, respectivamente (ver figura \ref{fig:mapa_ward}).
+Los métodos de agrupamiento aglomerativos por enlace simple, por enlace
+completo y por enlace promedio (grupos de pares no ponderados con media
+aritmética, UPGMA por sus siglas en inglés) destacaron la singularidad
+de este grupo formado por dos sitios (14 y 19). Además, el muestreo de
+\emph{bootstrap} multiescalar respaldó este grupo con un probabilidad de
+\emph{bootstrap} (BP) de 76 \% y probabilidad de valores aproximadamente
+insesgados (AU) de 99 \%, de que sea un grupo real (ver figura
+\ref {fig:*bootstrap*_multiescalar}). Las mirtáceas presentaron
+asociación estadística, según el diagrama de cajas, con un conjunto de
+variables de suelo (\emph{Al, Fe, Mn, N. min.}, etc.) y atributos del
+terreno (curvatura perfil media, curvatura tangencial media, elevación
+media, etc.) (ver figura \ref{fig:ward_con_variables}). ANOVA,
+Kruskal-Walis*
+
+\begin{figure}
+\centering
+\includegraphics[width=0.50000\textwidth]{ward_fracionado.png}
+\caption{Agrupamiento por el método Ward de varianza mínima de las
+mirtáceas \label{fig:ward_fraccionado}}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -716,21 +717,54 @@ remuestreo de \emph{bootstrap} multiescalar
 ambientales y atributos \label{fig:ward_con_variables}}
 \end{figure}
 
-Para este agrupamiento, el análisis de especies indicadoras mediante
-IndVal para una significancia menor de 0.05, propuso como especie
-asociada como indicadora del grupo 3 a \emph{Chamguava schippii}, para
-el conjunto de grupos 1+2 \emph{Eugenia coloradoensis} y para el
-conjunto de grupos 3+4 \emph{Eugenia oerstediana}; y el análisis de
-especies con preferencia por hábitat mediante el coeficiente de
-correlación biserial puntual para una significancia menor de 0.005,
-sugirió que \emph{Eugenia coloradoensis} tiene preferencia por el grupo
-2, \emph{Chamguava schippii} por el grupo 3 y \emph{Eugenia oerstediana}
-por el grupo 4.
+Para este agrupamiento, las especies asociadas como indicadoras,
+mediante IndVal para una significancia menor de 0.05, fueron
+\emph{Chamguava schippii} para el grupo 3, \emph{Eugenia coloradoensis}
+para el conjunto de grupos 1+2 y \emph{Eugenia oerstediana} para el
+conjunto de grupos 3+4; y las especies con preferencia por hábitat,
+mediante el coeficiente de correlación biserial puntual para una
+significancia menor de 0.05, fueron \emph{Eugenia coloradoensis} con
+preferencia por el grupo 2, \emph{Chamguava schippii} por el grupo 3 y
+\emph{Eugenia oerstediana} por el grupo 4.
 
-Según los modelos de estimación de riqueza (\emph{Homogeneous model},
-estándar y MLE; los Chao y los Jacknife), la completitud de muestra se
-alcanzó al 100\% para las mirtáceas de este ámbito geográfico por lo que
-no sería necesario aumentar el esfuerzo de muestreo ya que no se espera
+\begin{longtable}[]{@{}l@{}}
+\toprule
+Multilevel pattern analysis\tabularnewline
+\midrule
+\endhead
+Association function: IndVal.g\tabularnewline
+Significance level (alpha): 0.05\tabularnewline
+---------------------------------\tabularnewline
+Total number of species: 7\tabularnewline
+Selected number of species: 3\tabularnewline
+Number of species associated to 1 group: 1\tabularnewline
+Number of species associated to 2 groups: 2\tabularnewline
+Number of species associated to 3 groups: 0\tabularnewline
+---------------------------------------------\tabularnewline
+List of species associated to each combination\tabularnewline
+-------------------------------------------------\tabularnewline
+Group 3 \#sps. 1\tabularnewline
+-------------------\tabularnewline
+Chamguava schippii\tabularnewline
+------------------------------------------------------\tabularnewline
+Group 1+2 \#sps. 1\tabularnewline
+--------------------\tabularnewline
+Eugenia coloradoensis\tabularnewline
+-----------------------------------------------------\tabularnewline
+Group 3+4 \#sps. 1\tabularnewline
+---------------------\tabularnewline
+Eugenia oerstediana 0.6515\tabularnewline
+\bottomrule
+\end{longtable}
+
+Signif. codes: 0 \(‘***’\), 0.001 \(‘**’\), 0.01 \(‘*’\), 0.05 `.', 0.1
+`', 1
+
+Para los análisis de diversidad, se utilizaron los modelos de estimación
+de riqueza (\emph{Homogeneous model}, estándar y MLE; los Chao y los
+Jacknife), los cuales mostraron que la completitud de muestra se alcanzó
+al 100\% para las mirtáceas de este ámbito geográfico por lo que no
+sería necesario aumentar el esfuerzo de muestreo ya que no se espera
 encontrar otras especies en BCI*. La diversidad alpha para el
 agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7
 especies) con diferentes abundancias (1882, 1205, 553 y 1939,
@@ -739,14 +773,14 @@ observada, por lo que también se alcanzó la completitud de muestra al
 100\% y al 98\% para el grupo 3 (grupo con la menor abundancia), y no
 será necesario aumentar los esfuerzos de muestreo.
 
-La riqueza (\(N_0\)), \(E_2\) y \(N_2\) de Hill sugieren que la
+La riqueza (\(N_0\)), \(E_2\) y \(N_2\) de Hill mostraron que la
 diversidad de mirtáceas presenta una correlación positiva importante con
 \emph{Al, P, Ca y Fe}, en suma la equidad de Pielou (J), los ratios de
-Hill (\(E_1\) y \(E_2\)) y \(N_2\) infieren una correlación positiva
+Hill (\(E_1\) y \(E_2\)) y \(N_2\) mostraron una correlación positiva
 notable con la presencia de la geomorfología de pendiente media.
 
-\emph{Changuava schipii} y \emph{Eugenia oerstediana} son las especies
-que hacen contribución a la diversidad beta, éstas están bien
+\emph{Changuava schipii} y \emph{Eugenia oerstediana} fueron las
+especies que hacen contribución a la diversidad beta, éstas están bien
 representadas (la primera con gran dominancia) en los sitios 14 y 19
 (grupo 3 Ward) que hacen contribución a la diversidad beta; el 14 fue
 uno de los cinco sitios que poseen la riqueza máxima (los demás sitios
@@ -757,17 +791,17 @@ uno al lado del otro. El modelo de abundancia de especies muestra que el
 56\% de la comunidad presenta mayores valores de equidad (log normal
 10\% y null 46\%).
 
-La prueba I de Moran sugiere que las mirtáceas de esta localización
-presentan patrones aglomerados al menos con la vecindad de primer orden,
-con excepción de \emph{M. gatunensis} y \emph{E. galalonensis} que
-muestran un patrón espacial aleatorio. Cabe destacar que para \emph{C.
-schipii} existe una autocorrelación espacial positiva también para los
-vecinos de segundo orden y en términos negativos del cuarto al sexto
-orden; para \emph{E. nesiotica} y \emph{E. oerstediana} una
-autocorrelacion negativa con vecinos de tercer a cuarto orden y de
-cuarto a quinto orden, respectivamente, es decir, su abundancia
-disminuye en esas vecindades cuando aumenta en la de primer orden y
-viceversa.
+Para los análisis de ecología espacial, la prueba I de Moran sugirió que
+las mirtáceas de esta localización presentaron patrones aglomerados al
+menos con la vecindad de primer orden, con excepción de \emph{M.
+gatunensis} y \emph{E. galalonensis} que mostraron un patrón espacial
+aleatorio. Cabe destacar que \emph{C. schipii} presentó una
+autocorrelación espacial positiva también para los vecinos de segundo
+orden y en términos negativos del cuarto al sexto orden; para \emph{E.
+nesiotica} y \emph{E. oerstediana} una autocorrelacion negativa con
+vecinos de tercer a cuarto orden y de cuarto a quinto orden,
+respectivamente, es decir, su abundancia disminuye en esas vecindades
+cuando aumenta en la de primer orden y viceversa.
 
 La autocorrelación mediante la prueba de Mantel muestra que hay una
 correlación espacial inducida por alguna variable en términos positivos
@@ -874,6 +908,17 @@ Long coding sessions (Version v0.0.0.9000).
 \hypertarget{ref-borcard2018numerical}{}
 Borcard, F. ~. ois y L., Daniel y Gillet. (2018). \emph{Ecología
 numérica con r}. Springer.
+
+\hypertarget{ref-bucheli2019uso}{}
+Bucheli, G. E. H. (2019). Uso del Índice de moran y lisa para explicar
+el ausentismo electoral rural en ecuador. \emph{Revista Geográfica},
+(160), 91--108.
+
+\hypertarget{ref-paqueteiNEXT}{}
+Chao, A., Gotelli, N. J., Hsieh, T. C., Sande, E. L., Ma, K. H.,
+Colwell, R. K., \& Ellison, A. M. (2014). Rarefaction and extrapolation
+with hill numbers: A framework for sampling and estimation in species
+diversity studies. \emph{Ecological Monographs}, \emph{84}, 45--67.
 
 \hypertarget{ref-leaflet}{}
 Cheng, J., Karambelkar, B., \& Xie, Y. (2018). \emph{Leaflet: Create
