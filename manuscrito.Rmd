@@ -28,6 +28,13 @@ header-includes:
   \usepackage{pdflscape}
   \newcommand{\blandscape}{\begin{landscape}}
   \newcommand{\elandscape}{\end{landscape}}
+  \usepackage{float} \floatplacement{figure}{H} 
+  \newcommand{\beginsupplement}{
+    \setcounter{table}{0}
+    \renewcommand{\thetable}{S\arabic{table}}
+    \setcounter{figure}{0}
+    \renewcommand{\thefigure}{S\arabic{figure}}
+    }
 ---
 
 ```{r, include=FALSE}
@@ -107,7 +114,7 @@ El remuestreo *bootstrap* consiste en muestrear aleatoriamente subconjuntos de l
 
 Para evaluar homogeneidad de promedios de las variables ambientales entre los grupos Ward y las variables ambientales fueron ANOVA, que evalúa homogeneidad de medias, y Kruskal-Wallis, que evalúa la homogeneidad de medianas; los cuales hacen sentido para agrupamientos de 3 grupos o más [@jose_ramon_martinez_batlle_2020_4402362].
 
-El análisis de especies indicadoras de los grupos Ward se hizo mediante el método del Valor Indicador (en lo adelante, IndVal), el cual se calcula como el producto de la especificidad de una especie para el grupo objetivo por su fidelidad al grupo objetivo. La especificidad se define por la abundancia media de la especie dentro del grupo objetivo comparada con su abundancia media en todos los grupos; la fidelidad es la proporción de sitios del grupo objetivo en el que está presente la especie. Y el análisis de especies con preferencia por hábitat se realizó mediante el coeficiente de correlación biserial puntual [@borcard2018numerical].
+El análisis de especies indicadoras de los grupos Ward se hizo mediante el método del Valor Indicador (en lo adelante, IndVal), el cual se calcula como el producto de la especificidad de una especie para el grupo objetivo por su fidelidad al grupo objetivo. La especificidad se define por la abundancia media de la especie dentro del grupo objetivo comparada con su abundancia media en todos los grupos; la fidelidad es la proporción de sitios del grupo objetivo en el que está presente la especie. Y el análisis de especies con preferencia por hábitat se realizó mediante el coeficiente de correlación biserial puntual que mide la relación entre un vector que indica la presencia o abundancia de una especie en diferentes lugares y un vector que describe a qué grupo predefinido al que pertenece cada sitio [@borcard2018numerical].
 
 Para medir la diversidad alpha se utilizaron los índices de diversidad, descritos a continuación:
 
@@ -199,69 +206,23 @@ Para los análisis de agrupamiento (*cluster analysis*), se utilizó el método 
 ![Diagrama de cajas de los grupos Ward en relación con variables ambientales y atributos \label{fig:ward_con_variables}](correlograma_wardyvariablesambientales.png)
 
 
-Para este agrupamiento, las especies asociadas como indicadoras, mediante IndVal para una significancia menor de 0.05,  fueron *Chamguava schippii* para el grupo 3, *Eugenia coloradoensis* para el conjunto de grupos 1+2 y *Eugenia oerstediana* para el conjunto de grupos 3+4; y las especies con preferencia por hábitat, mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.05, fueron *Eugenia coloradoensis* con preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4.
+Para este agrupamiento, las especies asociadas como indicadoras, mediante IndVal para una significancia menor de 0.05,  fueron *Chamguava schippii* para el grupo 3, *Eugenia coloradoensis* para el conjunto de grupos 1+2 y *Eugenia oerstediana* para el conjunto de grupos 3+4 (ver figura \ref{fig:indval_analisis}); y las especies con preferencia por hábitat, mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.05, fueron *Eugenia coloradoensis* con preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4 (ver figura \ref).
 
-| Multilevel pattern analysis      | 
-|----------------------------------|
-| Association function: IndVal.g   |
-| Significance level (alpha): 0.05 |
-| ---------------------------------|
-| Total number of species: 7                  |
-| Selected number of species: 3               | 
-| Number of species associated to 1 group: 1  |
-| Number of species associated to 2 groups: 2 |
-| Number of species associated to 3 groups: 0 |
-|---------------------------------------------|
-| List of species associated to each combination  |
-|-------------------------------------------------|
-| Group 3  #sps.  1 |
-|-------------------|   A  |     B | stat |p.value     |
-|Chamguava schippii |0.9248| 1.0000| 0.962|   0.001 ***|
-|------------------------------------------------------|
-|Group 1+2  #sps.  1 |
-|--------------------|    A  |    B | stat | p.value  | 
-|Eugenia coloradoensis| 0.639| 1.000| 0.799|   0.028 *|
-|-----------------------------------------------------|
-| Group 3+4  #sps.  1 |
-|---------------------| A  |  B    | stat | p.value  | 
-|Eugenia oerstediana 0.6515| 1.0000| 0.807|   0.017 *|
----
-Signif. codes:  0 $‘***’$, 0.001 $‘**’$, 0.01 $‘*’$, 0.05 ‘.’, 0.1 ‘ ’, 1 
+![Análisis de especies indicadoras de los grupos Ward, mediante el método del Valor Indicador (IndVal) \label{fig:indval_analisis}](inval_analisis.png)
 
-
-|Multilevel pattern analysis|
-|---------------------------|
-|Association function: r.g       |
-|Significance level (alpha): 0.05|
-|--------------------------------|
-|Total number of species: 7      |
-|Selected number of species: 3   |
-|Number of species associated to 1 group: 3 |
-|Number of species associated to 2 groups: 0| 
-|Number of species associated to 3 groups: 0|
-|-------------------------------------------|
-|List of species associated to each combination | 
-|-----------------------------------------------|
-|Group 2  #sps.  1 |
-|---------------------|  stat| p.value | 
-|Eugenia coloradoensis| 0.568|   0.05 *|
-|--------------------------------------|
-|Group 3  #sps.  1 |
-|----------------------|stat | p.value  |  
-|Chamguava schippii    | 0.8 | 0.001 ***|
-|---------------------------------------|
-|Group 4  #sps.  1 |
-|-------------------| stat| p.value   | 
-|Eugenia oerstediana| 0.74|    0.01 **|
----
-Signif. codes:  0 $‘***’$, 0.001 $‘**’$, 0.01 $‘*’$, 0.05 ‘.’, 0.1 ‘ ’, 1
-
+![Análisis de especies con preferencia por hábitats en los grupos Ward, mediante el coeficiente de correlación biserial puntual \label{fig:rg_analisis}](rg_analisis.png)
 
 <!-- C. Diversidad:
 Según los análisis de estimación de riqueza, ¿está suficientemente representada mi familia? Consideremos como buena representación un 85%
 ¿Existe asociación de la diversidad alpha con variables ambientales/atributos? ¿Con cuáles?
 ¿Existe contribución local o por alguna especie a la diversidad beta?-->
-Para los análisis de diversidad, se utilizaron los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife), los cuales mostraron que la completitud de muestra se alcanzó al 100% para las mirtáceas de este ámbito geográfico por lo que no sería necesario aumentar el esfuerzo de muestreo ya que no se espera encontrar otras especies en BCI*. La diversidad alpha para el agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7 especies) con diferentes abundancias (1882, 1205, 553 y 1939, respectivamente). Para los grupos Ward, la riqueza máxima fue estimada y observada, por lo que también se alcanzó la completitud de muestra al 100% y al 98% para el grupo 3 (grupo con la menor abundancia), y no será necesario aumentar los esfuerzos de muestreo.
+Para los análisis de diversidad alpha las mirtáceas de este ámbito geográfico, se utilizaron los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife), los cuales mostraron que la completitud de muestra se alcanzó al 100%; las estimaciones de la diversidad con muestras enrarecidas y extrapoladas mostraron que la riqueza máxima fue alcanzada (ver firgura \ref{fig:chao_asintotico}0; y para las estimaciones de diversidad asintótica junto con estadísticas relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad de Simpson) la riqueza fue estimada y observada. por lo que no sería necesario aumentar el esfuerzo de muestreo ya que no se espera encontrar otras especies en BCI*  (ver figura \ref{fig:chao_noasintotico}). 
+
+![Matriz de comunidad combinada, en la que todos los sitios forman uno \label{fig:chao_asintotico}](chao_asintotico.png)
+
+[Rarefacción y extrapolación para la matriz de comunidad combinada en la que todos los sitios forman uno \label{fig:chao_noasintotico}](chao_noasintotico.png)
+
+La diversidad alpha para el agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7 especies) con diferentes abundancias (1882, 1205, 553 y 1939, respectivamente). Para los grupos Ward, la riqueza máxima fue estimada y observada, por lo que también se alcanzó la completitud de muestra al 100% y al 98% para el grupo 3 (grupo con la menor abundancia), y no será necesario aumentar los esfuerzos de muestreo.
 
 La riqueza ($N_0$), $E_2$ y $N_2$ de Hill mostraron que la diversidad de mirtáceas presenta una correlación positiva importante con *Al, P, Ca y Fe*, en suma la equidad de Pielou (J), los ratios de Hill ($E_1$ y $E_2$) y $N_2$ mostraron una correlación positiva notable con la presencia de la geomorfología de pendiente media.
 
@@ -299,6 +260,9 @@ El modelo de abundancia de especies muestra que el 56% de la comunidad presenta 
 # Agradecimientos
 
 # Información de soporte
+
+\beginsupplement
+
 
 \ldots
 
