@@ -123,7 +123,9 @@ Subtítulo},
 \makeatother
 
 \usepackage{pdflscape} \newcommand{\blandscape}{\begin{landscape}}
-\newcommand{\elandscape}{\end{landscape}}
+\newcommand{\elandscape}{\end{landscape}} \usepackage{float}
+\floatplacement{figure}{H}
+\newcommand{\beginsupplement}{ \setcounter{table}{0} \renewcommand{\thetable}{S\arabic{table}} \setcounter{figure}{0} \renewcommand{\thefigure}{S\arabic{figure}} }
 
 
 % add tightlist ----------
@@ -309,9 +311,7 @@ ambientales/atributos? ¿Con cuáles? ¿Existe contribución local o por
 alguna especie a la diversidad beta?
 
 Ecología espacial: ¿Alguna(s) especies de mirtáceas presenta(n) patrón
-aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable? ¿Predicen bien la
-ocurrencia de dicha(s) especie(s) los modelos de distribución de
-especies (SDM)?
+aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable?
 
 \subsection{Ámbito geográfico}\label{uxe1mbito-geogruxe1fico}
 
@@ -467,8 +467,10 @@ define por la abundancia media de la especie dentro del grupo objetivo
 comparada con su abundancia media en todos los grupos; la fidelidad es
 la proporción de sitios del grupo objetivo en el que está presente la
 especie. Y el análisis de especies con preferencia por hábitat se
-realizó mediante el coeficiente de correlación biserial puntual
-(Borcard, 2018).
+realizó mediante el coeficiente de correlación biserial puntual que mide
+la relación entre un vector que indica la presencia o abundancia de una
+especie en diferentes lugares y un vector que describe a qué grupo
+predefinido al que pertenece cada sitio (Borcard, 2018).
 
 Para medir la diversidad alpha se utilizaron los índices de diversidad,
 descritos a continuación:
@@ -721,97 +723,160 @@ Para este agrupamiento, las especies asociadas como indicadoras,
 mediante IndVal para una significancia menor de 0.05, fueron
 \emph{Chamguava schippii} para el grupo 3, \emph{Eugenia coloradoensis}
 para el conjunto de grupos 1+2 y \emph{Eugenia oerstediana} para el
-conjunto de grupos 3+4; y las especies con preferencia por hábitat,
-mediante el coeficiente de correlación biserial puntual para una
-significancia menor de 0.05, fueron \emph{Eugenia coloradoensis} con
-preferencia por el grupo 2, \emph{Chamguava schippii} por el grupo 3 y
-\emph{Eugenia oerstediana} por el grupo 4.
+conjunto de grupos 3+4 (ver figura \ref{fig:indval_analisis}); y las
+especies con preferencia por hábitat, mediante el coeficiente de
+correlación biserial puntual para una significancia menor de 0.05,
+fueron \emph{Eugenia coloradoensis} con preferencia por el grupo 2,
+\emph{Chamguava schippii} por el grupo 3 y \emph{Eugenia oerstediana}
+por el grupo 4 (ver figura \ref).
 
-\begin{longtable}[]{@{}l@{}}
-\toprule
-Multilevel pattern analysis\tabularnewline
-\midrule
-\endhead
-Association function: IndVal.g\tabularnewline
-Significance level (alpha): 0.05\tabularnewline
----------------------------------\tabularnewline
-Total number of species: 7\tabularnewline
-Selected number of species: 3\tabularnewline
-Number of species associated to 1 group: 1\tabularnewline
-Number of species associated to 2 groups: 2\tabularnewline
-Number of species associated to 3 groups: 0\tabularnewline
----------------------------------------------\tabularnewline
-List of species associated to each combination\tabularnewline
--------------------------------------------------\tabularnewline
-Group 3 \#sps. 1\tabularnewline
--------------------\tabularnewline
-Chamguava schippii\tabularnewline
-------------------------------------------------------\tabularnewline
-Group 1+2 \#sps. 1\tabularnewline
---------------------\tabularnewline
-Eugenia coloradoensis\tabularnewline
------------------------------------------------------\tabularnewline
-Group 3+4 \#sps. 1\tabularnewline
----------------------\tabularnewline
-Eugenia oerstediana 0.6515\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{figure}
+\centering
+\includegraphics{inval_analisis.png}
+\caption{Análisis de especies indicadoras de los grupos Ward, mediante
+el método del Valor Indicador (IndVal) \label{fig:indval_analisis}}
+\end{figure}
 
-Signif. codes: 0 \(‘***’\), 0.001 \(‘**’\), 0.01 \(‘*’\), 0.05 `.', 0.1
-`', 1
+\begin{figure}
+\centering
+\includegraphics{rg_analisis.png}
+\caption{Análisis de especies con preferencia por hábitats en los grupos
+Ward, mediante el coeficiente de correlación biserial puntual
+\label{fig:rg_analisis}}
+\end{figure}
 
-Para los análisis de diversidad, se utilizaron los modelos de estimación
-de riqueza (\emph{Homogeneous model}, estándar y MLE; los Chao y los
-Jacknife), los cuales mostraron que la completitud de muestra se alcanzó
-al 100\% para las mirtáceas de este ámbito geográfico por lo que no
-sería necesario aumentar el esfuerzo de muestreo ya que no se espera
-encontrar otras especies en BCI*. La diversidad alpha para el
-agrupamiento Ward, los cuatro grupos presentaban la riqueza máxima (7
-especies) con diferentes abundancias (1882, 1205, 553 y 1939,
-respectivamente). Para los grupos Ward, la riqueza máxima fue estimada y
-observada, por lo que también se alcanzó la completitud de muestra al
-100\% y al 98\% para el grupo 3 (grupo con la menor abundancia), y no
-será necesario aumentar los esfuerzos de muestreo.
+Para los análisis de diversidad alpha las mirtáceas de este ámbito
+geográfico presentaron, a través de la riqueza (\(N_0\)), \(E_2\) y
+\(N_2\) de Hill, una correlación positiva importante con \emph{Al, P, Ca
+y Fe}. Además, la diversidad de la familia (a través de la equidad de
+Pielou (J), los ratios de Hill (\(E_1\) y \(E_2\)) y \(N_2\)) mostró una
+correlación positiva notable con la presencia de la geomorfología de
+pendiente media (ver figura \ref{fig:pearson_div}).
 
-La riqueza (\(N_0\)), \(E_2\) y \(N_2\) de Hill mostraron que la
-diversidad de mirtáceas presenta una correlación positiva importante con
-\emph{Al, P, Ca y Fe}, en suma la equidad de Pielou (J), los ratios de
-Hill (\(E_1\) y \(E_2\)) y \(N_2\) mostraron una correlación positiva
-notable con la presencia de la geomorfología de pendiente media.
+\begin{figure}
+\centering
+\includegraphics{pearson_indcdiversidad.png}
+\caption{Matriz que relaciona los indices con las variables/atributos
+del suelo \label{fig:pearson_div}}
+\end{figure}
+
+El modelo de abundancia de especies muestra que el 56\% de la comunidad
+presenta mayores valores de equidad (log normal 10\% y null 46\%) (ver
+figura \ref{fig:modelo_abundancia}). También se utilizaron los modelos
+de estimación de riqueza (\emph{Homogeneous model}, estándar y MLE; los
+Chao y los Jacknife), los cuales mostraron que la completitud de muestra
+se alcanzó al 100\%; las estimaciones de la diversidad con muestras
+enrarecidas y extrapoladas mostraron que la riqueza máxima fue alcanzada
+(ver firgura \ref{fig:chao_asintotico}); y para las estimaciones de
+diversidad asintótica junto con estadísticas relacionadas (Riqueza de
+especies, diversidad de Shannon, y diversidad de Simpson) la riqueza fue
+estimada y observada. por lo que no sería necesario aumentar el esfuerzo
+de muestreo ya que no se espera encontrar otras especies en BCI* (ver
+figura \ref{fig:chao_noasintotico}).
+
+\begin{figure}
+\centering
+\includegraphics{modelodeabundancia.png}
+\caption{Modelo de abundancia de especies \label{fig:modelo_abundancia}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{chao_asintotico.png}
+\caption{Resultado de las estimaciones de diversidad para la matriz de
+comunidad combinada, en la que todos los sitios forman uno
+\label{fig:chao_asintotico}}
+\end{figure}
+
+\href{chao_noasintotico.png}{Resultado de rarefacción y extrapolación
+para la matriz de comunidad combinada en la que todos los sitios forman
+uno \label{fig:chao_noasintotico}}
+
+La diversidad alpha en el agrupamiento Ward, según los modelos de
+estimación de riqueza (\emph{Homogeneous model}, estándar y MLE; los
+Chao y los Jacknife) se alcanzó la completitud de muestra al 100\% para
+los grupos 1, 2 y 4 (1882, 1205 y 1939 individuos, respectivamente) y al
+98\% para el grupo 3 (grupo con la menor abundancia, 553 individuos).
+Las estimaciones de la diversidad con muestras enrarecidas y
+extrapoladas mostraron que en los grupos Ward la riqueza máxima fue
+alcanzada(ver figuras \ref{asintotico_ward1}, \ref{asintotico_ward2},
+\ref{asintotico_ward3} y \ref{asintotico_ward4}); y para las
+estimaciones de diversidad asintótica junto con estadísticas
+relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad
+de Simpson) la riqueza máxima fue estimada y observada (ver figura
+\ref{sintotico_ward}). y no será necesario aumentar los esfuerzos de
+muestreo.
+
+\begin{figure}
+\centering
+\includegraphics{sintotico_ward.png}
+\caption{Resultado de las estimaciones de diversidad asintótica junto
+con estadísticas relacionadas, para el agrupamiento Ward
+\label{sintotico_ward}}
+\end{figure}
 
 \emph{Changuava schipii} y \emph{Eugenia oerstediana} fueron las
 especies que hacen contribución a la diversidad beta, éstas están bien
 representadas (la primera con gran dominancia) en los sitios 14 y 19
-(grupo 3 Ward) que hacen contribución a la diversidad beta; el 14 fue
-uno de los cinco sitios que poseen la riqueza máxima (los demás sitios
-son 13, 17, 22 y 40) y el 19 fue el sitio más abundante con 399
-individuos, de los cuales 261 pertenecían a \emph{C. schipii} (ver
-figura \ref{fig:abun_sp_q}). Además, los sitios 14 y 19 están ubicados
-uno al lado del otro. El modelo de abundancia de especies muestra que el
-56\% de la comunidad presenta mayores valores de equidad (log normal
-10\% y null 46\%).
+(grupo 3 Ward) que hacen contribución a la diversidad beta (ver figura
+\ref{fig:beta_div}); el 14 fue uno de los cinco sitios que poseen la
+riqueza máxima (los demás sitios son 13, 17, 22 y 40) y el 19 fue el
+sitio más abundante con 399 individuos, de los cuales 261 pertenecían a
+\emph{C. schipii} (ver figura \ref{fig:abun_sp_q}). Además, los sitios
+14 y 19 están ubicados uno al lado del otro (ver figura
+\ref{fig:mapa_ward}).
 
-Para los análisis de ecología espacial, la prueba I de Moran sugirió que
-las mirtáceas de esta localización presentaron patrones aglomerados al
-menos con la vecindad de primer orden, con excepción de \emph{M.
-gatunensis} y \emph{E. galalonensis} que mostraron un patrón espacial
-aleatorio. Cabe destacar que \emph{C. schipii} presentó una
-autocorrelación espacial positiva también para los vecinos de segundo
-orden y en términos negativos del cuarto al sexto orden; para \emph{E.
-nesiotica} y \emph{E. oerstediana} una autocorrelacion negativa con
-vecinos de tercer a cuarto orden y de cuarto a quinto orden,
-respectivamente, es decir, su abundancia disminuye en esas vecindades
-cuando aumenta en la de primer orden y viceversa.
+\begin{figure}
+\centering
+\includegraphics{beta_div.png}
+\caption{Resultado de los análisis del SCBD y LCBD\label{fig:beta_div}}
+\end{figure}
 
-La autocorrelación mediante la prueba de Mantel muestra que hay una
-correlación espacial inducida por alguna variable en términos positivos
-para el primer orden y en términos negativos para el tercer y sexto
-orden (hasta 500 metros). La prueba Yo de Moran evidencia que \emph{C.
-schipii} muestra un posible patrón de correlación inversa con el
-\emph{B, Ca, Zn, N y pH}; para \emph{E. coloradoensis} infiere un patrón
-en términos positivos con \emph{Ca} y \emph{N. min.} y de igual manera
-para \emph{E. galalonensis} con la geomorfología de vaguada pct y
-pendiente media.
+En los análisis de ecología espacial, la autocorrelación espacial
+mediante la prueba de Mantel muestra que hay una correlación espacial
+inducida por alguna variable en términos positivos para el primer orden
+y en términos negativos para el tercer y sexto orden (hasta 500 metros)
+(ver figura \ref{fig:prueba_mantel}). Según la prueba I de Moran global
+aplicada a abundancia de especies transformadas sin tendencia, \emph{C.
+schipii}, \emph{E. oerstediana} y \emph{E. nesiótica} presentaron alta
+correlación espacial, y otras como \emph{M. gatunensis}, \emph{E.
+galalonensis} y \emph{P. friedrichthalium} mostraron un patrón espacial
+aleatorio (ver figuras \ref{fig:moranglobal1} y \ref{fig:moranglobal2}).
+Además, comparando los correlogramas del I de Moran, se observan
+patrones espaciales muy parecidos para \emph{C. schippii}, \emph{B} y
+\emph{Ca}; para \emph{E. oerstediana} y \emph{N}; y para \emph{E.
+nesiótica} y \emph{Mn} (ver figuras \ref{fig:imoran_especies} y
+\ref{fig:imoran_variables}). Esto lo respalda la prueba de I Moran local
+(aplicado a variables ambientales) con los mapas de \emph{clusters} LISA
+(aplicado a abundancias de especies transformadas sin tendencia),
+\emph{C. schippii} presentó una correlación espacial con los valores de
+abundancia altos de \emph{Al}, y bajos de \emph{B}, \emph{Z}, \emph{Ca}
+y \emph{N}; \emph{E. oerstediana} mostró una correlación espacial con
+los valores de abundancia bajos de \emph{N}, \emph{N. min.} y \emph{pH};
+y \emph{E. nesiótica} con valores de abundancia de \emph{Mn}, \emph{N},
+y \emph{pH} (ver figuras \ref{fig:imoranlocal1}, \ref{fig:imoranlocal2}
+y \ref{fig:imoranlocal3}).
+
+\begin{figure}
+\centering
+\includegraphics{prueba_mantel.png}
+\caption{Autocorrelación espacial mediante prueba Mantel (matrices de
+distancia) \label{fig:prueba_mantel}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{imoran_especies.png}
+\caption{Correlograma, I de Moran con abundancias de especies
+\label{fig:imoran_especies}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{imoran_variables.png}
+\caption{Correlograma, I de Moran con variables ambientales
+\label{fig:imoran_variables}}
+\end{figure}
 
 \section{Discusión}\label{discusiuxf3n}
 
@@ -884,7 +949,70 @@ especies.
 
 \section{Información de soporte}\label{informaciuxf3n-de-soporte}
 
-\ldots
+\beginsupplement
+
+\begin{figure}
+\centering
+\includegraphics{asintotico_ward1.png}
+\caption{Resultado de las estimaciones de diversidad asintótica, grupo
+Ward 1 \label{fig:asintotico_ward1}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{asintotico_ward2.png}
+\caption{Resultado de las estimaciones de diversidad asintótica, grupo
+Ward 2 \label{fig:asintotico_ward2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{asintotico_ward3.png}
+\caption{Resultado de las estimaciones de diversidad asintótica, grupo
+Ward 3 \label{fig:asintotico_ward3}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{asintotico_ward4.png}
+\caption{Resultado de las estimaciones de diversidad asintótica, grupo
+Ward 4 \label{fig:asintotico_ward4}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ee_files/figure-markdown_github/moranglobal1.png}
+\caption{I de Moran global aplicado a abundancia de especies
+transformadas sin tendencia, parte 1 \label{fig:moranglobal1}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ee_files/figure-markdown_github/moranglobal2.png}
+\caption{I de Moran global aplicado a abundancia de especies
+transformadas sin tendencia, parte 2 \label{fig:moranglobal2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ee_files/yodemoranlocal-1.png}
+\caption{I de Moran local aplicado a variables ambientales, parte 1
+\label{fig:imoranlocal1}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ee_files/yodemoranlocal-2.png}
+\caption{I de Moran local aplicado a variables ambientales, parte 2
+\label{fig:imoranlocal2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ee_files/yodemoranlocal-3.png}
+\caption{I de Moran local aplicado a variables ambientales, parte 3
+\label{fig:imoranlocal3}}
+\end{figure}
 
 \section{\texorpdfstring{\emph{Script}
 reproducible}{Script reproducible}}\label{script-reproducible}
