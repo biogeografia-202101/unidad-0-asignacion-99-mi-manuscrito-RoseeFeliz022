@@ -14,8 +14,8 @@ title: |
 author:
 - name: 'Rosee Aurelina Féliz Méndez'
   affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
-abstract: "El objetivo general es conocer los rasgos básicos de la estructura y composición de la comunidad de mirtáceas en relación con factores ambientales de la parcela permanente de 50-ha de isla Barro Colorado. Se hicieron estudios para medir el grado de asociación, agrupamiento, diversidad y ecología espacial de esta familia con la ayuda de los paquetes de R y con los datos de octavo censo de esta localidad. Las mirtáceas presentaron una riqueza de 7 especies con una abundancia de 5579 individuos. Las especies del género *Eugenia* presentaron altos grados de asociación. El agrupamiento Ward de varianza mínima sugirió la partición de 4 grupos que alcazaron el 100% de la completitud de muestra. La diversidad de mirtáceas posee una correlación positiva con *Al, P, Ca, Fe* y la geomorfología de pendiente media. Las especies *Changuava schipii* y *E. oerstediana* son las especies que aportan a la diversidad alpha y están estrechamente relacionadas con los sitios que aportan a la misma. Las mirtáceas presentan patrones aglomerados para vecinos de primer orden, a excepción de *M. gatunencis*, que presentó un patrón aleatorio. El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%)."
-keywords: "Myrtaceae, Ecología numérica, mirtáceas, parcela permanente de 50-ha, BCI"
+abstract: "La ecología de comunidades nos ayuda a comprender la manera en se distribuyen los conjuntos de especies en la naturaleza, y los modos en que estos agrupamientos están influenciados por su ambiente y por las interacciones intraespecíficas. En isla de Barro Colorado, durante los repetidos censos que se han realizado en la parcela permanente de 50-ha, se han reportado varias especies de mirtáceas, siendo su representatividad relativamente importante en dicho enclave. Ninguna investigación ha reportado ni analizado los patrones de la comunidad de mirtáceas de isla a la fecha. El objetivo general es conocer los rasgos básicos de la estructura y composición de la comunidad de mirtáceas en relación con factores ambientales esta parcela permanente. Se hicieron estudios para medir el grado de asociación, agrupamiento, diversidad y ecología espacial de esta familia con la ayuda de los paquetes de R y con los datos de octavo censo de esta localidad. Las mirtáceas presentaron una riqueza de 7 especies con una abundancia de 5579 individuos pertencientes a la subtribu Myrteae. Las especies del género *Eugenia* presentaron altos grados de asociación. El agrupamiento Ward de varianza mínima sugirió la partición de 4 grupos que alcazaron el 100% de la completitud de muestra. La diversidad de mirtáceas posee una correlación positiva con *Al, P, Ca, Fe* y la geomorfología de pendiente media. Las especies *Chamguava schippii* y *E. oerstediana* son las especies que aportan a la diversidad alpha y están estrechamente relacionadas con los sitios que aportan a la misma. El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%). *C. schippii*, *E. oerstediana* y *E. nesiotica* presentaron alta correlación espacial, y otras como *M. gatunensis*, *E. galalonensis* y *Psidium friedrichsthalianumchthalium* mostraron un patrón espacial aleatorio. De los hallazgos, se infiere preeliminarmente que *Myrcia gatunensis* es endémica del lago Gatún, *C. schippi* y *E. oerstediana* son basófilas y *E. nesiotica* es acidófila. Este estudio presenta nuevas conocimientos sobre las Myrteae, aunque solo se queda en estadísticos debido a falta de información que respalde o no los hallazgos obtenidos, por lo que se necesitarán nuevos estudios de las preferencia de variables ambientales y hábitats de las mirtáceas."
+keywords: "Myrtaceae, Myrteae, Ecología numérica, mirtáceas, parcela permanente de 50-ha, BCI"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
@@ -54,7 +54,7 @@ Las mirtaceas de BCI pertenecen a la subtribu Myrteae. Esta subtribu posee espec
 
 En BCI, durante los repetidos censos que se han realizado en la parcela permanente de 50-ha desde 1981 [@webcenso], se han reportado varias especies de mirtáceas, siendo su representatividad relativamente importante en dicho enclave.
 
-Mediante análisis exploratorios preliminares, se detectaron patrones singulares de distribución espacial y de diversidad. Algunas especies mostraron una distribución espacial concentrada (e.g. *Changuava schipii*). Igualmente, varias especies mostraron preliminarmente asociación con variables de suelo y geomorfólógicas. Ninguna investigación ha reportado ni analizado estos patrones a la fecha. El objetivo de este estudio es caracterizar la comunidad de mirtáceas de BCI, con ayuda de técnicas de ecología numérica (e.g. análisis de asociación, agrupamiento, diversidad y ecología espacial en relación a factores ambientales), utilizando como fuente los datos disponibles del censo número de 8 de la parcela permanente de 50-ha.
+Mediante análisis exploratorios preliminares, se detectaron patrones singulares de distribución espacial y de diversidad. Algunas especies mostraron una distribución espacial concentrada (e.g. *Chamguava schippii*). Igualmente, varias especies mostraron preliminarmente asociación con variables de suelo y geomorfólógicas. Ninguna investigación ha reportado ni analizado estos patrones a la fecha. El objetivo de este estudio es caracterizar la comunidad de mirtáceas de BCI, con ayuda de técnicas de ecología numérica (e.g. análisis de asociación, agrupamiento, diversidad y ecología espacial en relación a factores ambientales), utilizando como fuente los datos disponibles del censo número de 8 de la parcela permanente de 50-ha.
 
 
 # Metodología
@@ -158,7 +158,7 @@ El Índice Local de Asociación Espacial (LISA) ayuda a identificar patrones loc
 
 # Resultados
 
-La familia Myrtaceae de la parcela permanente de 50-ha de BCI presentó una abundancia de 5,579 individuos pertenecientes a 7 especies, de las cuales las más abundantes fueron *Eugenia galalonensis* y *Eugenia oerstediana*, representadas con 1,975 y 1,838 individuos cada una, y las especies más raras fueron *Psidium friedrichsthalianum* y *Myrcia gatunensis*, con 58 y 56 individuos respectivamente (ver figura \ref{tab:abun_sp}).
+La familia Myrtaceae de la parcela permanente de 50-ha de BCI presentó una abundancia de 5,579 individuos pertenecientes a 7 especies, de las cuales las más abundantes fueron *Eugenia galalonensis* y *Eugenia oerstediana*, representadas con 1,975 y 1,838 individuos cada una, y las especies más raras fueron *Psidium friedrichsthalianumchsthalianum* y *Myrcia gatunensis*, con 58 y 56 individuos respectivamente (ver figura \ref{tab:abun_sp}).
 
 ```{r, echo=FALSE}
 knitr::kable(abun_sp,
@@ -174,38 +174,20 @@ abun_sp_q
 
 ¿Se detectan especies asociadas dentro de mi familia seleccionada?
 ¿Existe asociación entre variables ambientales/atributos? ¿Cuáles variables? -->
-Para los análisis de medición de asociación, la distancia de *ji*-cuadradado y la distancia de Jacard resultaron pequeñas entre especies del genéro *Eugenia* (*E. oerstediana*, *E. galalonensis*, *E. nesiotica* y  *E. coloradoensis*), lo cual sugiere un patrón de dependencia, debido a que tienen altos grados de asociación; y las especies *Psidium friedrichsthalianum*, *Myrcia gatunensis* y *Changuava schippii* presentan un posible patrón independiente, no parecen asociarse con otras (ver figura \ref{fig:matriz_Jacard}). La riqueza de la familia presentó asociación estadística, a través del índice de Spearman, en términos positivos con *Al*, * P* y en términos negativos con *Ca*; y la abundancia de mi familia presentó asociación estadística, a través del índice de Spearman y el índice de Pearson, en términos positivos con *Al* y elevación media, y en términos negativos con *Ca*, heterogeneidad ambiental y geomorfología de vaguada (ver figuras \ref{fig:matriz_spearman} y \ref{fig:matriz_pearson}).
+Para los análisis de medición de asociación, la distancia de *ji*-cuadradado y la distancia de Jacard resultaron pequeñas entre especies del genéro *Eugenia* (*E. oerstediana*, *E. galalonensis*, *E. nesiotica* y  *E. coloradoensis*), lo cual sugiere un patrón de dependencia, debido a que tienen altos grados de asociación; y las especies *Psidium friedrichsthalianumchsthalianum*, *Myrcia gatunensis* y *Chamguava schippii* presentan un posible patrón independiente, no parecen asociarse con otras (ver figura \ref{fig:matriz_Jacard}). La riqueza de la familia presentó asociación estadística, a través del índice de Spearman, en términos positivos con *Al*, * P* y en términos negativos con *Ca*; y la abundancia de mi familia presentó asociación estadística, a través del índice de Spearman y el índice de Pearson, en términos positivos con *Al* y elevación media, y en términos negativos con *Ca*, heterogeneidad ambiental y geomorfología de vaguada (ver figuras \ref{fig:matriz_spearman} y \ref{fig:matriz_pearson}).
 
 ![Matriz de disimilaridad de Jacard \label{fig:matriz_Jacard}](Disimilaridad_.png)
  
-
-![Matriz de correlación, índice de Spearman \label{fig:matriz_spearman}](matriz_correlacion_suelo_abun_riq_spearman.png)
-
-![Matriz de correlación, índice de Pearson \label{fig:matriz_pearson}](matriz_correlacion_geomorf_abun_riq_spearman.png)
-
 
 <!-- B. Agrupamiento (cluster analysis):
 Los cuadros (o quadrats) de 1 hectárea, ¿se organizan en grupos discontinuos según la composición de las especies de mi familia seleccionada?
 Si existe algún patrón, ¿es consistente con alguna variable ambiental/atributo?
 ¿Hay especies indicadoras o con preferencia por determinadas condiciones ambientales/atributos?-->
-Para los análisis de agrupamiento (*cluster analysis*), se utilizó el método de agrupamiento Ward de varianza mínima, conjuntamente con el mapa de calor (ver figuras \ref{fig:mapadecalor_ward} y \ref{fig:ward_fraccionado}), los cuales mostraron que las mirtáceas de la parcela permanente de 50-ha de BCI se distribuyen en 4 grupos, de 2, 13, 15 y 20 sitios, respectivamente (ver figura \ref{fig:mapa_ward}). Los métodos de agrupamiento aglomerativos por enlace simple, por enlace completo y por enlace promedio (grupos de pares no ponderados con media aritmética, UPGMA por sus siglas en inglés) destacaron la singularidad de este grupo formado por dos sitios (14 y 19). Además, el muestreo de *bootstrap* multiescalar respaldó este grupo con un probabilidad de *bootstrap* (BP) de 76 % y probabilidad de valores aproximadamente insesgados (AU) de 99 %, de que sea un grupo real (ver figura \ref {fig:*bootstrap*_multiescalar}). Las mirtáceas presentaron asociación estadística, según el diagrama de cajas, con un conjunto de variables de suelo (*Al, Fe, Mn, N. min.*, etc.) y atributos del terreno (curvatura perfil media, curvatura tangencial media, elevación media, etc.) (ver figura \ref{fig:ward_con_variables}). ANOVA, Kruskal-Walis*
+Para los análisis de agrupamiento (*cluster analysis*), se utilizó el método de agrupamiento Ward de varianza mínima, conjuntamente con el mapa de calor (ver figuras \ref{fig:mapadecalor_ward} y \ref{fig:ward_fraccionado}), los cuales mostraron que las mirtáceas de la parcela permanente de 50-ha de BCI se distribuyen en 4 grupos, de 20, 13, 2 y 15 sitios, respectivamente (ver figura \ref{fig:mapa_ward}). Los métodos de agrupamiento aglomerativos por enlace simple, por enlace completo y por enlace promedio (grupos de pares no ponderados con media aritmética, UPGMA por sus siglas en inglés) destacaron la singularidad de este grupo formado por dos sitios (14 y 19)(ver figura \ref{fig:metodosdeagrupamiento}). Además, el muestreo de *bootstrap* multiescalar respaldó este grupo con un probabilidad de *bootstrap* (BP) de 76 % y probabilidad de valores aproximadamente insesgados (AU) de 99 %, de que sea un grupo real (ver figura \ref {fig:*bootstrap*_multiescalar}). Las mirtáceas presentaron asociación estadística, según las pruebas ANOVA y Kruskal-Wallis para una significancia por debajo de 0.05 y el diagrama de cajas, con variables de suelo: *pH, Cu, Zn, Ca, Mg, N, Al* y *K*; y atributos del terreno: pendiente_media, orientacion_media, elevación media, geomorf_espolon/gajo_pct (ver figuras \ref{fig:ward_con_variables} y \ref{fig:anova_kruskalwallis_ward}).
 
 ![Agrupamiento por el método Ward de varianza mínima de las mirtáceas \label{fig:ward_fraccionado}](ward_fracionado.png){width=50%}
 
-
-![Mapa de calor con el dendrograma del agrupamiento Ward \label{fig:mapadecalor_ward}](Mapadecalor_Ward_aa2.png){width=50%}
-
-
-![Agrupamiento por el método Ward de varianza mínima de las mirtáceas \label{fig:mapa_ward}](mapa_ward_k4.png){width=50%}
-
-
-![Dendrograma, agrupamiento Ward con los porcentajes del remuestreo de *bootstrap* multiescalar \label{fig:*bootstrap*_multiescalar}](bootstrap_Ward.png)
-
-
-![Diagrama de cajas de los grupos Ward en relación con variables ambientales y atributos \label{fig:ward_con_variables}](correlograma_wardyvariablesambientales.png)
-
-
-Para este agrupamiento, las especies asociadas como indicadoras, mediante IndVal para una significancia menor de 0.05,  fueron *Chamguava schippii* para el grupo 3, *Eugenia coloradoensis* para el conjunto de grupos 1+2 y *Eugenia oerstediana* para el conjunto de grupos 3+4 (ver figura \ref{fig:indval_analisis}); y las especies con preferencia por hábitat, mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.05, fueron *Eugenia coloradoensis* con preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4 (ver figura \ref).
+Para este agrupamiento, las especies asociadas como indicadoras, mediante IndVal para una significancia menor de 0.05,  fueron *Chamguava schippii* para el grupo 3, *Eugenia coloradoensis* para el conjunto de grupos 1+2 y *Eugenia oerstediana* para el conjunto de grupos 3+4 (ver figura \ref{fig:indval_analisis}); y las especies con preferencia por hábitat, mediante el coeficiente de correlación biserial puntual para una significancia menor de 0.05, fueron *Eugenia coloradoensis* con preferencia por el grupo 2, *Chamguava schippii* por el grupo 3 y *Eugenia oerstediana* por el grupo 4 (ver figura \ref{fig:rg_analisis}).
 
 ![Análisis de especies indicadoras de los grupos Ward, mediante el método del Valor Indicador (IndVal) \label{fig:indval_analisis}](inval_analisis.png)
 
@@ -217,28 +199,22 @@ Según los análisis de estimación de riqueza, ¿está suficientemente represen
 ¿Existe contribución local o por alguna especie a la diversidad beta?-->
 Para los análisis de diversidad alpha las mirtáceas de este ámbito geográfico presentaron, a través de la riqueza ($N_0$), $E_2$ y $N_2$ de Hill, una correlación positiva importante con *Al, P, Ca y Fe*. Además, la diversidad de la familia (a través de la equidad de Pielou (J), los ratios de Hill ($E_1$ y $E_2$) y $N_2$) mostró una correlación positiva notable con la presencia de la geomorfología de pendiente media (ver figura \ref{fig:pearson_div}).
 
-![Matriz que relaciona los indices con las variables/atributos del suelo \label{fig:pearson_div}](pearson_indcdiversidad.png)
-
-El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%) (ver figura \ref{fig:modelo_abundancia}). También se utilizaron los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife), los cuales mostraron que la completitud de muestra se alcanzó al 100%; las estimaciones de la diversidad con muestras enrarecidas y extrapoladas mostraron que la riqueza máxima fue alcanzada (ver firgura \ref{fig:chao_asintotico}); y para las estimaciones de diversidad asintótica junto con estadísticas relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad de Simpson) la riqueza fue estimada y observada. por lo que no sería necesario aumentar el esfuerzo de muestreo ya que no se espera encontrar otras especies en BCI*  (ver figura \ref{fig:chao_noasintotico}). 
+El modelo de abundancia de especies mostró que el 56% de los quadrats presenta mayores valores de equidad (log normal 10% y null 46%) (ver figura \ref{fig:modelo_abundancia}). También se utilizaron los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife), los cuales mostraron que la completitud de muestra se alcanzó al 100%; las estimaciones de la diversidad con muestras enrarecidas y extrapoladas mostraron que la riqueza máxima fue alcanzada (ver firgura \ref{fig:chao_asintotico}); y para las estimaciones de diversidad asintótica junto con estadísticas relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad de Simpson) la riqueza fue estimada y observada (ver figura \ref{fig:chao_noasintotico}). 
 
 ![Modelo de abundancia de especies \label{fig:modelo_abundancia}](modelodeabundancia.png)
 
-![Resultado de las estimaciones de diversidad para la matriz de comunidad combinada, en la que todos los sitios forman uno \label{fig:chao_asintotico}](chao_asintotico.png)
+La diversidad alpha en el agrupamiento Ward, según los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife) se alcanzó la completitud de muestra al 100% para los grupos 1, 2 y 4 (1882, 1205 y 1939 individuos, respectivamente) y al 98% para el grupo 3 (grupo con la menor abundancia, 553 individuos). Las estimaciones de la diversidad con muestras enrarecidas y extrapoladas mostraron que en los grupos Ward la riqueza máxima fue alcanzada(ver figuras \ref{asintotico_ward1}, \ref{asintotico_ward2}, \ref{asintotico_ward3} y \ref{asintotico_ward4}); y para las estimaciones de diversidad asintótica junto con estadísticas relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad de Simpson) la riqueza máxima fue estimada y observada (ver figura \ref{sintotico_ward}).
 
-[Resultado de rarefacción y extrapolación para la matriz de comunidad combinada en la que todos los sitios forman uno \label{fig:chao_noasintotico}](chao_noasintotico.png)
+![Resultado de las estimaciones de diversidad asintótica junto con estadísticas relacionadas, para el agrupamiento Ward \label{fig:sintotico_ward}](sintotico_ward.png)
 
-La diversidad alpha en el agrupamiento Ward, según los modelos de estimación de riqueza (*Homogeneous model*, estándar y MLE; los Chao y los Jacknife) se alcanzó la completitud de muestra al 100% para los grupos 1, 2 y 4 (1882, 1205 y 1939 individuos, respectivamente) y al 98% para el grupo 3 (grupo con la menor abundancia, 553 individuos). Las estimaciones de la diversidad con muestras enrarecidas y extrapoladas mostraron que en los grupos Ward la riqueza máxima fue alcanzada(ver figuras \ref{asintotico_ward1}, \ref{asintotico_ward2}, \ref{asintotico_ward3} y \ref{asintotico_ward4}); y para las estimaciones de diversidad asintótica junto con estadísticas relacionadas (Riqueza de especies, diversidad de Shannon, y diversidad de Simpson) la riqueza máxima fue estimada y observada (ver figura \ref{sintotico_ward}). y no será necesario aumentar los esfuerzos de muestreo.
-
-![Resultado de las estimaciones de diversidad asintótica junto con estadísticas relacionadas, para el agrupamiento Ward \label{sintotico_ward}](sintotico_ward.png)
-
-*Changuava schipii* y *Eugenia oerstediana* fueron las especies que hacen contribución a la diversidad beta, éstas están bien representadas (la primera con gran dominancia) en los sitios 14 y 19 (grupo 3 Ward) que hacen contribución a la diversidad beta (ver figura \ref{fig:beta_div}); el 14 fue uno de los cinco sitios que poseen la riqueza máxima (los demás sitios son 13, 17, 22 y 40) y el 19 fue el sitio más abundante con 399 individuos, de los cuales 261 pertenecían a *C. schipii* (ver figura \ref{fig:abun_sp_q}). Además, los sitios 14 y 19 están ubicados uno al lado del otro (ver figura \ref{fig:mapa_ward}).
+*Chamguava schippii* y *Eugenia oerstediana* fueron las especies que hacen contribución a la diversidad beta, éstas están bien representadas (la primera con gran dominancia) en los sitios 14 y 19 (grupo 3 Ward) que hacen contribución a la diversidad beta (ver figura \ref{fig:beta_div}); el 14 fue uno de los cinco sitios que poseen la riqueza máxima (los demás sitios son 13, 17, 22 y 40) y el 19 fue el sitio más abundante con 399 individuos, de los cuales 261 pertenecían a *C. schippii* (ver figura \ref{fig:abun_sp_q}). Además, los sitios 14 y 19 están ubicados uno al lado del otro geográficamente (ver figura \ref{fig:mapa_ward}).
 
 ![Resultado de los análisis del SCBD y LCBD\label{fig:beta_div}](beta_div.png)
 
 <!-- E. Ecología espacial:
 ¿Alguna(s) especies de mi familia presenta(n) patrón aglomerado? ¿Cuál(es)? ¿Se asocia con alguna variable?
 ¿Predicen bien la ocurrencia de dicha(s) especie(s) los modelos de distribución de especies (SDM)? -->
-En los análisis de ecología espacial, la autocorrelación espacial mediante la prueba de Mantel muestra que hay una correlación espacial inducida por alguna variable en términos positivos para el primer orden y en términos negativos para el tercer y sexto orden (hasta 500 metros) (ver figura \ref{fig:prueba_mantel}). Según la prueba I de Moran global aplicada a abundancia de especies transformadas sin tendencia,  *C. schipii*, *E. oerstediana* y *E. nesiótica* presentaron alta correlación espacial, y otras como *M. gatunensis*, *E. galalonensis* y *P. friedrichthalium* mostraron un patrón espacial aleatorio (ver figuras \ref{fig:moranglobal1} y \ref{fig:moranglobal2}). Además, comparando los correlogramas del I de Moran, se observan patrones espaciales muy parecidos para *C. schippii*, *B* y *Ca*; para *E. oerstediana* y *N*; y para *E. nesiótica* y *Mn* (ver figuras \ref{fig:imoran_especies} y \ref{fig:imoran_variables}). Esto lo respalda la prueba de I Moran local (aplicado a variables ambientales) con los mapas de *clusters* LISA (aplicado a abundancias de especies transformadas sin tendencia), *C. schippii* presentó una correlación espacial con los valores de abundancia altos de *Al*, y bajos de *B*, *Z*, *Ca* y *N*; *E. oerstediana* mostró una correlación espacial con los valores de abundancia bajos de *N*, *N. min.* y *pH*; y *E. nesiótica* con valores de abundancia de *Mn*, *N*, y *pH* (ver figuras \ref{fig:imoranlocal1}, \ref{fig:imoranlocal2} y \ref{fig:imoranlocal3}).
+En los análisis de ecología espacial, la autocorrelación espacial mediante la prueba de Mantel mostró que hay correlación espacial inducida por alguna variable en términos positivos para el primer orden y en términos negativos para el tercer y sexto orden (hasta 500 metros) (ver figura \ref{fig:prueba_mantel}). Según la prueba I de Moran global aplicada a abundancia de especies transformadas sin tendencia,  *C. schippii*, *E. oerstediana* y *E. nesiotica* presentaron alta correlación espacial, y otras como *M. gatunensis*, *E. galalonensis* y *P. friedrichsthalianumchthalium* mostraron un patrón espacial aleatorio (ver figuras \ref{fig:moranglobal1} y \ref{fig:moranglobal2}). Además, comparando con los correlogramas del I de Moran, se observaron patrones espaciales muy parecidos para *C. schippii*, *B* y *Ca*; para *E. oerstediana* y *N*; y para *E. nesiotica* y *Mn* (ver figuras \ref{fig:imoran_especies} y \ref{fig:imoran_variables}). Esto coincide con la prueba del I de Moran local (aplicado a variables ambientales) y los mapas de *clusters* LISA (aplicado a abundancias de especies transformadas sin tendencia), *C. schippii* presentó correlación espacial con los valores de abundancia altos de *Al*, y bajos de *B*, *Zn*, *Ca* y *N*; *E. oerstediana* mostró una correlación espacial con los valores de abundancia bajos de *N*, *N. min.* y *pH*; y *E. nesiotica* con valores de abundancia bajos de *Mn*, y altos de *N*, y *pH* (ver figuras \ref{fig:imoranlocal1}, \ref{fig:imoranlocal2} y \ref{fig:imoranlocal3}).
  
 ![Autocorrelación espacial mediante prueba Mantel (matrices de distancia) \label{fig:prueba_mantel}](prueba_mantel.png)
 
@@ -248,23 +224,38 @@ En los análisis de ecología espacial, la autocorrelación espacial mediante la
 
 # Discusión
 
-La comunidad de mirtáceas de la parcela permante de BCI posee una riqueza de 7 especies con una abundancia de 5579 individuos, la mayor abundancia se registró para las especies *E. galalonensis* (35.40%) y *E. oerstediana* (32.94%) y la menor abundancia para las especies *P. friedrichsthalianum* (1.04%) y *M. gatunensis* (1.004%). En cada quadrat de la parcela BCI podemos encontrar un mínimo de 58 y un máximo de 399 mirtáceas para un promedio de 112 individuos por quadrat.
+Las mirtaceas de la parcela permanente de BCI presentaron una riqueza de 7 especies pertenecientes a la subtribu Myrteae. El 57% de esta riqueza, correspondiente a las especies del género *Eugenia*, presentaron altos grados de asociación entre ellas, por lo que supone un patrón de dependencia, a diferencia de las especies *P. friedrichsthalianumechsthalianum*, *M. gatunensis* y *C. schippii* mostraron un patrón independiente, por lo que supone que se presentan aleatoriamente en la muestra sin asociarse a las otras especies. 
 
-El 57% de la riqueza, las especies del género *Eugenia*, presentaron altos grados de asociación entre ellas, por lo que supone un patrón de dependencia, a diferencia de las especies *P. friedriechsthalianum*, *M. gatunensis* y *C. schipii* mostraron un posible patrón independiente, por lo que supone que se presentan aleatoriamente en la muestra sin asociarse a las otras especies. 
+Las Myrteae de esta muestra, según el método Ward, se dividen en 4 grupos, cada uno con 20, 13, 2 y 15 sitios respectivamente. Este agrupamiento, según las pruebas ANOVA y Kruskal-Wallis y el diagrama de cajas, estuvo influenciado por variables de suelo: *pH, Cu, Zn, Ca, Mg, N, Al* y *K*; y atributos del terreno: pendiente_media, orientacion_media, elevación media, geomorf_espolon/gajo_pct. El grupo 3 (con 2 sitios, 14 y 19) coincide en los métodos de agrupamiento (*single*, *complete*, UPGMA y Ward) y el *bootstrap* multiescalar (BP de 76% y un AU de 99%) esto infiere que es un grupo natural y real dentro de la localidad.
 
-Las mirtáceas de esta muestra, según el método Ward, se dividen en 4 grupos, cada uno con 2, 13, 15 y 20 sitios respectivamente; el grupo con 2 sitios es respaldado por los métodos de agrupamiento aglomerativo y el *bootstrap* multiescalar (BP de 76% y un AU de 99%) esto infiere que es un grupo natural y real dentro de la localidad. Este agrupamiento no se relaciona específicamente con alguna variable sino por la preferencia de un conjunto de éstas, como lo son *Al* y *Fe*.
+Según el análisis de especies indicadoras (IndVal), las especies asociadas como diagnósticas para el agrupamiento Ward, fueron *C. schippii* para el grupo 3, *E. coloradoensis* para el conjunto 1+2 y *E. oerstediana* para el grupo 3+4. También, *C. schippii* presentó preferencia por los hábitats del grupo 3, *E. coloradoensis* para los del grupo 2, y *E. oerstediana* para los del grupo 4. Esto puede ser debido a las altas abundancias de estas especies presentes en estos grupos.
 
-Según el análisis de especies indicadoras (IndVal), las especies asociadas como diagnósticas para el agrupamiento Ward, fueron *C. schipii* para el grupo 3, *E. coloradoensis* para el conjunto 1+2 y *E. oerstediana* para el grupo 3+4, esto puede ser debido a sus altas abundancias presentes en estos grupos.
+El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%). No obstante, los estimadores de riqueza demostraron que la completitud de muestra para las mirtáceas en estudio fue estimada y observada al 100%, lo mismo para los grupos Ward. De lo que se infiere, que este es un patrón natural de las Myrteae, y no será necesario aumentar el esfuerzo de muestreo porque no se espera encontrar más especies de esta familia en BCI.
 
-Los estimadores de riqueza demostraron que la completitud de muestra para las mirtáceas en estudio fue alcanzda 100%, lo mismo para los grupos Ward, por lo que inferimos que el esfuerzo de muestreo surtió las necesidas de lugar y no se espera encontrar más especies de en de esta familia en BCI.
+La riqueza y abundancia de la familia presentó asociación estadística en términos positivos con *Al*, * P* y en términos negativos con *Ca*; y la abundancia de mi familia presentó asociación estadística en términos positivos con *Al* y elevación media, y en términos negativos con *Ca*, heterogeneidad ambiental y geomorfología de vaguada. Además, la diversidad alpha de las comunidad presentó correlación con las variables *Al, P, Ca, Fe* y la geomorfología de pendiente media. De lo que se infiere, que la presencia de estas variables está relacionada estrechamente con la distribución de la familia en la parcela permanente de BCI.
 
-Los equidad de Pielou, los números de Hill destacan que la diversidad de mirtáceas posee una correlación positiva con *Al, P, Ca, Fe* y la geomorfología de pendiente media.
+Las especies que hacen contribución a la diversidad beta fueron *C. schippii* y *E. oerstediana*, y los sitios que hacen contribución fueron los sitios 14 y 19 (grupo ward 3). Este grupo posee altas abundancias de las especies antes mencionadas; el sitio 19 posee la mayor abundancia de especies por quadrat 399 individuos de los cuales 261 son de *C. schippii* y 38 de *E. oerstediana*; y el sitio 14 posee 154 individuos, de los cuales 61 individuos son de *C. schippi* y 32 de *E. oerstediana*. Estos sitios se encuentran juntos geográficamente, y presentan altos grados de *Al* y bajos grados de *N*, lo que según los análisis de ecología espacial se relaciona con altas abundancias de las especies antes mencionadas.
 
-Las especies que hacen contribución a la diversidad beta son *C. schipii* y *E. oerstediana*, y los sitios que hacen contribución a esta diversidad son el grupo 14 y 19, coincidencialmente un grupo Ward que posee altas abundancias de las especies antes mencionadas, por lo que este grupo guarda una estrecha relación con la presencia de estas especies.
+Los análisis de ecología espacial de mirtáceas, mediante la prueba de Mantel, mostraron estadísticamente que hay correlación espacial inducida por alguna variable en términos positivos para el primer orden. Las especies *C. schippii*, *E. oerstediana* y *E. nesiotica* presentaron alta correlación espacial; y *M. gatunencis*, *E. galalonensis* y *P. friedrichsthalianumchthalium* presentaron un patrón aleatorio. Con la prueba del I de Moran local (aplicado a variables ambientales) y los mapas de *clusters* LISA (aplicado a abundancias de especies transformadas sin tendencia), se evidenció estadísticamente que está correlación para *C. schippii* está inducida por los valores de abundancia altos de *Al*, y bajos de *B*, *Zn*, *Ca* y *N*;  para *E. oerstediana* por los valores de abundancia bajos de *N*, *N. min.* y *pH*; y para *E. nesiotica* por los valores de abundancia bajos de *Mn*, y altos de *N*, y *pH*.
 
-Las mirtáceas de esta localidad, según el I de Moran, presentan patrones aglomerados para vecinos de primer orden que implican hasta 50 sitios, con excepción de *M. gatunencis*, que como había mencionado antes, presentó un patrón aleatorio; en el caso de *C. schipii*, presenta patrón más aglomerado que las demás debido a que presenta una correlación positiva también con los vecinos de segundo orden y en términos negativos con los vecinos del cuarto al sexto orden, es decir que aumenta o disminuye de forma inversa en estos lugares en relación con el primer y segundo orden.
+##Interpretación
 
-El modelo de abundancia de especies muestra que el 56% de la comunidad presenta mayores valores de equidad (log normal 10% y null 46%), parece una cifra razonable debido a que el 48% de los quadrats poseen valores 7 y 6 de riqueza,  lo que infiere que los modelos de distribución de especies (SDM) parecen estar prediciendo bien la ocurrencia de dichas especies.
+De los resultados obtenidos, se obtienen nuevos conocimientos preliminares de las especies de mirtáceas que se desarrollana continuación:
+
+La distribución de las Myrteae en la parcela permanente de BCI presenta una estrecha relación con las variables *Al, P, Ca, Fe* y la geomorfología de pendiente media.
+
+*P. friedrichsthalianumchthalium* y *M. gatunensis* son especies raras que no se asocian con otras mirtáceas, presentan patrones aleatorios. También, *M. gatunensis* fue descrita en Barro Colorado por Standl, se infiere que es preliminarmente endémica del área del lago Gatún.
+
+*C. schippi* es una especie que no se asocia con otras mirtáceas. Su abundancia puede aumentar en presencia altos valores de *Al* y bajos *B*, *Zn*, *Ca* y *N*. Se infiere que es preliminarmente basófila.
+
+Las especies del género *Eugenia* presentan un patrón de dependencia. Además, se infiere que *E. oerstediana* es preliminarmente basófila y *E. nesiotica* preliminarmente acidófila.
+
+
+##Limitaciones y futuro
+
+Los datos de BCI son censales, por lo que el sesgo de muestreo es una preocupación menor. Sin embargo, los datos de BCI también tienen sesgo, debido a que se utiliza un DAP de corte para decidir si un individuo es censado o no.  No obstante,  los datos censales carecen de una fortaleza porque no reflejan asociación con grandes unidades de hábitats y, además, revelan asociación con microhábitats muy específicos, por lo que extraer conclusiones sobre patrones de asociación con variables ambientales de manera más general, presenta sus limitaciones. Debido a esto se nesecitarán más estudios de estas mirtáceas en otros hábitats menos relacionados para observar verdaderos patrones naturales y ver si coinciden con los de este estudio, que se han quedado en la estadística inferencial.
+
+Otra de las limitaciones, es que no se encontraron estudios que respalden o no los resultados de este estudio las preferencias de las especies de Myrteae de la parcela permanente de BCI han sido muy poco estudiadas. Se necesitarán más estudios sobre preferencias de variables ambientales y hábitats.
 
 
 # Agradecimientos
@@ -272,6 +263,28 @@ El modelo de abundancia de especies muestra que el 56% de la comunidad presenta 
 # Información de soporte
 
 \beginsupplement
+
+![Matriz de correlación, índice de Spearman \label{fig:matriz_spearman}](matriz_correlacion_suelo_abun_riq_spearman.png)
+
+![Matriz de correlación, índice de Pearson \label{fig:matriz_pearson}](matriz_correlacion_geomorf_abun_riq_spearman.png)
+
+![Mapa de calor con el dendrograma del agrupamiento Ward \label{fig:mapadecalor_ward}](Mapadecalor_Ward_aa2.png){width=50%}
+
+![Agrupamiento por el método Ward de varianza mínima de las mirtáceas \label{fig:mapa_ward}](mapa_ward_k4.png){width=50%}
+
+![\label{fig:metodosdeagrupamiento}](metodosdeagrupamiento.png)
+
+![Dendrograma, agrupamiento Ward con los porcentajes del remuestreo de *bootstrap* multiescalar \label{fig:*bootstrap*_multiescalar}](bootstrap_Ward.png)
+
+![Diagrama de cajas de los grupos Ward en relación con variables ambientales y atributos \label{fig:ward_con_variables}](correlograma_wardyvariablesambientales.png)
+
+![Pruebas ANOVA y Kruskal-Wallis para el agrupamiento Ward \label{fig:anova_kruskalwallis_ward}](anova_kruskalwallis_ward.png)
+
+![Matriz que relaciona los indices con las variables/atributos del suelo \label{fig:pearson_div}](pearson_indcdiversidad.png)
+
+![Resultado de las estimaciones de diversidad para la matriz de comunidad combinada, en la que todos los sitios forman uno \label{fig:chao_asintotico}](chao_asintotico.png)
+
+![Resultado de rarefacción y extrapolación para la matriz de comunidad combinada en la que todos los sitios forman uno \label{fig:chao_noasintotico}](chao_noasintotico.png)
 
 ![Resultado de las estimaciones de diversidad asintótica, grupo Ward 1 \label{fig:asintotico_ward1}](asintotico_ward1.png)
 
