@@ -7,10 +7,7 @@ output:
     latex_engine: pdflatex
     template: svm-latex-ms.tex
     number_sections: true
-title: | 
-        | Ecología numérica de la familia Myrtaceae en la parcela permanente de 50-ha en Barro Colorado, lago Gatún, Panamá
-        | Subtítulo
-        | Subtítulo
+title: Ecología numérica de la familia Myrtaceae en la parcela permanente de 50-ha en Barro Colorado, lago Gatún, Panamá
 author:
 - name: 'Rosee Aurelina Féliz Méndez'
   affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
@@ -337,6 +334,89 @@ Mis más grato agradecimiento a todos, por ayudarme a concluir mi última materi
 
 # *Script* reproducible
 
-\ldots
+## aed_1.R {-}
+
+```{r, code=readLines('aed_1.R'), eval=FALSE} 
+```
+
+## aed_2.R {-}
+
+```{r, code=readLines('aed_2.R'), eval=FALSE} 
+```
+
+## aed_3.R {-}
+
+```{r, code=readLines('aed_3.R'), eval=FALSE} 
+```
+
+## aed_4.R {-}
+
+```{r, code=readLines('aed_4.R'), eval=FALSE} 
+```
+
+## aed_5.R {-}
+
+```{r, code=readLines('aed_5.R'), eval=FALSE} 
+```
+
+## aed_6.R {-}
+
+```{r, code=readLines('aed_6.R'), eval=FALSE} 
+```
+
+## medicion_asociacion2_modoQ.R {-}
+
+```{r, code=readLines('medicion_asociacion2_modoQ.R'), eval=FALSE} 
+```
+
+## medición_asociación3_modoR.R {-}
+
+```{r, code=readLines('medición_asociación3_modoR.R'), eval=FALSE} 
+```
+
+## aa_1.R {-}
+
+```{r, code=readLines('aa_1.R'), eval=FALSE} 
+```
+
+## aa_2.R {-}
+
+```{r, code=readLines('aa_2.R'), eval=FALSE} 
+```
+
+## aa_3.R {-}
+
+```{r, code=readLines('aa_3.R'), eval=FALSE} 
+```
+
+## aa_4.R {-}
+
+```{r, code=readLines('aa_4.R'), eval=FALSE} 
+```
+
+## to_1.R {-}
+
+```{r, code=readLines('to_1.R'), eval=FALSE} 
+```
+
+## to_2.R {-}
+
+```{r, code=readLines('to_2.R'), eval=FALSE} 
+```
+
+## di_1.R {-}
+
+```{r, code=readLines('di_1.R'), eval=FALSE} 
+```
+
+## di_2.R {-}
+
+```{r, code=readLines('di_2.R'), eval=FALSE} 
+```
+
+## ee.R {-}
+
+```{r, code=readLines('ee.R'), eval=FALSE} 
+```
 
 # Referencias
